@@ -1,11 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="utf-8">
+    <title>Guest Place</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="./css/fonts.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="icon" href="./resources/favicon/favicon.svg" type="image/x-icon">
 </head>
+
 <body>
-    
+    <header>
+        <div class="first_block_header flex justify-content-space-between ">
+            <div class="location_in_header flex align-center ">
+                <img src="./resources//header_icons/MapPin.svg" alt="MapPinImage">
+                <p>Москва</p>
+            </div>
+            <div class="icons_in_header flex">
+                <img src="./resources//header_icons/Favorite.svg" alt="FavoriteIconImage">
+                <img src="./resources//header_icons/ChatCircle.svg" alt="ChatCircleImage">
+                <img src="./resources//header_icons/User.svg" alt="UserImage">
+            </div>
+        </div>
+        <div class="black_line"></div>
+        <div class="second_block_header flex align-center">
+            <div class>
+                <img src="./resources/header_icons/Logo.png" alt="LogoImage">
+            </div>
+            <div class="info_text_in_second_block_header flex">
+                <p>О платформе</p>
+                <p>Площадкам</p>
+                <p>Гостям</p>
+            </div>
+            <div class="add_text_in_second_block_header flex">
+                <p><a link="#">Разместить запрос</a></p>
+                <p><a link="#">Добавить место</a></p>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="first_section">
+            <div class="image_div">
+                <div class="main_info_on_section flex">
+                    <div class="text_in_main_info_on_section">
+                        <p class="p1_in_text big_text_in_text_main_info">Социальная интерактивная</p>
+                        <p class="blue_text_platform big_text_in_text_main_info">платформа</p>
+                        <p class="p3_in_text medium_text_in_text_main_info">Соединяем <a class="blue_text_link">гостей и
+                                места</a></p>
+                        <p class="p4_in_text medium_text_in_text_main_info">Общенгие, бронирование <a
+                                class="blue_text">здесь и сейчас</a></p>
+                    </div>
+                    <div class="img_in_main_info">
+                        <img src="./resources/first_section_images/People.svg" alt="PeopleImage">
+                    </div>
+                </div>
+                <div class="input_div_in_section_1 flex justify-content-space-between">
+                    <div class="input_text">
+                        <input type="text" class="search_input" placeholder="Введите название площадки">
+                    </div>
+                    <div class="filter_dropdown">
+                        <p class="filter_dropdown_main_name">Тип площадки</p>
+                    </div>
+                    <div class="filter_dropdown">
+                        <p class="filter_dropdown_main_name">Особенности</p>
+                    </div>
+                    <div class="filter_dropdown">
+                        <p class="filter_dropdown_main_name">Вместимость</p>
+                    </div>
+                    <div class="filter_dropdown">
+                        <p class="filter_dropdown_main_name">Стоимость</p>
+                    </div>
+                    <div class="filter_dropdown">
+                        <p class="filter_dropdown_main_name">Ещё фильтры</p>
+                    </div>
+                </div>
+                <div class="buttons_block_in_section_1 flex">
+                    <button class="button_in_section_1 gradient_button">
+                        Показать на карте
+                    </button>
+                    <button class="button_in_section_1 border_colorful_button">
+                        Показать списком
+                    </button>
+                </div>
+            </div>
+        </section>
+        <section class="second_section">
+            <span class="main_text_in_second_section">Места</span> <span class="main_text_in_second_section blue_text">по категориям</span>
+            <div class="cards_in_second_section flex justify-content-space-between">
+                <div class="card flex align-center">
+                    <p class="text_on_card">Отдых</p>
+                    <div class="circle"></div>
+                    <div id="image_in_card_1">
+                        <img src="./resources/second_section_images/RestImage.svg" alt="RestImageOnCard1">
+                    </div>
+                </div>
+                <div class="card flex align-center">
+                    <p class="text_on_card">Бизнес</p>
+                    <div class="circle"></div>
+                    <div id="image_in_card_2">
+                        <img src="./resources/second_section_images/Business.svg" alt="RestImageOnCard1">
+                    </div>
+                </div>
+                <div class="card flex align-center">
+                    <p class="text_on_card">Банкеты</p>
+                    <div class="circle"></div>
+                    <div id="image_in_card_3">
+                        <img src="./resources/second_section_images/Banket.svg" alt="RestImageOnCard1">
+                    </div>
+                    <div class="tape">
+                        <img src="./resources/second_section_images/BanketTape.svg" alt="BanketTape">
+                    </div>
+                </div>
+                <div class="card flex align-center">
+                    <p class="text_on_card">Здоровье</p>
+                    <div class="circle"></div>
+                    <div id="image_in_card_4">
+                        <img src="./resources/second_section_images/Health.svg" alt="RestImageOnCard1">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="flag1">
+            <img src="./resources/footer/Flag1.svg">
+        </div>
+        <div class="flag2">
+            <img src="./resources/footer/Flag2.svg">
+        </div>
+        <div class="black_line"></div>
+        <div class="footer_div flex align-center justify-content-space-between">
+            <div class>
+                <img src="./resources/header_icons/Logo.png" alt="LogoImage">
+            </div>
+            <div class="footer_info flex align-center">
+                <p>О проекте</p>
+                <p>Площадкам</p>
+                <p>Гостям</p>
+                <p>Контакты</p>
+                <p>Помощь</p>
+                <p>Вакансии</p>
+                <p>Техподдержка</p>
+            </div>
+        </div>
+
+    </footer>
 </body>
 </html>
