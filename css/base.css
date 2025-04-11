@@ -1,0 +1,180 @@
+:root {
+    --bg-color-section: black;
+    --bg-color-section-2: #FAFAFA;
+    --bg-comments-color: #DADADA;
+    --bg-color: #FFF;
+    --svg-logo-text-color: #121212;
+    --text-regular: #585F66;
+    --text-color: #121212;
+    --text-red-color: #FF5634;
+    --text-gray-color: #656565;
+    --text-blue-color: #06C;
+    --text-gray-2: #4F4F4F;
+    --white-color: #FFF;
+    --ultra-light-blue: #ECF4FD;
+    --horisontal-line: #CACACA;
+    --blue-color: #0066CC;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+
+body {
+    margin: 0;
+    background-color: var(--bg-color);
+    font-family: "Raleway", sans-serif;
+}
+
+html, body {
+    max-width: 1440px;
+    margin: auto;
+}
+
+header {
+    height: 120px;
+    max-width: 1440px;
+    margin: 0 auto;
+    top: 0;
+}
+
+main, footer {
+    max-width: 1440px;
+    margin: 0 auto;
+
+}
+
+footer{
+    margin-top: 130px;
+}
+
+.flex {
+    display: flex;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-content-space-between {
+    justify-content: space-between;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.blue_text {
+    color: var(--text-blue-color);
+}
+
+/*------------Header styles------------*/
+
+/*---First block header---*/
+
+.first_block_header {
+    height: 50px;
+    max-width: 1110px;
+    margin: 0 auto;
+}
+
+div.location_in_header img,
+div.icons_in_header img {
+    width: 20px;
+    height: auto;
+}
+
+div.location_in_header p {
+    font-size: 16px;
+}
+
+.blue-text-about-us{
+    color: var(--text-blue-color);
+}
+
+div.icons_in_header img {
+    width: 30px;
+    height: auto;
+}
+
+.location_in_header {
+    gap: 2px;
+}
+
+.icons_in_header {
+    gap: 18px
+}
+
+.black_line {
+    height: 1px;
+    max-width: 1440px;
+    background-color: rgb(193, 193, 193);
+}
+
+/*---Second block header---*/
+
+.second_block_header {
+    height: 70px;
+    max-width: 1110px;
+    margin: 0 auto;
+    padding-top: 15px;
+}
+
+.info_text_in_second_block_header {
+    gap: 28px;
+    padding-left: 185px;
+}
+
+div.info_text_in_second_block_header p,
+div.add_text_in_second_block_header p {
+    font-size: 16px;
+}
+
+.add_text_in_second_block_header {
+    gap: 50px;
+    padding-left: 90px;
+}
+
+
+/*------------------Footer---------------*/
+
+
+.footer_div{
+    max-width: 1110px;
+    margin: 0 auto;
+    margin-top: 43px;
+}
+
+.footer_info{
+    font-size: 16px;
+    gap: 35px;
+}
+
+.footer_div p{
+    margin: 0;
+}
+
+footer{
+    position: relative;
+}
+
+.flag1{
+    position: absolute;
+    top: -2px
+}
+
+.flag2{
+    position: absolute;
+    right: 25px;
+    top: -2px
+}

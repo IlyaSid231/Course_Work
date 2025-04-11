@@ -1,0 +1,381 @@
+/*---------------------About Us-----------------*/
+
+/* -------label-about-us--------- */
+
+.path_about_us{
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 135%;
+    max-width: 158px;
+    margin: 50px auto 0 auto;
+}
+
+p.p_grey_text{
+    color: var(--text-gray-2);
+    white-space: pre;
+}
+
+
+.label_main_text_about_us{
+    max-width: 565px;
+    height: 63px;
+    font-family: 'PoiretOne', sans-serif;
+    font-size: 4.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    text-transform: uppercase;
+    white-space: pre;
+
+    margin: 36px auto 0 auto;
+}
+
+.label_description_about_us{
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 130%;
+
+    margin-top: 25px;
+}
+
+/* ---------- Abilities Gp platform IN About Us ----------- */
+
+.label_platform_abilities_about_us{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    max-width: 453px;
+    
+    font-family: 'PoiretOne', sans-serif;
+    font-size: 3.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    text-transform: uppercase;
+
+    margin-top: 101px;
+    margin-left: 34.3056%;
+    align-items: center
+    
+}
+
+.rectangles_section_about_us{
+    margin-top: 53px;
+    gap: 30px;
+    z-index: 1;
+}
+
+.white_rectangle_about_us{
+    position: relative;
+    width: 37.5%;
+    min-height: 500px;
+    border-radius: 40px;
+    background-color: var(--bg-color);
+    box-shadow: 0px 4px 15px 0px rgba(105, 78, 75, 0.14);
+
+}
+
+.rectangle_label_guest{
+    margin-left: -1px;
+}
+
+.guest_rectangle_about_us::after{
+    content: '';
+    position: absolute;
+    top: -184px;
+    left: -75px;
+    width: 218px;
+    height: 367px;
+    background-image: url(./resources/images/bride.svg);
+    background-size: cover;
+    z-index: -1;
+}
+
+.place_rectangle_about_us::after{
+    content: '';
+    position: absolute;
+    top: -204px;
+    right: -75px;
+    width: 179px;
+    height: 388px;
+    background-image: url(./resources/images/groom.svg);
+    background-size: cover;
+    z-index: -1;
+}
+
+.rectangle_label_about_us{
+    gap: 10px;
+    margin-top: 40px;
+}
+
+.rectangle_label_about_us h3{
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+}
+
+.styled_list_about_us{
+    list-style: none;
+    padding: 0;
+    font-size: 14px;
+    line-height: 135%;
+    color: var(--text-regular);
+
+    margin-top: 30px;
+    margin-left: 45px;
+    max-width: 450px;
+}
+
+.styled_list_about_us li:first-child{
+    margin-bottom: 13px;
+}
+
+.place_rectangle_about_us .styled_list_about_us li:first-child{
+    margin-bottom: 15px;
+}
+
+.styled_list_about_us li {
+    position: relative; 
+    padding-left: 14px;
+    margin-bottom: 15px;
+    min-height: 19px;
+}
+
+.styled_list_about_us li::before {
+    content: ''; 
+    position: absolute;
+    left: 0; 
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 4px;
+    background-color: var(--blue-color);
+    border-radius: 50%;
+}
+
+.button_block_in_white_rectangle{
+    width: 228px;
+    margin: 33px auto 0 auto;
+}
+
+.button_in_white_rectangle{
+    width: 228px;
+    height: 62px;
+    border: none;
+    border-radius: 50px;
+    border-color: transparent;
+    background: linear-gradient(90deg,#8E2DBC, #FFC5BD, #DB7AE3, #0066CC);
+    background-size: 123%;
+    cursor: pointer;
+
+    text-align: center;
+    color: var(--white-color);
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.place_rectangle_about_us .button_block_in_white_rectangle{
+    margin-top: 69px;
+}
+
+/* ------------------------- Advantages section (third-section)------------------------ */
+
+.third_section_about_us{
+    width: 77.0833%;
+    min-height: 364px;
+    border-radius: 40px;
+    background-color: var(--ultra-light-blue);
+    margin: 100px auto 0 auto;
+    border: 1px solid;
+    border-color: transparent;
+}
+
+.third_section_label{
+    max-width: 503px;
+    min-height: 30px;
+    margin: 72px auto 33px auto;
+    gap: 5px;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+
+.third_section_label img{
+    width: 267px;
+    height: 30px;
+}
+
+.third_section_label p{
+    color: #333;
+    text-align: center;
+    width: 231px;
+
+    font-size: 2.6rem;
+    height: 26px;
+    line-height: 130%;
+}
+
+.third_section_description{
+    text-align: center;
+    margin: 0 auto;
+    max-width: 540px;
+    font-size: 1.6rem;
+    line-height: 130%;
+}
+
+.third_section_future{
+    justify-content: center;
+    margin-top: 70px;
+    gap: 30px;
+}
+
+.third_section_future p{
+    max-width: 386px;
+    font-size: 16px;
+    line-height: 130%;
+}
+
+.lamp_block, .reward_block{
+    gap: 15px;
+}
+
+
+/* ----- Fourth Section ----- */
+
+.same_section_about_us{
+    gap: 95px;
+    margin-top: 100px;
+}
+
+.label_same_section_text_block{
+    gap: 10px;
+}
+
+.label_same_section_text_block h3{
+    font-family: 'PoiretOne', sans-serif;
+    font-size: 4.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    text-transform: uppercase;
+}
+
+.same_section_text_block{
+    max-width: 540px;
+    font-size: 1.6rem;
+    line-height: 130%;
+
+    margin-top: 28px;
+}
+
+.label_description_same_section_text_block{
+    margin-top: 41px;
+}
+
+.same_section_line_with_blue_text{
+    gap: 4px;
+}
+
+.same_section_margin{
+    margin-top: 143px;
+}
+
+/* ----------Our News ------------------ */
+
+.our_news_about_us{
+    margin-top: 178px;
+}
+
+.our_news_label{
+    gap: 10px;
+    padding-left: 2px;
+}
+
+.our_news_label h3{
+    text-align: center;
+    font-family: 'PoiretOne', sans-serif;
+    font-size: 4.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    text-transform: uppercase;
+}
+
+.rectangle_container{
+    margin-top: 75px;
+    gap: 29px;
+}
+
+.card{
+    min-height: 269px;
+    position: relative;
+}
+
+.white_rectangle{
+    position: relative;
+    margin-top: 44px;
+    width: 350px;
+    min-height: 225px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 15px rgba(105, 78, 75, 0.14);
+    border-radius: 40px;
+    overflow: clip;
+    z-index: -1;
+    border: 1px solid transparent;
+}
+
+.white_rectangle p{
+    text-align: center;
+    margin-top: 110px;
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 130%;
+}
+
+.white_rectangle::before{
+    content: '';
+    position: absolute;
+    top: -55px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 122px;
+    height: 122px;
+    background-color: var(--bg-color);
+    border-radius: 50%;
+    box-shadow: inset 0px 0px 10px rgba(105, 78, 75, 0.14);
+    z-index: 1;
+}
+
+.same_round{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+    width: 98px;
+    height: 98px;
+    border-radius: 50%;
+    box-shadow: 0px 8px 12px 0px rgba(105, 78, 75, 0.14);
+}
+
+.platform_round{
+    background-color: #F8DA75;
+}
+
+.same_round img{
+    position: inherit;
+    top: 29px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.update_round{
+    background-color: #F7B686;
+}
+
+.new_product_round{
+    background-color: #EF8062;
+}
