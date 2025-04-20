@@ -1,0 +1,262 @@
+{
+  "restaurants": [
+    {
+      "id": 1,
+      "title": "Банкетный зал лофт Форест Холл",
+      "rating": 3.7,
+      "reviews": 23,
+      "metro": "Сокольники (5 минут пешком)",
+      "capacity": "35/100/150",
+      "services": "Wi-Fi, Бизнес-ланч, Выездная регистрация, Банкеты, Анимация, Тимбилдинг, Конференции, Презентации, Номерной фонд",
+      "features": "Летняя веранда, Парковая зона, удобный подъезд",
+      "average_price": 2500,
+      "menu_price": 4000,
+      "rent_price": 3000,
+      "images": [
+        "/hall1/image1.png",
+        "/hall1/image2.png",
+        "/hall1/image3.png",
+        "/hall1/image4.png"
+      ]
+    },
+    {
+      "id": "hall2",
+      "title": "Loft Party Hall",
+      "rating": 4.5,
+      "reviews": 18,
+      "metro": "Чистые пруды (7 минут пешком)",
+      "capacity": "20/70/120",
+      "services": "Wi-Fi, DJ, Кейтеринг, Кальян, Презентации, Фото-зона, Бар",
+      "features": "Панорамные окна, Неоновый свет, Терраса",
+      "average_price": 2700,
+      "menu_price": 4200,
+      "rent_price": 3200,
+      "images": [
+        "resources/halls/hall2/photo1.jpg",
+        "resources/halls/hall2/photo2.jpg"
+      ]
+    },
+    {
+      "id": "hall3",
+      "title": "Зал Прованс",
+      "rating": 4.7,
+      "reviews": 41,
+      "metro": "Новокузнецкая (2 минуты)",
+      "capacity": "40/80/130",
+      "services": "Wi-Fi, Кондиционер, Банкеты, Живая музыка, Презентации",
+      "features": "Уютный интерьер, Камин, Зона для танцев",
+      "average_price": 2400,
+      "menu_price": 3900,
+      "rent_price": 2800,
+      "images": [
+        "resources/halls/hall3/photo1.jpg",
+        "resources/halls/hall3/photo2.jpg"
+      ]
+    },
+    {
+      "id": "hall4",
+      "title": "Гранд Холл «Москва»",
+      "rating": 4.8,
+      "reviews": 57,
+      "metro": "Павелецкая (3 минуты)",
+      "capacity": "100/200/300",
+      "services": "Wi-Fi, Банкетное меню, Кейтеринг, Шоу-программа, Парковка",
+      "features": "Сцена, Профессиональный звук, VIP-зоны",
+      "average_price": 5000,
+      "menu_price": 6500,
+      "rent_price": 7000,
+      "images": [
+        "resources/halls/hall4/photo1.jpg",
+        "resources/halls/hall4/photo2.jpg"
+      ]
+    },
+    {
+      "id": "hall5",
+      "title": "SkyView Hall",
+      "rating": 4.3,
+      "reviews": 33,
+      "metro": "Маяковская (4 минуты)",
+      "capacity": "30/60/110",
+      "services": "Wi-Fi, Панорамный вид, Живая музыка, Диджей, Проектор",
+      "features": "На крыше, Шикарный вид, Барная стойка",
+      "average_price": 3200,
+      "menu_price": 4500,
+      "rent_price": 3800,
+      "images": [
+        "resources/halls/hall5/photo1.jpg",
+        "resources/halls/hall5/photo2.jpg"
+      ]
+    },
+    {
+      "id": "hall6",
+      "title": "Loft на Бауманской",
+      "rating": 4.1,
+      "reviews": 17,
+      "metro": "Бауманская (6 минут)",
+      "capacity": "25/50/90",
+      "services": "Wi-Fi, Бар, Диджей, Фотозона, Игры, Презентации",
+      "features": "Индустриальный стиль, Световое оборудование",
+      "average_price": 2300,
+      "menu_price": 3700,
+      "rent_price": 2500,
+      "images": [
+        "resources/halls/hall6/photo1.jpg",
+        "resources/halls/hall6/photo2.jpg"
+      ]
+    },
+    {
+      "id": "hall7",
+      "title": "Императорский зал",
+      "rating": 4.9,
+      "reviews": 76,
+      "metro": "Кутузовская (3 минуты)",
+      "capacity": "80/150/220",
+      "services": "Wi-Fi, Официанты, Фуршет, Банкеты, Свадьбы",
+      "features": "Зеркальные потолки, Хрустальные люстры",
+      "average_price": 4700,
+      "menu_price": 7000,
+      "rent_price": 6000,
+      "images": [
+        "resources/halls/hall7/photo1.jpg",
+        "resources/halls/hall7/photo2.jpg"
+      ]
+    },
+    {
+      "id": "hall8",
+      "title": "Площадка на крыше «Вершина»",
+      "rating": 4.6,
+      "reviews": 29,
+      "metro": "Краснопресненская (5 минут)",
+      "capacity": "40/80/140",
+      "services": "Wi-Fi, Проектор, DJ, Летняя веранда",
+      "features": "Открытое небо, Вид на центр Москвы",
+      "average_price": 3500,
+      "menu_price": 4800,
+      "rent_price": 4000,
+      "images": [
+        "resources/halls/hall8/photo1.jpg",
+        "resources/halls/hall8/photo2.jpg"
+      ]
+    },
+    {
+      "id": "hall9",
+      "title": "Family Event Hall",
+      "rating": 4.0,
+      "reviews": 12,
+      "metro": "Перово (10 минут)",
+      "capacity": "20/40/70",
+      "services": "Wi-Fi, Детские праздники, Анимация, Кофе-брейки",
+      "features": "Детская зона, Игровая комната",
+      "average_price": 1800,
+      "menu_price": 3000,
+      "rent_price": 2200,
+      "images": [
+        "resources/halls/hall9/photo1.jpg",
+        "resources/halls/hall9/photo2.jpg"
+      ]
+    },
+    {
+      "id": "hall10",
+      "title": "Центральный клубный зал",
+      "rating": 4.2,
+      "reviews": 21,
+      "metro": "Таганская (6 минут)",
+      "capacity": "35/90/130",
+      "services": "Wi-Fi, Светомузыка, Танцпол, Бар, Презентации",
+      "features": "Мини-сцена, Современный дизайн",
+      "average_price": 2600,
+      "menu_price": 4100,
+      "rent_price": 3100,
+      "images": [
+        "resources/halls/hall10/photo1.jpg",
+        "resources/halls/hall10/photo2.jpg"
+      ]
+    },
+    {
+      "id": "hall11",
+      "title": "VIP-зал «Элегант»",
+      "rating": 4.8,
+      "reviews": 38,
+      "metro": "Пушкинская (2 минуты)",
+      "capacity": "20/40/60",
+      "services": "Wi-Fi, Персональное обслуживание, Презентации, Банкеты",
+      "features": "Закрытая территория, VIP-парковка",
+      "average_price": 5500,
+      "menu_price": 7000,
+      "rent_price": 6500,
+      "images": [
+        "resources/halls/hall11/photo1.jpg",
+        "resources/halls/hall11/photo2.jpg"
+      ]
+    },
+    {
+      "id": "hall12",
+      "title": "Loft Modern",
+      "rating": 4.4,
+      "reviews": 27,
+      "metro": "Савёловская (9 минут)",
+      "capacity": "30/60/90",
+      "services": "Wi-Fi, DJ, Проектор, Кейтеринг, Настольные игры",
+      "features": "Бетонные стены, Проекционный экран",
+      "average_price": 2400,
+      "menu_price": 3900,
+      "rent_price": 2700,
+      "images": [
+        "resources/halls/hall12/photo1.jpg",
+        "resources/halls/hall12/photo2.jpg"
+      ]
+    },
+    {
+      "id": "hall13",
+      "title": "Театральный зал «Сцена»",
+      "rating": 4.5,
+      "reviews": 34,
+      "metro": "Театральная (3 минуты)",
+      "capacity": "50/100/180",
+      "services": "Wi-Fi, Сцена, Микрофоны, Освещение, Акустика",
+      "features": "Профессиональный звук, Красный бархат",
+      "average_price": 4300,
+      "menu_price": 6200,
+      "rent_price": 5000,
+      "images": [
+        "resources/halls/hall13/photo1.jpg",
+        "resources/halls/hall13/photo2.jpg"
+      ]
+    },
+    {
+      "id": "hall14",
+      "title": "Оранжерея Green Hall",
+      "rating": 4.6,
+      "reviews": 44,
+      "metro": "ВДНХ (4 минуты)",
+      "capacity": "25/60/100",
+      "services": "Wi-Fi, Живые растения, Фото-зона, Банкеты, Природная атмосфера",
+      "features": "Стеклянная крыша, Много света, Живая природа",
+      "average_price": 2800,
+      "menu_price": 4200,
+      "rent_price": 3300,
+      "images": [
+        "resources/halls/hall14/photo1.jpg",
+        "resources/halls/hall14/photo2.jpg"
+      ]
+    },
+    {
+      "id": "hall15",
+      "title": "Усадьба Event Hall",
+      "rating": 4.9,
+      "reviews": 52,
+      "metro": "Крылатское (6 минут)",
+      "capacity": "60/120/200",
+      "services": "Wi-Fi, Шатры, Живая музыка, Природа, Кейтеринг",
+      "features": "Загородный стиль, Зона барбекю, Парковка",
+      "average_price": 3700,
+      "menu_price": 5200,
+      "rent_price": 4500,
+      "images": [
+        "resources/halls/hall15/photo1.jpg",
+        "resources/halls/hall15/photo2.jpg"
+      ]
+    }
+  ]
+  
+}
