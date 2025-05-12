@@ -1,0 +1,236 @@
+/*------Colors authorization----------*/
+
+:root {
+    --bg-color-section: #FAFAFA;
+    --bg-color: #FFF;
+    --text-error-color: #fc6262;
+    --text-red-color: #FF5634;
+    --text-color: #333;
+    --white-color: #FFF;
+    --svg-logo-text-color: #121212;
+    
+}
+
+/*-------------Dark Theme--------------*/
+
+.dark{
+    --bg-color-section: #344756;
+    --bg-comments-color: #DADADA;
+    --bg-color: #2D384A;
+    --text-color: #FFF;
+    --white-color: #000218;
+    --svg-logo-text-color: #FFF;
+}
+
+
+/*---------Basic styles----------*/
+
+html{
+    font-size: 10px;
+}
+
+body{
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    background-color: var(--bg-color);
+}
+
+h1{
+    margin-top: 16px;
+    text-transform: uppercase;
+    padding-bottom: 5px;
+    color:  var(--text-color);
+    text-align: center;
+    margin-bottom: 40px;
+    font-family: 'PoiretOne', sans-serif;
+    font-size: 30px;
+}
+
+button {
+    padding: 1em 2em;
+    margin: 1em;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 1.6em;
+    color: var(--bg-color);
+    transition: 240ms ease-out;
+    white-space: nowrap;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background-color: var(--text-red-color);
+    color: var(--white-color);
+}
+
+input{
+    height: 40px;
+    width: 385px;
+
+    box-sizing: border-box;
+    padding: 9px 25px;
+
+    border-radius: 50px;
+    background: var(--bg-color);
+    box-shadow: 0px 4px 15px 0px rgba(105, 78, 75, 0.14);
+    border: 1px solid transparent;
+
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 135%;
+    font-variant-numeric: lining-nums proportional-nums;
+}
+
+.flex{
+    display: flex;
+}
+
+.space_between{
+    justify-content: space-between;
+}
+
+label{
+    text-transform: uppercase;
+}
+
+/*-------Full screen logo-------*/
+
+#splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--white-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#splash-screen.hide {
+    opacity: 0;
+    pointer-events: none;
+}
+
+svg path:nth-child(4) {
+    fill: var(--svg-logo-text-color);
+}
+/*-------------Input Buttons styles---------------*/
+
+.input_buttons{
+    flex-direction: column;
+}
+
+/*------------Input field + text label div---------------*/
+.group{
+    margin: 10px;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+div.label_text{
+    width: 250px;
+    text-align: right;
+    margin-top: 10px;
+    font-size: 1.6em;
+}
+
+input:focus{
+    border: 2px solid #22262A;
+}
+
+.input_div{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.input_fields{
+    width: 300px;
+}
+
+
+/*--------------Error styles---------------*/
+
+.field_error{
+    box-shadow: 1px 1px 1px var(--text-error-color);
+}
+
+.error_message{
+    color: var(--text-error-color);
+    font-size: 13px;
+    font-weight: 400;
+    margin-left: 10px;
+}
+
+/*--------Registration form--------*/
+
+#registration_form{
+    background: var(--bg-color);
+    max-width: 700px;
+    padding: 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    margin: 200px auto;
+}
+
+/*---------Button authorization---------*/
+
+.authorisation{
+    width: 190px;
+    height: 55px;
+    background: conic-gradient(from 180deg, #8E2DBC, #FFC5BD 110deg, #DB7AE3, #06C 315deg);
+    background-size: 200% 300%;
+    background-position: -127px 0px;
+    padding: 5px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+}
+
+button.authorisation:hover{
+    opacity: .8;
+    font-weight: bold;
+    transform: scale(1.1);
+    animation: anime_button 3s ease infinite;
+}
+
+@keyframes anime_button {
+    0% {
+        background-position: -127px 0px;
+    }
+
+    50% {
+        background-position: 0px 0px;
+    }
+
+    100% {
+        background-position: -127px 0px;
+    }
+}
+
+@media (max-width: 768px){
+    #registration_form{
+        max-width: 270px;
+    }
+
+    input{
+        width: 270px;
+        font-size: 14px;
+    }
+
+    .authorisation{
+        font-size: 16px;
+    }
+}

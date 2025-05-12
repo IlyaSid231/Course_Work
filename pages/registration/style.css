@@ -1,0 +1,640 @@
+/*------Colors registration----------*/
+
+:root {
+    --bg-color-section: #FAFAFA;
+    --bg-comments-color: #f4f1f1;
+    --bg-color: #FFF;
+    --text-color: #333;
+    --text-color-in-user-agreement: #333;
+    --text-error-color: #fc6262;
+    --text-red-color: #FF5634;
+    --white-color: #FFF;
+    --svg-logo-text-color: #121212;
+}
+
+/*-------------Dark Theme--------------*/
+
+.dark {
+    --bg-color-section: #344756;
+    --bg-comments-color: #DADADA;
+    --bg-color: #2D384A;
+    --text-color: #f3efef;
+    --white-color: #000218;
+    --svg-logo-text-color: #FFF;
+}
+
+
+/*--------Basic styles-------*/
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    background-color: var(--bg-color);
+}
+
+body.lock{
+    overflow-y: hidden;
+}
+
+label {
+    text-transform: uppercase;
+    font-size: 16px;
+    color: var(--text-color);
+}
+
+h1 {
+    margin: 0;
+    text-transform: uppercase;
+    padding-bottom: 5px;
+    color: var(--text-color);
+    font-family: 'PoiretOne', sans-serif;
+    font-size: 30px;
+}
+
+.flex {
+    display: flex;
+}
+
+.space_between {
+    justify-content: space-between;
+}
+
+
+input {
+    height: 40px;
+    width: 385px;
+
+    border-radius: 50px;
+    border: none;
+    font-size: 18px;
+    box-shadow: 0px 4px 15px 0px rgba(105, 78, 75, 0.14);
+    color:#333;
+    padding-left: 15px;
+
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 135%;
+    font-variant-numeric: lining-nums proportional-nums;
+}
+
+input:focus {
+    border: 2px solid #22262A;
+}
+
+button {
+    height: 55px;
+    padding: 1em 2em;
+    margin: 1em;
+    border: 1px solid #ededed;
+    background-color: transparent;
+    border-radius: .75rem;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.6em;
+    color: var(--bg-color);
+    transform-origin: center center;
+    transition: 240ms ease-out;
+    text-align: center;
+    white-space: nowrap;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+/*-------Full screen logo-------*/
+
+#splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--white-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#splash-screen.hide {
+    opacity: 0;
+    pointer-events: none;
+}
+
+svg path:nth-child(4) {
+    fill: var(--svg-logo-text-color);
+}
+
+/*------Registration form---------*/
+
+#registration_form {
+    margin: 0 auto;
+    background: var(--bg-color);
+    width: 700px;
+    padding: 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    margin: 20px auto;
+    position: relative;
+    z-index: 1;
+}
+
+/*-------Input div, group and input-----*/
+
+.group {
+    margin: 10px;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+div.label_text {
+    width: 250px;
+    text-align: right;
+    margin-top: 10px;
+}
+
+.input_div {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.input_fields {
+    width: 300px;
+}
+
+/*--------Error styles--------*/
+
+.field_error {
+    box-shadow: 1px 1px 1px var(--text-error-color);
+}
+
+.error_message {
+    color: var(--text-error-color);
+    font-size: 13px;
+    font-weight: 400;
+}
+
+/*-------Button password eye------*/
+
+.btn_password {
+    position: absolute;
+    width: 40px;
+    height: auto;
+    right: 5px;
+    border: none;
+    border-radius: 20px;
+    opacity: .4;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+}
+
+.btn_password.active_password_btn {
+    opacity: 1;
+}
+
+.btn_password:hover{
+    transform: none;
+    background-color: transparent;
+}
+
+
+/*------Random generate button------*/
+
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.random_btn {
+    padding: 0;
+    height: 50px;
+    width: 200px;
+    
+    position: relative;
+    border-radius: 50px;
+    border: none;
+    background: var(--bg-color);
+    margin-bottom: 10px;
+    cursor: pointer;
+    
+    text-align: center;
+    font-family: "Raleway", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.random_btn::after{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(from var(--angle), rgb(57, 57, 250), pink, rgb(57, 57, 250));
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2px;
+    border-radius: 50px;
+    z-index: -1;
+    animation: 3s spin linear infinite;
+    animation-play-state: paused;
+}
+
+.random_btn:hover::after{
+    animation-play-state: running;
+}
+
+.random_btn:hover{
+    transform: none;
+}
+
+@keyframes spin {
+    from {
+        --angle: 0deg;
+    }
+
+    to {
+        --angle: 360deg;
+    }
+}
+
+/*-------Registration button--------*/
+
+.registration {
+    padding: 10px 30px;
+    height: 55px;
+    background: conic-gradient(from 180deg, #8E2DBC, #FFC5BD 110deg, #DB7AE3, #06C 300deg);
+    background-size: 200% 300%;
+    background-position: -75px 0px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+
+    text-align: center;
+    font-family: "Raleway", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--bg-color);
+}
+
+.registration.active_registration {
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+
+button.registration:disabled {
+    background: #cccccc;
+    color: #666666;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+button.registration:disabled:hover, button.btn_agreement:disabled:hover{
+    transform: none;
+}
+
+/*------Log In and Go Back buttons-----*/
+
+.log_in_button{
+    background: conic-gradient(from 180deg, #8E2DBC, #FFC5BD 110deg, #DB7AE3, #06C 300deg);
+    background-size: 200% 300%;
+    background-position: -75px 0px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+
+    text-align: center;
+    font-family: "Raleway", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--bg-color);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    transition: all 0.5s ease;
+}
+
+.back_on_previous_page{
+    color: var(--bg-color);
+    background: conic-gradient(from 180deg, #8E2DBC, #FFC5BD 110deg, #DB7AE3, #06C 300deg);
+    background-size: 200% 300%;
+    background-position: -75px 0px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    transition: all 0.5s ease;
+}
+
+.log_in_button:hover, .back_on_previous_page:hover, .registration:hover, .btn_agreement:hover {
+    animation: anime_button 3s ease infinite;
+}
+
+@keyframes anime_button {
+    0% {
+        background-position: -75px 0px;
+    }
+
+    50% {
+        background-position: 0px 0px;
+    }
+
+    100% {
+        background-position: -75px 0px;
+    }
+}
+
+/*----User agremeent link-----*/
+
+.license{
+    margin: auto 0;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    color: var(--text-color);
+}
+
+.license:hover{
+    text-decoration: underline;
+}
+
+/*-------Modal-------*/
+
+.modal_overlay {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.modal {
+    background-color: var(--bg-color);
+    width: 500px;
+    max-height: 80vh;
+    display: none;
+    overflow-y: auto;
+    position: relative;
+    padding: 20px;
+    margin: 0 10px;
+
+  }
+
+.modal_overlay--visible {
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.3s ease-in-out;
+}
+
+.modal_1--visible {
+    display: block;
+}
+
+.modal_1 {
+    position: relative;
+}
+
+.close-button {
+    background: #606061;
+    color: #FFFFFF;
+    line-height: 25px;
+    text-align: center;
+    width: 24px;
+    text-decoration: none;
+    font-weight: bold;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+/*-------User agreement-------*/
+
+.user_agreement_div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#user-agreement {
+    height: 350px;
+    width: 100%;
+    overflow-y: scroll;
+    resize: none;
+    border: none;
+    color: var(--text-color-in-user-agreement);
+    background-color: var(--bg-comments-color);
+}
+
+.user_agreement_h2 {
+    text-align: center;
+    color: var(--text-color)
+}
+
+.div_checkbox{
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+.checkbox-container, .checkbox-container p {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-transform: none;
+}
+
+.checkbox-container p{
+    padding-left: 0;
+}
+
+/* Скрытие стандартного чекбокса */
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Кастомный чекбокс */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+    border-radius: 3px;
+}
+
+/* При включении чекбокса */
+.checkbox-container input:checked~.checkmark {
+    background-color: #2196F3;
+}
+
+/* Создание кастомной метки чекбокса */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Отображение метки чекбокса при включении */
+.checkbox-container input:checked~.checkmark:after {
+    display: block;
+}
+
+/* Стиль метки чекбокса */
+.checkbox-container .checkmark:after {
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.div_btn_agreement {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn_agreement {
+    margin-top: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+
+    color: var(--bg-color);
+    background: conic-gradient(from 180deg, #8E2DBC, #FFC5BD 110deg, #DB7AE3, #06C 300deg);
+    background-size: 200% 300%;
+    background-position: -75px 0px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    transition: all 0.5s ease;
+}
+
+button.btn_agreement:disabled {
+    background: #cccccc;
+    color: #666666;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+
+@media (max-width: 768px){
+    #registration_form{
+        max-width: 250px;
+    }
+    .group{
+        flex-direction: column;
+        margin-left: 0;
+    }
+
+    div.label_text{
+        text-align: left;
+        margin-bottom: 10px;
+    }
+
+    input{
+        width: 230px;
+        height: 30px;
+        font-size: 14px;
+    }
+
+    label{
+        font-size: 14px;
+    }
+
+    .authorisation{
+        font-size: 16px;
+    }
+
+    button{
+        font-size: 1.4em;
+    }
+
+    .btn_password{
+        width: 30px;
+        right: -5px;
+    }
+
+    .random_btn{
+        width: 150px;
+        height: 40px;
+        padding: 0;
+        margin-left: 0;
+    }
+
+    .registration{
+        width: 170px;
+        height: 50px;
+        margin: 10px auto;
+        margin-bottom: 30px;
+    }
+
+    .log_in_button, .back_on_previous_page{
+        width: 150px;
+        height: 40px;
+        margin: 10px auto;
+        padding: 0;
+    }
+    .log_in_button{
+        margin-top: 30px;
+    }
+
+    .license{
+        margin: 0 auto;
+    }
+
+    .modal{
+        width: 300px;
+        height: 550px;
+    }
+
+    .checkbox-container{
+        font-size: 14px;
+    }
+}
