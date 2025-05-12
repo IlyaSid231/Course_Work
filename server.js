@@ -70,12 +70,12 @@ server.put('/favorites', (req, res) => {
     const newFavorites = req.body;
 
     const isValid = newFavorites.every(item => 
-      item.id && item.userId && item.restaurantId
+      item.id && item.username && item.restaurantId
     );
     
     if (!isValid) {
       return res.status(400).json({
-        error: 'Each item must contain id, userId and restaurantId'
+        error: 'Each item must contain id, userName and restaurantId'
       });
     }
 
@@ -99,16 +99,17 @@ server.put('/requests', (req, res) => {
     // Валидация структуры данных
     const isValid = newRequests.every(request => 
       request.id && 
-      request.userId && 
+      request.username && 
       request.restaurantId &&
       request.date &&
       request.contactPhone&&
-      request.contactName
+      request.contactName &&
+      (request.question === "" || request.question)
     );
     
     if (!isValid) {
       return res.status(400).json({
-        error: 'Each request must contain: id, userId, restaurantId, date, status, userName and userPhone'
+       error: 'Each request must contain: id, username, restaurantId, date, contactPhone, contactName'
       });
     }
 
@@ -128,7 +129,49 @@ server.put('/requests', (req, res) => {
   }
 });
 
+// Явный обработчик POST /users
+server.post('/users', (req, res) => {
+  try {
+    const newUsers = req.body;
 
+    if (!Array.isArray(newUsers)) {
+      return res.status(400).json({ error: 'Поле users должно быть массивом' });
+    }
+
+    // Валидация структуры данных
+    const isValid = newUsers.every(user => 
+      user.username &&
+      user.password &&
+      user.email &&
+      user.phone && 
+      user.birth_date &&
+      user.first_name &&
+      user.last_name &&
+      user.middle_name &&
+      user.role
+    );
+    
+    if (!isValid) {
+      return res.status(400).json({
+        error: 'Each user must contain: username, password, email, phone, birth_date, first_name, last_name, middle_name'
+      });
+    }
+
+    router.db
+    .set('users', newUsers)
+    .write();
+
+  // Возвращаем обновленные данные
+  res.json(newUsers);
+
+  } catch (error) {
+    console.error('Error updating requests:', error);
+    res.status(500).json({ 
+      error: 'Internal server error',
+      details: error.message 
+    });
+  }
+});
 
 
 // Затем подключаем основной роутер
