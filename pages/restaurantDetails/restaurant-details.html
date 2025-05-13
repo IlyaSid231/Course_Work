@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detailed</title>
+    <link rel="stylesheet" href="/css/fonts.css">
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="/css/modal.css">
+    <link rel="icon" href="/resources/favicon/favicon.svg" type="image/x-icon">
+</head>
+<body>
+     <header>
+        <div class="first_block_header flex justify-content-space-between ">
+            <div class="location_in_header flex align-center ">
+                <img src="/resources/header_icons/MapPin.svg" alt="MapPinImage">
+                <p>Москва</p>
+            </div>
+            <div class="icons_in_header flex">
+                <img src="/resources/header_icons/Favorite.svg" alt="FavoriteIconImage">
+                <img src="/resources/header_icons/ChatCircle.svg" alt="ChatCircleImage">
+                <img src="/resources/header_icons/User.svg" alt="UserImage">
+            </div>
+        </div>
+        <div class="black_line"></div>
+        <div class="second_block_header flex align-center">
+            <div class>
+                <img src="/resources/header_icons/Logo.png" alt="LogoImage">
+            </div>
+            <div class="info_text_in_second_block_header flex">
+                <p class="blue-text-about-us">О платформе</p>
+                <p>Площадкам</p>
+                <p>Гостям</p>
+            </div>
+            <div class="add_text_in_second_block_header flex">
+                <p><a link="#">Разместить запрос</a></p>
+                <p><a link="#">Добавить место</a></p>
+            </div>
+        </div>
+    </header>
+
+     <div class="path_current_restaurant flex justify-center">
+        <p class="p_grey_text">Главная </p>
+        <p class="p-plaform" id="currentPlatformName"></p>
+    </div>
+
+    <div class="title-container">
+            <h1 id="restaurant-title"></h1>
+            <h2 id="restaurant-title-english" class="title-english blue_text"></h2>
+        </div>
+
+    <div class="reviews_and_favorites_section flex justify-center align-center" id="reviews_and_favorites_section">
+
+        <button class="favorite_btn" id="favorite_btn">В избранное</button>
+    </div>
+
+    <!-- Модальное окно для слайдера -->
+    <div class="images_modal" id="images_modal">
+        <span class="close-modal" id="close-modal">&times;</span>
+        <div class="modal-slider">
+            <button class="modal-arrow left-arrow" id="modal-left-arrow">&lt;</button>
+            <img id="modal-image" src="" alt="Restaurant_img">
+            <button class="modal-arrow right-arrow" id="modal-right-arrow">&gt;</button>
+        </div>
+    </div>
+
+    <div class="card_section flex">
+         <!-- Контейнер для слайдера -->
+        <div class="slider">
+            <button class="slider-arrow left-arrow" id="left-arrow">&lt;</button>
+            <div class="slider-images" id="slider-images">
+                <img id="slider-image" src="" alt="Current_img">
+            </div>
+            <button class="slider-arrow right-arrow" id="right-arrow">&gt;</button>
+        </div>
+
+
+        <div class="restaurant-details flex flex-direction-column">
+            <!-- Контейнер для информации о ресторане -->
+            <div class="restaurant-info flex">
+                <div class="first_inf_container flex flex-direction-column">
+                    <p class="infContainerLabel">Адрес: <span id="restaurant-address" class="infContainerValue"></span></p>
+                    <p class="infContainerLabel">Метро: <span id="restaurant-metro" class="infContainerValue"></span></p>
+                    <p class="infContainerLabel">Рабочее время: <span id="restaurant-hours" class="infContainerValue"></span></p>
+                    <p class="infContainerLabel">Средний чек: <span id="restaurant-average-price" class="infContainerValue"></span></p>
+                    <p class="infContainerLabel">Банкетное меню от: <span id="restaurant-menu-price" class="infContainerValue"></span></p>
+                    <p class="infContainerLabel">Телефон: </strong> <span id="restaurant-phone" class="infContainerValue"></span></p>
+                    <p class="infContainerLabel">Количество залов: </strong> <span id="restaurant-halls" class="infContainerValue"></span></p>
+                </div>
+                <div class="second_inf_container flex flex-direction-column">
+                    <p class="infContainerLabel">Количество мест: </strong> <span id="restaurant-capacity" class="infContainerValue"></span></p>
+                    <p class="infContainerLabel">Площадь кв.м.: </strong> <span id="restaurant-area" class="infContainerValue"></span></p>
+                    <p class="infContainerLabel">Аренда от: </strong> <span id="restaurant-rent-price" class="infContainerValue"></span></p>
+                </div>
+            </div>
+            <div class="button_section" id="button_section">
+
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="flag1">
+            <img src="/resources/footer/Flag1.svg">
+        </div>
+        <div class="flag2">
+            <img src="/resources/footer/Flag2.svg">
+        </div>
+        <div class="black_line"></div>
+        <div class="footer_div flex align-center justify-content-space-between">
+            <div class>
+                <img src="/resources/header_icons/Logo.png" alt="LogoImage">
+            </div>
+            <div class="footer_info flex align-center">
+                <p>О проекте</p>
+                <p>Площадкам</p>
+                <p>Гостям</p>
+                <p>Контакты</p>
+                <p>Помощь</p>
+                <p>Вакансии</p>
+                <p>Техподдержка</p>
+            </div>
+        </div>
+
+    </footer>
+    <script type="module" src="./js/restaurant-details.js"></script>
+</body>
+</html>
