@@ -7,121 +7,255 @@
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="./css/fonts.css">
     <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/modal.css">
     <link rel="stylesheet" href="./css/main.css">
     <link rel="icon" href="./resources/favicon/favicon.svg" type="image/x-icon">
 </head>
 
 <body>
+    <div id="preloader">
+        <img src="/resources/header_icons/Logo.png" alt="Loading..." class="preloader-logo">
+    </div>
     <header>
-        <div class="first_block_header flex justify-content-space-between ">
-            <div class="location_in_header flex align-center ">
-                <img src="./resources/header_icons/MapPin.svg" alt="MapPinImage">
-                <p>Москва</p>
+        <div class="first_block_header flex align-center">
+            <div class="header_logo">
+                <img src="./resources/header_icons/Logo.png" alt="LogoImage" id="header_logo_image">
             </div>
-            <div class="icons_in_header flex">
-                <img src="./resources/header_icons/Favorite.svg" alt="FavoriteIconImage">
-                <img src="./resources/header_icons/ChatCircle.svg" alt="ChatCircleImage">
-                <img src="./resources/header_icons/User.svg" alt="UserImage">
+            <div class="info_text_in_first_block_header flex">
+                <p id="homeLink">Домой</p>
+                <p id="contactsLink">Контакты</p>
+                <p id="aboutLink">О платформе</p>
             </div>
-        </div>
-        <div class="black_line"></div>
-        <div class="second_block_header flex align-center">
-            <div class>
-                <img src="./resources/header_icons/Logo.png" alt="LogoImage">
-            </div>
-            <div class="info_text_in_second_block_header flex">
-                <p>О платформе</p>
-                <p>Площадкам</p>
-                <p>Гостям</p>
-            </div>
-            <div class="add_text_in_second_block_header flex">
-                <p><a link="#">Разместить запрос</a></p>
-                <p><a link="#">Добавить место</a></p>
+            <div class="all_buttons_in_header flex align-center justify-center">
+                <img src="./resources/header_icons/open_eye.png" alt="blind_ver" class="blind_version_btn" id="blind_version_btn">
+                <label class="switch">
+                    <span><img src="./resources/header_icons/light-mode.png" class="light_image" alt="light_icon"></span>
+                    <span><img src="resources/header_icons/dark-mode.png" class="dark_image" alt="dark_icon"></span>
+                    <input type="checkbox">
+                    <span class="move"></span>
+                </label>
+                <button type="button" class="languages_btn" data-btn="ru" style="display: block;">Ru</button>
+                <button type="button" class="languages_btn" data-btn="en" style="display: none;">En</button>
+                <div class="icons_in_header flex">
+                    <img src="./resources/header_icons/Favorite.svg" alt="FavoriteIconImage" id="header_favorite_button">
+                    <img src="./resources/header_icons/ChatCircle.svg" alt="ChatCircleImage" id="header_request_button">
+                    <img src="./resources/header_icons/User.svg" alt="UserImage" id="header_user_button">
+                </div>
             </div>
         </div>
     </header>
     <main>
-        <section class="first_section">
-            <div class="image_div">
-                <div class="main_info_on_section flex">
-                    <div class="text_in_main_info_on_section">
-                        <p class="p1_in_text big_text_in_text_main_info">Социальная интерактивная</p>
-                        <p class="blue_text_platform big_text_in_text_main_info">платформа</p>
-                        <p class="p3_in_text medium_text_in_text_main_info">Соединяем <a class="blue_text_link">гостей и
-                                места</a></p>
-                        <p class="p4_in_text medium_text_in_text_main_info">Общенгие, бронирование <a
-                                class="blue_text">здесь и сейчас</a></p>
+        <div id="users_view">
+            <section class="first_section">
+                <div class="image_div">
+                    <div class="main_info_on_section flex">
+                        <div class="text_in_main_info_on_section">
+                            <p class="p1_in_text big_text_in_text_main_info">Социальная интерактивная</p>
+                            <p class="blue_text_platform big_text_in_text_main_info">платформа</p>
+                            <p class="p3_in_text medium_text_in_text_main_info">Соединяем <a class="blue_text">гостей и
+                                    места</a></p>
+                            <p class="p4_in_text medium_text_in_text_main_info">Общение, бронирование <a
+                                    class="blue_text">здесь и сейчас</a></p>
+                        </div>
+                        <div class="img_in_main_info">
+                            <img src="./resources/first_section_images/People.svg" alt="PeopleImage">
+                        </div>
                     </div>
-                    <div class="img_in_main_info">
-                        <img src="./resources/first_section_images/People.svg" alt="PeopleImage">
-                    </div>
+            <div class="search_and_filter_block flex ">
+                <div class="input_text">
+                    <input type="text" class="search_input" placeholder="Введите название площадки">
                 </div>
-                <div class="input_div_in_section_1 flex justify-content-space-between">
-                    <div class="input_text">
-                        <input type="text" class="search_input" placeholder="Введите название площадки">
-                    </div>
-                    <div class="filter_dropdown">
-                        <p class="filter_dropdown_main_name">Тип площадки</p>
-                    </div>
-                    <div class="filter_dropdown">
-                        <p class="filter_dropdown_main_name">Особенности</p>
-                    </div>
-                    <div class="filter_dropdown">
-                        <p class="filter_dropdown_main_name">Вместимость</p>
-                    </div>
-                    <div class="filter_dropdown">
-                        <p class="filter_dropdown_main_name">Стоимость</p>
-                    </div>
-                    <div class="filter_dropdown">
-                        <p class="filter_dropdown_main_name">Ещё фильтры</p>
-                    </div>
+                <div class="filter_dropdown flex align-center justify-center">
+                    <select class="select_style filter_platform_type" id="filter_platform_type">
+                        <option value="">Тип площадки</option>
+                        <option value="conference_hall">Конференц-зал</option>
+                        <option value="loft">Лофт</option>
+                        <option value="banquet_hall">Банкетный зал</option>
+                        <option value="rooftop_deck">Площадка на крыше</option>
+                        <option value="manor">Усадьба</option>
+                        <option value="theater_hall">Театральный зал</option>
+                        <option value="greenhouse">Оранжерея</option>
+                        <option value="club_hall">Клубный зал</option>
+                    </select>
+                    <img src="/resources/images/arrow_down.png" alt="arrow_down">
                 </div>
-                <div class="buttons_block_in_section_1 flex">
-                    <button class="button_in_section_1 gradient_button">
-                        Показать на карте
-                    </button>
-                    <button class="button_in_section_1 border_colorful_button">
-                        Показать списком
-                    </button>
+                <div class="filter_dropdown flex align-center justify-center">
+                    <select class="select_style filter_features" id="filter_features">
+                        <option value="">Особенности</option>
+                        <option value="parking">Парковка</option>
+                        <option value="vip">VIP</option>
+                        <option value="fireplace">Камин</option>
+                    </select>
+                    <img src="/resources/images/arrow_down.png" alt="arrow_down">
                 </div>
-            </div>
-        </section>
-        <section class="second_section">
-            <span class="main_text_in_second_section">Места</span> <span class="main_text_in_second_section blue_text">по категориям</span>
-            <div class="cards_in_second_section flex justify-content-space-between">
-                <div class="card flex align-center">
-                    <p class="text_on_card">Отдых</p>
-                    <div class="circle"></div>
-                    <div id="image_in_card_1">
-                        <img src="./resources/second_section_images/RestImage.svg" alt="RestImageOnCard1">
-                    </div>
+                <div class="filter_dropdown flex align-center justify-center">
+                    <select class="select_style filter_capacity" id="filter_capacity">
+                        <option value="">Вместимость</option>
+                        <option value="less_30">До 30 чел</option>
+                        <option value="30_100">30-100 чел</option>
+                        <option value="more_100">Более 100 чел</option>
+                    </select>
+                    <img src="/resources/images/arrow_down.png" alt="arrow_down">
                 </div>
-                <div class="card flex align-center">
-                    <p class="text_on_card">Бизнес</p>
-                    <div class="circle"></div>
-                    <div id="image_in_card_2">
-                        <img src="./resources/second_section_images/Business.svg" alt="RestImageOnCard1">
-                    </div>
+                <div class="filter_dropdown flex align-center justify-center">
+                    <select class="select_style filter_price" id="filter_price">
+                        <option value="">Стоимость</option>
+                        <option value="less_3000">До 3000</option>
+                        <option value="3000_5000">3000 - 5000</option>
+                        <option value="more_5000">Более 5000</option>
+                    </select>
+                    <img src="/resources/images/arrow_down.png" alt="arrow_down">
                 </div>
-                <div class="card flex align-center">
-                    <p class="text_on_card">Банкеты</p>
-                    <div class="circle"></div>
-                    <div id="image_in_card_3">
-                        <img src="./resources/second_section_images/Banket.svg" alt="RestImageOnCard1">
-                    </div>
-                    <div class="tape">
-                        <img src="./resources/second_section_images/BanketTape.svg" alt="BanketTape">
-                    </div>
-                </div>
-                <div class="card flex align-center">
-                    <p class="text_on_card">Здоровье</p>
-                    <div class="circle"></div>
-                    <div id="image_in_card_4">
-                        <img src="./resources/second_section_images/Health.svg" alt="RestImageOnCard1">
-                    </div>
+                <div class="filter_dropdown flex align-center justify-center">
+                    <select class="select_style filter_more" id="filter_more">
+                        <option value="">Ещё фильтры</option>
+                        <option value="sokolniki">Сокольники</option>
+                        <option value="mayakovskaya">Маяковская</option>
+                        <option value="cutuzovskaya">Кутузовская</option>
+                    </select>
+                    <img src="/resources/images/arrow_down.png" alt="arrow_down">
                 </div>
             </div>
-        </section>
+                    <div class="buttons_block_in_section_1 flex">
+                        <button class="button_in_section_1 gradient_button">
+                            Показать на карте
+                        </button>
+                        <button class="button_in_section_1 border_colorful_button" id="sendButton">
+                            Показать списком
+                        </button>
+                    </div>
+                </div>
+            </section>
+            <section class="second_section" id="second_section">
+                <span class="main_text_in_second_section">Места</span> <span class="main_text_in_second_section blue_text">по категориям</span>
+                <div class="cards_in_second_section flex">
+                    <div class="card flex align-center">
+                        <p class="text_on_card">Отдых</p>
+                        <div class="circle"></div>
+                        <div id="image_in_card_1">
+                            <img src="./resources/second_section_images/RestImage.svg" alt="RestImageOnCard1">
+                        </div>
+                    </div>
+                    <div class="card flex align-center">
+                        <p class="text_on_card">Бизнес</p>
+                        <div class="circle"></div>
+                        <div id="image_in_card_2">
+                            <img src="./resources/second_section_images/Business.svg" alt="RestImageOnCard1">
+                        </div>
+                    </div>
+                    <div class="card flex align-center">
+                        <p class="text_on_card">Банкеты</p>
+                        <div class="circle"></div>
+                        <div id="image_in_card_3">
+                            <img src="./resources/second_section_images/Banket.svg" alt="RestImageOnCard1">
+                        </div>
+                        <div class="tape">
+                            <img src="./resources/second_section_images/BanketTape.svg" alt="BanketTape">
+                        </div>
+                    </div>
+                    <div class="card flex align-center">
+                        <p class="text_on_card">Здоровье</p>
+                        <div class="circle"></div>
+                        <div id="image_in_card_4">
+                            <img src="./resources/second_section_images/Health.svg" alt="RestImageOnCard1">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+
+
+        
+    <!-- Админ-панель с кнопками для открытия модальных окон -->
+    <section class="admin-panel" id="admin-panel" style="display: none;">
+        <h2>Админ-панель</h2>
+        <div class="admin_buttons_section flex align-center justify-center">
+            <button class="admin-action-btn" data-modal="add">Добавить ресторан</button>
+            <button class="admin-action-btn" data-modal="edit">Редактировать ресторан</button>
+            <button class="admin-action-btn" data-modal="delete">Удалить ресторан</button>
+            <button class="admin-action-btn" id="addAdmin">Добавить нового админа</button>
+        </div>
+
+        <!-- Модальные окна -->
+        <div class="modal-overlay" id="modal-overlay">
+            <!-- Модальное окно добавления -->
+            <div class="modal admin-modal" id="add-modal">
+                <span class="close-button">×</span>
+                <h3>Добавить ресторан</h3>
+                <input type="text" id="add-title" placeholder="Название (RU)" required>
+                <input type="text" id="add-title-en" placeholder="Название (EN)" required>
+                <input type="number" id="add-rating" placeholder="Рейтинг (0-5)" min="0" max="5" step="0.1" required>
+                <input type="number" id="add-reviews" placeholder="Отзывы" min="0" required>
+                <input type="text" id="add-metro" placeholder="Метро (RU)" required>
+                <input type="text" id="add-metro-en" placeholder="Метро (EN)" required>
+                <input type="text" id="add-address" placeholder="Адрес (RU)" required>
+                <input type="text" id="add-address-en" placeholder="Адрес (EN)" required>
+                <input type="text" id="add-working-hours" placeholder="Время работы (например, 10:00-22:00)" required>
+                <input type="text" id="add-phone" placeholder="Телефон" required>
+                <input type="text" id="add-type" placeholder="Тип (RU)" required>
+                <input type="text" id="add-type-en" placeholder="Тип (EN)" required>
+                <input type="text" id="add-capacity" placeholder="Вместимость (через запятую, например, 35,100,150)" required>
+                <input type="text" id="add-services" placeholder="Услуги (RU, через запятую)" required>
+                <input type="text" id="add-services-en" placeholder="Услуги (EN, через запятую)" required>
+                <input type="text" id="add-features" placeholder="Особенности (RU, через запятую)" required>
+                <input type="text" id="add-features-en" placeholder="Особенности (EN, через запятую)" required>
+                <input type="number" id="add-average-price" placeholder="Средний чек" min="0" required>
+                <input type="number" id="add-menu-price" placeholder="Цена меню" min="0" required>
+                <input type="number" id="add-rent-price" placeholder="Цена аренды" min="0" required>
+                <input type="text" id="add-images" placeholder="Изображения (через запятую)" required>
+                <input type="number" id="add-number-of-halls" placeholder="Количество залов" min="1" required>
+                <input type="text" id="add-area" placeholder="Площадь (через запятую, например, 50,100,120)" required>
+                <button id="add-submit">Добавить</button>
+            </div>
+
+            <!-- Модальное окно редактирования -->
+            <div class="modal admin-modal" id="edit-modal">
+                <span class="close-button">×</span>
+                <h3>Редактировать ресторан</h3>
+                <div class="id_section flex align-center justify-content-space-between" id="id_section">
+                    <input type="number" id="edit-id" placeholder="ID ресторана" required>
+                    <button id="find_rest_inf">Найти</button>
+                </div>
+                <input type="text" id="edit-title" placeholder="Название (RU)" required>
+                <input type="text" id="edit-title-en" placeholder="Название (EN)" required>
+                <input type="number" id="edit-rating" placeholder="Рейтинг (0-5)" min="0" max="5" step="0.1" required>
+                <input type="number" id="edit-reviews" placeholder="Отзывы" min="0" required>
+                <input type="text" id="edit-metro" placeholder="Метро (RU)" required>
+                <input type="text" id="edit-metro-en" placeholder="Метро (EN)" required>
+                <input type="text" id="edit-address" placeholder="Адрес (RU)" required>
+                <input type="text" id="edit-address-en" placeholder="Адрес (EN)" required>
+                <input type="text" id="edit-working-hours" placeholder="Время работы (например, 10:00-22:00)" required>
+                <input type="text" id="edit-phone" placeholder="Телефон" required>
+                <input type="text" id="edit-type" placeholder="Тип (RU)" required>
+                <input type="text" id="edit-type-en" placeholder="Тип (EN)" required>
+                <input type="text" id="edit-capacity" placeholder="Вместимость (через запятую, например, 35,100,150)" required>
+                <input type="text" id="edit-services" placeholder="Услуги (RU, через запятую)" required>
+                <input type="text" id="edit-services-en" placeholder="Услуги (EN, через запятую)" required>
+                <input type="text" id="edit-features" placeholder="Особенности (RU, через запятую)" required>
+                <input type="text" id="edit-features-en" placeholder="Особенности (EN, через запятую)" required>
+                <input type="number" id="edit-average-price" placeholder="Средний чек" min="0" required>
+                <input type="number" id="edit-menu-price" placeholder="Цена меню" min="0" required>
+                <input type="number" id="edit-rent-price" placeholder="Цена аренды" min="0" required>
+                <input type="text" id="edit-images" placeholder="Изображения (через запятую)" required>
+                <input type="number" id="edit-number-of-halls" placeholder="Количество залов" min="1" required>
+                <input type="text" id="edit-area" placeholder="Площадь (через запятую, например, 50,100,120)" required>
+                <button id="edit-submit">Сохранить</button>
+            </div>
+
+            <!-- Модальное окно удаления -->
+            <div class="modal admin-modal" id="delete-modal">
+                <span class="close-button">×</span>
+                <h3>Удалить ресторан</h3>
+                <div class="group">
+                    <input type="number" id="delete-id" placeholder="ID товара" required>
+                </div>
+                <button id="delete-submit">Удалить</button>
+            </div>
+        </div>
+    </section>
+
+
     </main>
     <footer>
         <div class="flag1">
@@ -131,21 +265,26 @@
             <img src="./resources/footer/Flag2.svg">
         </div>
         <div class="black_line"></div>
-        <div class="footer_div flex align-center justify-content-space-between">
+        <div class="footer_div flex align-center">
             <div class>
-                <img src="./resources/header_icons/Logo.png" alt="LogoImage">
+                <img src="./resources/header_icons/Logo.png" alt="LogoImage" id="footer_logo_image">
             </div>
-            <div class="footer_info flex align-center">
-                <p>О проекте</p>
-                <p>Площадкам</p>
-                <p>Гостям</p>
-                <p>Контакты</p>
-                <p>Помощь</p>
-                <p>Вакансии</p>
-                <p>Техподдержка</p>
+            <div class="footer_info flex align-center flex-direction-column">
+                <p class="contact_label">Контакты:</p>
+                <p><span class="footer_bold_text">Email: </span>ilyasidarenko@gmail.com</p>
+                <p><span class="footer_bold_text">Телефон: </span>+375 (29) 123-45-67</p>
+                <p><span class="footer_bold_text">Сайт: </span>GitHub</p>
             </div>
         </div>
+        <div class="black_line second_black_line"></div>
+        <p class="coopyright">Авторское право © Guest Place | Разработано IlyaSid231</p>
 
     </footer>
+
+    <script src="https://unpkg.com/imask"></script>
+    <script type="module" src="./js/index.js"></script>
+    <script src="./js/theme.js"></script>
+    <script type="module" src="./js/roles.js"></script>
+    <script type="module" src="./js/navigation.js"></script>
 </body>
 </html>
