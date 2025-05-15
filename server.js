@@ -23,32 +23,52 @@ server.use(jsonServer.bodyParser);
 // Кастомный middleware для фильтрации
 server.use((req, res, next) => {
   if (req.method === 'GET' && (req.path === '/restaurants' || req.path.startsWith('/restaurants?'))) {
-    const { capacityRange } = req.query;
-
-    if (!capacityRange) {
-      next();
-      return;
-    }
-
+    
+    const { capacityRange, favoriteIds, requestedIds, feature, language } = req.query;
     const originalData = router.db.get('restaurants').value();
-    let filteredData;
-
-    if (capacityRange === 'less_30') {
-      filteredData = originalData.filter(restaurant  => Math.min(...restaurant .capacity) <= 30);
-    } else if (capacityRange === '30_100') {
-      filteredData = originalData.filter(restaurant  => restaurant.capacity.some(cap => cap >= 30 && cap <= 100));
-    } else if (capacityRange === 'more_100') {
-      filteredData = originalData.filter(restaurant => Math.max(...restaurant.capacity) > 100);
-    } else {
-      filteredData = originalData;
+    let filteredData = originalData;
+    
+    if (favoriteIds) {
+      const favoriteIdsArray = favoriteIds.split(',').map(id => parseInt(id.trim(), 10));
+      filteredData = originalData.filter(restaurant => favoriteIdsArray.includes(restaurant.id));
     }
 
-    // Временная база данных только с отфильтрованными данными
+    if (requestedIds) {
+      const requestedIdsArray = requestedIds.split(',').map(id => parseInt(id.trim(), 10));
+      filteredData = originalData.filter(restaurant => requestedIdsArray.includes(restaurant.id));
+    }
+    
+    if (capacityRange) {
+        if (capacityRange === 'less_30') {
+        filteredData = originalData.filter(restaurant  => Math.min(...restaurant .capacity) <= 30);
+      } else if (capacityRange === '30_100') {
+        filteredData = originalData.filter(restaurant  => restaurant.capacity.some(cap => cap >= 30 && cap <= 100));
+      } else if (capacityRange === 'more_100') {
+        filteredData = originalData.filter(restaurant => Math.max(...restaurant.capacity) > 100);
+      } else {
+        filteredData = originalData;
+      }
+    }
+
+    if(feature){
+      // filteredData = filteredData.filter(restaurant => restaurant.features.some(f => 
+      //   f[language]?.trim().toLowerCase() === feature.trim().toLowerCase()));
+      filteredData = filteredData.filter(restaurant =>
+        restaurant.features.some(f =>
+          f[language].toLowerCase().includes(feature.toLowerCase())
+        ));
+    }
+
+
+    // Временная база данных с отфильтрованными данными
     const tempDb = { restaurants: filteredData };
     const tempRouter = jsonServer.router(tempDb);
 
-    // Удаляем capacityRange, чтобы json-server не пытался его обработать
+    // Удаляем capacityRange, favoriteIds, чтобы json-server не пытался его обработать
     delete req.query.capacityRange;
+    delete req.query.favoriteIds;
+    delete req.query.requestedIds;
+    delete req.query.feature;
 
     res.setHeader('X-Total-Count', filteredData.length);
     
@@ -135,7 +155,7 @@ server.post('/users', (req, res) => {
     const newUsers = req.body;
 
     if (!Array.isArray(newUsers)) {
-      return res.status(400).json({ error: 'Поле users должно быть массивом' });
+      return res.status(400).json({ error: 'field users must be an array' });
     }
 
     // Валидация структуры данных
@@ -173,12 +193,99 @@ server.post('/users', (req, res) => {
   }
 });
 
+server.post('/restaurants', (req, res) => {
+  try {
+    const newRestaurant = req.body;
+
+    // Валидация обязательных полей
+    const requiredFields = ['id', 'title', 'rating', 'metro', 'capacity', 'address', 'average_price', 'menu_price', 'rent_price', 'images', 'type', 'working_hours', 'phone', 'number_of_halls', 'area'];
+    const missingFields = requiredFields.filter(field => !newRestaurant[field]);
+
+    if (missingFields.length > 0) {
+      return res.status(400).json({
+        error: `Missing required fields: ${missingFields.join(', ')}`
+      });
+    }
+
+    // Добавление в "базу данных"
+    router.db
+      .get('restaurants')
+      .push(newRestaurant)
+      .write();
+
+    res.status(201).json(newRestaurant);
+
+  } catch (error) {
+    console.error('Error adding restaurant:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+// Явный обработчик PUT /restaurants/:id (обновление)
+server.put('/restaurants/:id', (req, res) => {
+  try {
+    const restaurantId = parseInt(req.params.id, 10);
+    const updatedData = req.body;
+
+    // Проверка существования ресторана
+    const restaurantExists = router.db
+      .get('restaurants')
+      .find({ id: restaurantId })
+      .value();
+
+    if (!restaurantExists) {
+      return res.status(404).json({ error: 'Restaurant not found in server' });
+    }
+
+    // Обновление данных
+    const updatedRestaurant = router.db
+      .get('restaurants')
+      .find({ id: restaurantId })
+      .assign(updatedData)
+      .write();
+
+    res.json(updatedRestaurant);
+
+  } catch (error) {
+    console.error('Error updating restaurant:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+// Явный обработчик DELETE /restaurants/:id
+server.delete('/restaurants/:id', (req, res) => {
+  try {
+    const restaurantId = parseInt(req.params.id, 10);
+
+    // Проверка существования ресторана
+    const restaurant = router.db
+      .get('restaurants')
+      .find({ id: restaurantId })
+      .value();
+
+    if (!restaurant) {
+      return res.status(404).json({ error: 'Restaurant not found in server' });
+    }
+
+    // Удаление из "базы данных"
+    router.db
+      .get('restaurants')
+      .remove({ id: restaurantId })
+      .write();
+
+    res.status(204).end(); // 204 No Content
+
+  } catch (error) {
+    console.error('Error deleting restaurant:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+
 
 // Затем подключаем основной роутер
 server.use(router);
 
-// Подключаем роутер ПОСЛЕ кастомного middleware
-server.use(router);
 
 
 server.listen(3000, () => {
