@@ -1,0 +1,156 @@
+.modal-overlay {
+    position: fixed; /* Фиксированное позиционирование, чтобы покрыть весь экран */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .modal {
+    box-sizing: border-box;
+    background-color: var(--bg-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 80%;
+    max-width: 680px;
+    height: 568px;
+    border-radius: 60px;
+  }
+
+
+/* Стили окна оставления заявки ------------------------------------------- */
+  .modal_auth_window{
+    position: relative;
+    z-index: 1;
+  }
+
+  .modal_auth_window::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 237px;
+    height: 405px;
+    background-image: url(/resources/images/question_man.svg);
+    background-size: cover;
+    z-index: -1;
+  }
+
+  /* Стили для текста и кнопок*/
+.modal-content{
+  text-align: center;
+  height: 100%;
+  position: relative;
+}
+
+
+.modal h3{
+  color: var(--text-dark);
+  font-family: 'PoiretOne', sans-serif;
+  font-size: 42px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  text-transform: uppercase;
+  padding-top: 70px;
+}
+
+.modal-content p{
+  margin: 57px auto;
+  color: var(--text-regular);
+  font-family: 'Raleway', sans-serif;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  max-width: 445px;
+}
+
+.modal-content .auth-buttons{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  padding: 55px 0;
+}
+
+.modal-content .auth-buttons .auth-button, .sybmit_button{
+    width: 190px;
+    height: 62px;
+    background: conic-gradient(from 180deg, #8E2DBC, #FFC5BD 110deg, #DB7AE3, #06C 315deg);
+    background-size: 200% 300%;
+    background-position: -127px 0px;
+    padding: 5px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    
+    color: var(--bg-color);
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+}
+
+
+/* Модальное окно для оставления заявки ------------------------------------------------------- */
+
+.modal_request_window{
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.modal_request_window::after{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 160px;
+  height: 400px;
+  background-image: url(/resources/images/man_connect.svg);
+  background-size: cover;
+  z-index: -1;
+}
+
+.modal_request_window p{
+  max-width: 445px;
+  margin: 30px auto;
+
+  color: var(--text-regular);
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.modal_request_window .input-group{
+  gap: 20px;
+  margin-bottom: 37px;
+}
+
+.modal_request_window input{
+  box-sizing: border-box;
+  width: 347px;
+  height: 38px;
+  padding: 9px 25px;
+
+  border-radius: 50px;
+  background: var(--bg-color);
+  box-shadow: 0px 4px 15px 0px rgba(105, 78, 75, 0.14);
+  border: 1px solid transparent;
+
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 135%;
+  font-variant-numeric: lining-nums proportional-nums;
+}
+

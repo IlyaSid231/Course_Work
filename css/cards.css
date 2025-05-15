@@ -1,0 +1,306 @@
+.path_about_us{
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 135%;
+    margin: 50px auto 0 auto;
+}
+
+p.p_grey_text{
+    color: var(--text-gray-2);
+    white-space: pre;
+}
+
+.label_section{
+    width: auto;
+    height: 63px;
+    font-family: 'PoiretOne', sans-serif;
+    font-size: 4.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    text-transform: uppercase;
+    white-space: pre;
+
+    margin: 36px auto 0 auto;
+}
+
+
+/* Секция каталога ресторанов ----------------------------------------------------------------------------------------------------- */
+
+/* Весь каталог ресторанов */
+.catalog-grid {
+    max-width: 1110px;
+    flex-direction: column;
+    gap: 105px;
+    margin: 102px auto 65px auto;
+}   
+/* ------------------------- */
+
+
+.catalog-grid .card{
+    width: 100%;
+
+}
+
+
+.card{
+    gap: 18px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+}
+
+.card_infContainer{
+    width: 445px;
+    color: var(--text-dark);
+    font-variant-numeric: lining-nums proportional-nums;
+    gap: 7px;
+    margin-right: 10px;
+}
+.card_infContainer > :nth-child(1){
+    margin-bottom: 5.5px;
+}
+.card_infContainer > :nth-child(2){
+    margin-bottom: 16.5px;
+}
+.card_infContainer > div:last-child{
+    margin-top: 19px;
+    gap: 32px;
+}
+
+/* Секция изображения ----------- */
+.card_imageSection img{
+    width: 434px;
+    height: 286px;
+    border-radius: 30px;
+}
+.card_imageSection{
+    position: relative;
+}
+.card_imageSection .favoriteIconContainer{
+    position: absolute;
+    right: 28px;
+    top: 17px;
+    left: 380px;
+    width: 26px;
+    height: 26px;
+    background-size: cover;
+    border: none;
+    background-color: transparent;
+}
+
+.card_infContainer h3{
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    
+}
+
+
+
+/* Стили для блока с рейтингом */
+.rating_container{
+    gap: 5px;
+    align-items: center;
+    max-height: 19px;
+}
+
+.rating_container .stars img{
+    width: 12px;
+    height: 12px;
+    padding: 2px;
+}
+
+.rating_container .stars{
+    gap: 2px;
+} 
+
+.rating_container .reviews{
+    
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 130%; 
+}
+
+/* Стили для блокa с текстовой инфомрацией --------------- */
+.infContainerLabel{
+    color: var(--text-light);
+    font-size: 14px;
+    padding-right: 6px;
+}
+
+.metro_station_block .infContainerLabel{
+    padding-right: 4px;
+}
+
+.capacity_block{
+    padding-top: 2px;
+}
+
+.services_block{
+    padding-top: 2px;
+}
+.services_block .infContainerValue{
+    line-height: 19px;
+}
+.services_block span, .features_block span{
+    padding-right: 1px;
+}
+
+.features_block{
+    padding-top: 1px;
+}
+
+
+.infContainerValue{
+    font-size: 14px;
+    
+}
+
+.infContainerLabelBigger{
+    color: var(--text-light);
+    font-size: 16px;
+}
+.infContainerValueBigger{
+    font-size: 18px;
+}
+
+.menu_price_block, .average_price_block, .rent_price_block{
+    gap: 5px;
+}
+
+/* Стили для кнопок карточек -------------------------*/
+
+.button_block{
+    gap: 17px;
+    font-family: inherit;
+    font-size: 1.4rem;
+}
+
+.leave_request_button, .leave_request_button_sent{
+    width: 140px;
+    height: 40px;
+    background: conic-gradient(from 180deg,#8E2DBC, #FFC5BD 110deg, #DB7AE3, #06C 315deg);
+    background-size: 300% 300%;
+    background-position: -127px 0px;
+    padding: 5px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    
+    color: var(--bg-color);
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+}
+
+.leave_request_button_sent{
+    filter: grayscale(100%);
+}
+
+.more_inf_button{
+    width: 136px;
+    height: 36px;
+    position: relative;
+    border-radius: 50px;
+    border: none;
+    background: var(--bg-color);
+    margin-bottom: 10px;
+    cursor: pointer;
+
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.more_inf_button::after{
+    content: '';
+    position: absolute;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    top: -2px;
+    left: -2px;
+    border-radius: 50px;
+    background: conic-gradient(from 180deg, #8E2DBC, #FFC5BD 110deg, #DB7AE3, #06C 315deg);
+    z-index: -1;
+}
+
+.online_view_button{
+    width: 140px;
+    height: 30px;
+    border-radius: 50px;
+    border: none;
+    background: var(--ultra-light-blue);
+    cursor: pointer;
+
+    color: var(--text-dark);
+    font-family: inherit;
+    font-size: inherit;
+    text-align: center;
+    font-weight: 400;
+    line-height: 135%;
+}
+/* ------------------------------------------------------------------------------------------------------------------------------- */
+
+/* Стили для кнопок пагинации */
+
+.pagination{
+    gap: 20px;
+    padding-top: 40px;
+}
+
+.pagination button{
+    position: relative;
+    text-align: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: none;
+    font-size: 1.6rem;
+    font-weight: 700;
+    background-color: var(--bg-color);
+    cursor: pointer;
+}
+
+.pagination button:disabled{
+    cursor: auto;
+}
+.pagination button:disabled span{
+    background-image: linear-gradient(to right, gray);
+    filter: grayscale(100%);
+}
+.pagination button:disabled::after{
+    background-image: linear-gradient(to right, gray);
+    filter: grayscale(100%);
+}
+.pagination button span{
+    background-image: conic-gradient(from 180deg, #8E2DBC, #FFC5BD 110deg, #DB7AE3, #06C 315deg);
+    background-clip: text;
+    color: transparent;
+}
+
+.pagination button::after{
+    content: '';
+    position: absolute;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    top: -2px;
+    left: -2px;
+    border-radius: 50%;
+    background-image: conic-gradient(from 180deg, #8E2DBC, #FFC5BD 110deg, #DB7AE3, #06C 315deg);
+    z-index: -1;
+}
+
+#currentPage{
+    color: var(--text-dark);
+    font-size: 2.1rem;
+}
+
+.search_and_filter_block select{
+    position: relative;
+}
