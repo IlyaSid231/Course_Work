@@ -19,145 +19,230 @@
     <header>
         <div class="first_block_header flex align-center">
             <div class="header_logo">
-                <img src="./resources/header_icons/Logo.png" alt="LogoImage" id="header_logo_image">
+               <span class="image-placeholder" data-alt="LogoImage">
+                    <img src="./resources/header_icons/Logo.png" alt="LogoImage" id="header_logo_image" class="accessibility-image">
+                </span>
             </div>
-            <div class="info_text_in_first_block_header flex">
-                <p id="homeLink">Домой</p>
-                <p id="contactsLink">Контакты</p>
-                <p id="aboutLink">О платформе</p>
-            </div>
-            <div class="all_buttons_in_header flex align-center justify-center">
-                <img src="./resources/header_icons/open_eye.png" alt="blind_ver" class="blind_version_btn" id="blind_version_btn">
-                <label class="switch">
-                    <span><img src="./resources/header_icons/light-mode.png" class="light_image" alt="light_icon"></span>
-                    <span><img src="resources/header_icons/dark-mode.png" class="dark_image" alt="dark_icon"></span>
-                    <input type="checkbox">
-                    <span class="move"></span>
-                </label>
-                <button type="button" class="languages_btn" data-btn="ru" style="display: block;">Ru</button>
-                <button type="button" class="languages_btn" data-btn="en" style="display: none;">En</button>
-                <div class="icons_in_header flex">
-                    <img src="./resources/header_icons/Favorite.svg" alt="FavoriteIconImage" id="header_favorite_button">
-                    <img src="./resources/header_icons/ChatCircle.svg" alt="ChatCircleImage" id="header_request_button">
-                    <img src="./resources/header_icons/User.svg" alt="UserImage" id="header_user_button">
+            <nav class="body_menu flex">
+                <div class="menu_background_text flex align-center">
+                    <div class="info_text_in_first_block_header flex align-center">
+                        <p id="homeLink" data-lang="header_home-title">Домой</p>
+                        <p id="contactsLink" data-lang="header_contacts-title">Contacts</p>
+                        <p id="aboutLink" data-lang="header_about-title">About</p>
+                    </div>
                 </div>
+                <div class="all_buttons_in_header flex align-center justify-center">
+                    <img src="./resources/header_icons/open_eye.png" alt="blind_ver" class="blind_version_btn" id="blind_version_btn">
+                    <label class="switch">
+                        <span><img src="./resources/header_icons/light-mode.png" class="light_image" alt="light_icon"></span>
+                        <span><img src="resources/header_icons/dark-mode.png" class="dark_image" alt="dark_icon"></span>
+                        <input type="checkbox">
+                        <span class="move"></span>
+                    </label>
+                    <button type="button" class="languages_btn" data-btn="ru" style="display: none;">Ru</button>
+                    <button type="button" class="languages_btn" data-btn="en" style="display: block;">En</button>
+                    <div class="icons_in_header flex">
+                        <span class="image-placeholder" data-alt="FavoriteImage">
+                            <img src="./resources/header_icons/Favorite.svg" alt="FavoriteIconImage" id="header_favorite_button" class="accessibility-image">
+                        </span>
+                        <span class="image-placeholder" data-alt="ChatCircleImage">
+                            <img src="./resources/header_icons/ChatCircle.svg" alt="ChatImage" id="header_request_button" class="accessibility-image">
+                        </span>
+                        <span class="image-placeholder" data-alt="UserImage">
+                            <img src="./resources/header_icons/User.svg" alt="UserImage" id="header_user_button" class="accessibility-image">
+                        </span>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="menu_overflow"></div>
+            <!-- Бургер меню -->
+            <div class="menu_icon">
+                    <span></span>
             </div>
+
+
         </div>
     </header>
     <main>
+
+
+        <div id="accessibility-panel" class="accessibility-panel">
+            <div class="accessibility-panel-options flex justify-center flex-direction-column">
+                <h3 data-lang="accessibility_title">Настройки для слабовидящих</h3>
+                <div class="accessibility-option">
+                    <label data-lang="accessibility_mode_label">Версия для слабовидящих:</label>
+                    <button class="accessibility-btn" data-accessibility="on" data-lang="accessibility_on">Вкл</button>
+                    <button class="accessibility-btn" data-accessibility="off" data-lang="accessibility_off">Выкл</button>
+                </div>
+                <div class="accessibility-option">
+                    <label data-lang="font_size_label">Размер шрифта:</label>
+                    <button class="accessibility-btn" data-font="small" data-lang="font_small">Малый</button>
+                    <button class="accessibility-btn" data-font="medium" data-lang="font_medium">Средний</button>
+                    <button class="accessibility-btn" data-font="large" data-lang="font_large">Большой</button>
+                </div>
+                <div class="accessibility-option">
+                    <label data-lang="color_scheme_label">Цветовая схема:</label>
+                    <button class="accessibility-btn" data-theme="black-white" data-lang="theme_black_white">Черный/Белый</button>
+                    <button class="accessibility-btn" data-theme="black-green" data-lang="theme_black_green">Черный/Зеленый</button>
+                    <button class="accessibility-btn" data-theme="white-black" data-lang="theme_white_black">Белый/Черный</button>
+                </div>
+                <div class="accessibility-option">
+                    <label data-lang="images_label">Изображения:</label>
+                    <button class="accessibility-btn" data-images="on" data-lang="images_on">Вкл</button>
+                    <button class="accessibility-btn" data-images="off" data-lang="images_off">Выкл</button>
+                </div>
+                <button class="accessibility-btn close-panel" data-lang="close_panel">Закрыть</button>
+            </div>
+        </div>
+
+
+
         <div id="users_view">
             <section class="first_section">
                 <div class="image_div">
                     <div class="main_info_on_section flex">
                         <div class="text_in_main_info_on_section">
-                            <p class="p1_in_text big_text_in_text_main_info">Социальная интерактивная</p>
-                            <p class="blue_text_platform big_text_in_text_main_info">платформа</p>
-                            <p class="p3_in_text medium_text_in_text_main_info">Соединяем <a class="blue_text">гостей и
-                                    места</a></p>
-                            <p class="p4_in_text medium_text_in_text_main_info">Общение, бронирование <a
-                                    class="blue_text">здесь и сейчас</a></p>
+                            <p class="p1_in_text big_text_in_text_main_info" data-lang="main_social_interactive">Социальная интерактивная</p>
+                            <p class="blue_text_platform big_text_in_text_main_info" data-lang="main_platform">платформа</p>
+                            <p class="p3_in_text medium_text_in_text_main_info" data-lang="main_connecting">Соединяем <span class="blue_text" data-lang="main_connecting_guests">гостей и
+                                    места</span></p>
+                            <p class="p4_in_text medium_text_in_text_main_info" data-lang="main_communication">Общение, бронирование <a
+                                    class="blue_text" data-lang="main_communication_booking">здесь и сейчас</a></p>
                         </div>
                         <div class="img_in_main_info">
-                            <img src="./resources/first_section_images/People.svg" alt="PeopleImage">
+                            <span class="image-placeholder" data-alt="PeopleImage">
+                                <img src="./resources/first_section_images/People.svg" alt="PeopleImage" class="accessibility-image">
+                            </span>
                         </div>
                     </div>
             <div class="search_and_filter_block flex ">
                 <div class="input_text">
-                    <input type="text" class="search_input" placeholder="Введите название площадки">
+                    <input type="text" class="search_input" placeholder="Введите название площадки" data-lang="search_placeholder">
                 </div>
-                <div class="filter_dropdown flex align-center justify-center">
-                    <select class="select_style filter_platform_type" id="filter_platform_type">
-                        <option value="">Тип площадки</option>
-                        <option value="conference_hall">Конференц-зал</option>
-                        <option value="loft">Лофт</option>
-                        <option value="banquet_hall">Банкетный зал</option>
-                        <option value="rooftop_deck">Площадка на крыше</option>
-                        <option value="manor">Усадьба</option>
-                        <option value="theater_hall">Театральный зал</option>
-                        <option value="greenhouse">Оранжерея</option>
-                        <option value="club_hall">Клубный зал</option>
-                    </select>
-                    <img src="/resources/images/arrow_down.png" alt="arrow_down">
+                <div class="filter_overflow"></div>
+                <div class="filter_container" id="filter_container">
+                    <div class="filter_dropdown flex align-center justify-center">
+                        <select class="select_style filter_platform_type" id="filter_platform_type" >
+                            <option value="" data-lang="filter_platform_type">Тип площадки</option>
+                            <option value="conference_hall" data-lang="platform_conference_hall">Конференц-зал</option>
+                            <option value="loft" data-lang="platform_loft">Лофт</option>
+                            <option value="banquet_hall" data-lang="platform_banquet_hall">Банкетный зал</option>
+                            <option value="rooftop_deck" data-lang="platform_rooftop_deck">Площадка на крыше</option>
+                            <option value="manor" data-lang="platform_manor">Усадьба</option>
+                            <option value="theater_hall" data-lang="platform_theater_hall">Театральный зал</option>
+                            <option value="greenhouse" data-lang="platform_greenhouse">Оранжерея</option>
+                            <option value="club_hall" data-lang="platform_club_hall">Клубный зал</option>
+                        </select>
+                        <img src="/resources/images/arrow_down.png" alt="arrow_down">
+                    </div>
+                    <div class="filter_dropdown flex align-center justify-center">
+                        <select class="select_style filter_features" id="filter_features">
+                            <option value="" data-lang="header_features-title">Особенности</option>
+                            <option value="parking" data-lang="feature_parking">Парковка</option>
+                            <option value="vip">VIP</option>
+                            <option value="fireplace" data-lang="feature_fireplace">Камин</option>
+                        </select>
+                        <img src="/resources/images/arrow_down.png" alt="arrow_down">
+                    </div>
+                    <div class="filter_dropdown flex align-center justify-center">
+                        <select class="select_style filter_capacity" id="filter_capacity">
+                            <option value="" data-lang="filter_capacity">Вместимость</option>
+                            <option value="less_30" data-lang="capacity_less_30">До 30 чел</option>
+                            <option value="30_100" data-lang="capacity_30_100">30-100 чел</option>
+                            <option value="more_100" data-lang="capacity_more_100">Более 100 чел</option>
+                        </select>
+                        <img src="/resources/images/arrow_down.png" alt="arrow_down">
+                    </div>
+                    <div class="filter_dropdown flex align-center justify-center">
+                        <select class="select_style filter_price" id="filter_price">
+                            <option value="" data-lang="filter_price">Стоимость</option>
+                            <option value="less_3000" data-lang="price_less_3000">До 3000</option>
+                            <option value="3000_5000" data-lang="price_3000_5000">3000 - 5000</option>
+                            <option value="more_5000" data-lang="price_more_5000">Более 5000</option>
+                        </select>
+                        <img src="/resources/images/arrow_down.png" alt="arrow_down">
+                    </div>
+                    <div class="filter_dropdown flex align-center justify-center">
+                        <select class="select_style filter_more" id="filter_more">
+                            <option value="" data-lang="filter_more">Ещё фильтры</option>
+                            <option value="sokolniki" data-lang="location_sokolniki">Сокольники</option>
+                            <option value="mayakovskaya" data-lang="location_mayakovskaya">Маяковская</option>
+                            <option value="cutuzovskaya" data-lang="location_kutuzovskaya">Кутузовская</option>
+                        </select>
+                        <img src="/resources/images/arrow_down.png" alt="arrow_down">
+                    </div>
                 </div>
-                <div class="filter_dropdown flex align-center justify-center">
-                    <select class="select_style filter_features" id="filter_features">
-                        <option value="">Особенности</option>
-                        <option value="parking">Парковка</option>
-                        <option value="vip">VIP</option>
-                        <option value="fireplace">Камин</option>
-                    </select>
-                    <img src="/resources/images/arrow_down.png" alt="arrow_down">
-                </div>
-                <div class="filter_dropdown flex align-center justify-center">
-                    <select class="select_style filter_capacity" id="filter_capacity">
-                        <option value="">Вместимость</option>
-                        <option value="less_30">До 30 чел</option>
-                        <option value="30_100">30-100 чел</option>
-                        <option value="more_100">Более 100 чел</option>
-                    </select>
-                    <img src="/resources/images/arrow_down.png" alt="arrow_down">
-                </div>
-                <div class="filter_dropdown flex align-center justify-center">
-                    <select class="select_style filter_price" id="filter_price">
-                        <option value="">Стоимость</option>
-                        <option value="less_3000">До 3000</option>
-                        <option value="3000_5000">3000 - 5000</option>
-                        <option value="more_5000">Более 5000</option>
-                    </select>
-                    <img src="/resources/images/arrow_down.png" alt="arrow_down">
-                </div>
-                <div class="filter_dropdown flex align-center justify-center">
-                    <select class="select_style filter_more" id="filter_more">
-                        <option value="">Ещё фильтры</option>
-                        <option value="sokolniki">Сокольники</option>
-                        <option value="mayakovskaya">Маяковская</option>
-                        <option value="cutuzovskaya">Кутузовская</option>
-                    </select>
-                    <img src="/resources/images/arrow_down.png" alt="arrow_down">
-                </div>
+                <button class="filter_trigger" aria-label="Open filters" aria-controls="filter_container" aria-expanded="false">
+                    <span class="image-placeholder" data-alt="Filter Icon">
+                        <img src="/resources/images/filter_icon.svg" alt="Filter Icon" class="accessibility-image">
+                    </span>
+                </button>
             </div>
                     <div class="buttons_block_in_section_1 flex">
-                        <button class="button_in_section_1 gradient_button">
+                        <button class="button_in_section_1 gradient_button" id="yandex_map" data-lang="show_on_map">
                             Показать на карте
                         </button>
-                        <button class="button_in_section_1 border_colorful_button" id="sendButton">
+
+                        <!-- Modal window for Yandex map -->
+                        <div class="modal-overlay-yandex" bis_skin_checked="1">
+                            <div class="modal_yandex" bis_skin_checked="1">
+                                <span class="close-button-map">x</span>
+                                <div class="map_1" bis_skin_checked="1"><iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A484176a18dba7e80e1e3bbfc1573b82e56f6763f85422e83fd1da633272acfee&amp;source=constructor" width="800" height="600" frameborder="0" bis_size="{&quot;x&quot;:137,&quot;y&quot;:7550,&quot;w&quot;:800,&quot;h&quot;:600,&quot;abs_x&quot;:137,&quot;abs_y&quot;:7550}" bis_id="fr_uwy0spgll4ld2f9iua0bq6" bis_depth="0" bis_chainid="3"></iframe></div>
+                                <div class="map_2" bis_skin_checked="1"></div>
+                            </div>
+                        </div>
+
+
+
+                        <button class="button_in_section_1 border_colorful_button" id="sendButton" data-lang="show_as_list">
                             Показать списком
                         </button>
                     </div>
                 </div>
             </section>
             <section class="second_section" id="second_section">
-                <span class="main_text_in_second_section">Места</span> <span class="main_text_in_second_section blue_text">по категориям</span>
+                <span class="main_text_in_second_section" data-lang="venues_by">Места</span> <span class="main_text_in_second_section blue_text" data-lang="venues_by_categories">по категориям</span>
                 <div class="cards_in_second_section flex">
                     <div class="card flex align-center">
-                        <p class="text_on_card">Отдых</p>
+                        <p class="text_on_card" data-lang="card_leisure">Отдых</p>
                         <div class="circle"></div>
                         <div id="image_in_card_1">
-                            <img src="./resources/second_section_images/RestImage.svg" alt="RestImageOnCard1">
+                           <span class="image-placeholder" data-alt="RestImageOnCard1">
+                                <img src="./resources/second_section_images/RestImage.svg" alt="RestImageOnCard1" class="accessibility-image">
+                            </span>
                         </div>
                     </div>
                     <div class="card flex align-center">
-                        <p class="text_on_card">Бизнес</p>
+                        <p class="text_on_card" data-lang="card_business">Бизнес</p>
                         <div class="circle"></div>
                         <div id="image_in_card_2">
-                            <img src="./resources/second_section_images/Business.svg" alt="RestImageOnCard1">
+                            <span class="image-placeholder" data-alt="RestImageOnCard1">
+                                <img src="./resources/second_section_images/Business.svg" alt="BusinessImageOnCard2" class="accessibility-image">
+                            </span>
                         </div>
                     </div>
                     <div class="card flex align-center">
-                        <p class="text_on_card">Банкеты</p>
+                        <p class="text_on_card" data-lang="card_banquets">Банкеты</p>
                         <div class="circle"></div>
                         <div id="image_in_card_3">
-                            <img src="./resources/second_section_images/Banket.svg" alt="RestImageOnCard1">
+                            <span class="image-placeholder" data-alt="RestImageOnCard1">
+                                <img src="./resources/second_section_images/Banket.svg" alt="BanketImageOnCard3" class="accessibility-image">
+                            </span>
                         </div>
                         <div class="tape">
-                            <img src="./resources/second_section_images/BanketTape.svg" alt="BanketTape">
+                             <span class="image-placeholder" data-alt="BanketTape">
+                                <img src="./resources/second_section_images/BanketTape.svg" alt="BanketTape" class="accessibility-image">
+                            </span>
                         </div>
                     </div>
                     <div class="card flex align-center">
-                        <p class="text_on_card">Здоровье</p>
+                        <p class="text_on_card" data-lang="card_health">Здоровье</p>
                         <div class="circle"></div>
                         <div id="image_in_card_4">
-                            <img src="./resources/second_section_images/Health.svg" alt="RestImageOnCard1">
+                            <span class="image-placeholder" data-alt="RestImageOnCard1">
+                                <img src="./resources/second_section_images/Health.svg" alt="HealthImageOnCard4" class="accessibility-image">
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -169,88 +254,92 @@
         
     <!-- Админ-панель с кнопками для открытия модальных окон -->
     <section class="admin-panel" id="admin-panel" style="display: none;">
-        <h2>Админ-панель</h2>
+        <h2 data-lang="admin_panel_title">Админ-панель</h2>
         <div class="admin_buttons_section flex align-center justify-center">
-            <button class="admin-action-btn" data-modal="add">Добавить ресторан</button>
-            <button class="admin-action-btn" data-modal="edit">Редактировать ресторан</button>
-            <button class="admin-action-btn" data-modal="delete">Удалить ресторан</button>
-            <button class="admin-action-btn" id="addAdmin">Добавить нового админа</button>
+            <button class="admin-action-btn" data-modal="add" data-lang="admin_add_venue">Добавить ресторан</button>
+            <button class="admin-action-btn" data-modal="edit" data-lang="admin_edit_venue">Редактировать ресторан</button>
+            <button class="admin-action-btn" data-modal="delete" data-lang="admin_delete_venue">Удалить ресторан</button>
+            <button class="admin-action-btn" id="addAdmin" data-lang="admin_add_new_admin">Добавить нового админа</button>
+            <button class="admin-action-btn" id="clearLocalStorage" data-lang="admin_clear_local_storage">Очистить Local Storage</button>
         </div>
 
         <!-- Модальные окна -->
-        <div class="modal-overlay" id="modal-overlay">
+        <div class="modal-overlay-admin" id="modal-overlay">
             <!-- Модальное окно добавления -->
             <div class="modal admin-modal" id="add-modal">
                 <span class="close-button">×</span>
-                <h3>Добавить ресторан</h3>
-                <input type="text" id="add-title" placeholder="Название (RU)" required>
-                <input type="text" id="add-title-en" placeholder="Название (EN)" required>
-                <input type="number" id="add-rating" placeholder="Рейтинг (0-5)" min="0" max="5" step="0.1" required>
-                <input type="number" id="add-reviews" placeholder="Отзывы" min="0" required>
-                <input type="text" id="add-metro" placeholder="Метро (RU)" required>
-                <input type="text" id="add-metro-en" placeholder="Метро (EN)" required>
-                <input type="text" id="add-address" placeholder="Адрес (RU)" required>
-                <input type="text" id="add-address-en" placeholder="Адрес (EN)" required>
-                <input type="text" id="add-working-hours" placeholder="Время работы (например, 10:00-22:00)" required>
-                <input type="text" id="add-phone" placeholder="Телефон" required>
-                <input type="text" id="add-type" placeholder="Тип (RU)" required>
-                <input type="text" id="add-type-en" placeholder="Тип (EN)" required>
-                <input type="text" id="add-capacity" placeholder="Вместимость (через запятую, например, 35,100,150)" required>
-                <input type="text" id="add-services" placeholder="Услуги (RU, через запятую)" required>
-                <input type="text" id="add-services-en" placeholder="Услуги (EN, через запятую)" required>
-                <input type="text" id="add-features" placeholder="Особенности (RU, через запятую)" required>
-                <input type="text" id="add-features-en" placeholder="Особенности (EN, через запятую)" required>
-                <input type="number" id="add-average-price" placeholder="Средний чек" min="0" required>
-                <input type="number" id="add-menu-price" placeholder="Цена меню" min="0" required>
-                <input type="number" id="add-rent-price" placeholder="Цена аренды" min="0" required>
-                <input type="text" id="add-images" placeholder="Изображения (через запятую)" required>
-                <input type="number" id="add-number-of-halls" placeholder="Количество залов" min="1" required>
-                <input type="text" id="add-area" placeholder="Площадь (через запятую, например, 50,100,120)" required>
-                <button id="add-submit">Добавить</button>
+                <h3 data-lang="modal_add_venue">Добавить ресторан</h3>
+                <input type="text" id="add-title" placeholder="Название (RU)" data-lang="placeholder_add_title_ru" required>
+                <input type="text" id="add-title-en" placeholder="Название (EN)" data-lang="placeholder_add_title_en" required>
+                <input type="number" id="add-rating" placeholder="Рейтинг (0-5)" min="0" max="5" step="0.1" data-lang="placeholder_add_rating" required>
+                <input type="number" id="add-reviews" placeholder="Отзывы" min="0" data-lang="placeholder_add_reviews" required>
+                <input type="text" id="add-metro" placeholder="Метро (RU)" data-lang="placeholder_add_metro_ru" required>
+                <input type="text" id="add-metro-en" placeholder="Метро (EN)" data-lang="placeholder_add_metro_en" required>
+                <input type="text" id="add-address" placeholder="Адрес (RU)" data-lang="placeholder_add_address_ru" required>
+                <input type="text" id="add-address-en" placeholder="Адрес (EN)" data-lang="placeholder_add_address_en" required>
+                <input type="text" id="add-working-hours" placeholder="Время работы (например, 10:00-22:00)" data-lang="placeholder_add_working_hours" required>
+                <input type="text" id="add-phone" placeholder="Телефон" data-lang="placeholder_add_phone" required>
+                <input type="text" id="add-type" placeholder="Тип (RU)" data-lang="placeholder_add_type_ru" required>
+                <input type="text" id="add-type-en" placeholder="Тип (EN)" data-lang="placeholder_add_type_en" required>
+                <input type="text" id="add-capacity" placeholder="Вместимость (через запятую, например, 35,100,150)" data-lang="placeholder_add_capacity" required>
+                <input type="text" id="add-services" placeholder="Услуги (RU, через запятую)" data-lang="placeholder_add_services_ru" required>
+                <input type="text" id="add-services-en" placeholder="Услуги (EN, через запятую)" data-lang="placeholder_add_services_en" required>
+                <input type="text" id="add-features" placeholder="Особенности (RU, через запятую)" data-lang="placeholder_add_features_ru" required>
+                <input type="text" id="add-features-en" placeholder="Особенности (EN, через запятую)" data-lang="placeholder_add_features_en" required>
+                <input type="number" id="add-average-price" placeholder="Средний чек" data-lang="placeholder_add_average_price" min="0" required>
+                <input type="number" id="add-menu-price" placeholder="Цена меню" data-lang="placeholder_add_menu_price" min="0" required>
+                <input type="number" id="add-rent-price" placeholder="Цена аренды" data-lang="placeholder_add_rent_price" min="0" required>
+                <input type="text" id="add-images" placeholder="Изображения (через запятую)" data-lang="placeholder_add_images" required>
+                <input type="number" id="add-number-of-halls" placeholder="Количество залов" data-lang="placeholder_add_number_of_halls" min="1" required>
+                <input type="text" id="add-area" placeholder="Площадь (через запятую, например, 50,100,120)" data-lang="placeholder_add_area" required>
+                <div class="flex align-center justify-center">
+                    <button id="add-submit" data-lang="modal_add_submit">Добавить</button>
+                </div>
             </div>
 
             <!-- Модальное окно редактирования -->
             <div class="modal admin-modal" id="edit-modal">
                 <span class="close-button">×</span>
-                <h3>Редактировать ресторан</h3>
-                <div class="id_section flex align-center justify-content-space-between" id="id_section">
-                    <input type="number" id="edit-id" placeholder="ID ресторана" required>
-                    <button id="find_rest_inf">Найти</button>
+                <h3 data-lang="modal_edit_venue">Редактировать ресторан</h3>
+                <div class="id_section flex align-center" id="id_section">
+                    <input type="number" id="edit-id" placeholder="ID ресторана" data-lang="placeholder_edit_id" required>
+                    <button id="find_rest_inf" data-lang="modal_find">Найти</button>
                 </div>
-                <input type="text" id="edit-title" placeholder="Название (RU)" required>
-                <input type="text" id="edit-title-en" placeholder="Название (EN)" required>
-                <input type="number" id="edit-rating" placeholder="Рейтинг (0-5)" min="0" max="5" step="0.1" required>
-                <input type="number" id="edit-reviews" placeholder="Отзывы" min="0" required>
-                <input type="text" id="edit-metro" placeholder="Метро (RU)" required>
-                <input type="text" id="edit-metro-en" placeholder="Метро (EN)" required>
-                <input type="text" id="edit-address" placeholder="Адрес (RU)" required>
-                <input type="text" id="edit-address-en" placeholder="Адрес (EN)" required>
-                <input type="text" id="edit-working-hours" placeholder="Время работы (например, 10:00-22:00)" required>
-                <input type="text" id="edit-phone" placeholder="Телефон" required>
-                <input type="text" id="edit-type" placeholder="Тип (RU)" required>
-                <input type="text" id="edit-type-en" placeholder="Тип (EN)" required>
-                <input type="text" id="edit-capacity" placeholder="Вместимость (через запятую, например, 35,100,150)" required>
-                <input type="text" id="edit-services" placeholder="Услуги (RU, через запятую)" required>
-                <input type="text" id="edit-services-en" placeholder="Услуги (EN, через запятую)" required>
-                <input type="text" id="edit-features" placeholder="Особенности (RU, через запятую)" required>
-                <input type="text" id="edit-features-en" placeholder="Особенности (EN, через запятую)" required>
-                <input type="number" id="edit-average-price" placeholder="Средний чек" min="0" required>
-                <input type="number" id="edit-menu-price" placeholder="Цена меню" min="0" required>
-                <input type="number" id="edit-rent-price" placeholder="Цена аренды" min="0" required>
-                <input type="text" id="edit-images" placeholder="Изображения (через запятую)" required>
-                <input type="number" id="edit-number-of-halls" placeholder="Количество залов" min="1" required>
-                <input type="text" id="edit-area" placeholder="Площадь (через запятую, например, 50,100,120)" required>
-                <button id="edit-submit">Сохранить</button>
+                <input type="text" id="edit-title" placeholder="Название (RU)" data-lang="placeholder_edit_title_ru" required>
+                <input type="text" id="edit-title-en" placeholder="Название (EN)" data-lang="placeholder_edit_title_en" required>
+                <input type="number" id="edit-rating" placeholder="Рейтинг (0-5)" data-lang="placeholder_edit_rating" min="0" max="5" step="0.1" required>
+                <input type="number" id="edit-reviews" placeholder="Отзывы" data-lang="placeholder_edit_reviews" min="0" required>
+                <input type="text" id="edit-metro" placeholder="Метро (RU)" data-lang="placeholder_edit_metro_ru" required>
+                <input type="text" id="edit-metro-en" placeholder="Метро (EN)" data-lang="placeholder_edit_metro_en" required>
+                <input type="text" id="edit-address" placeholder="Адрес (RU)" data-lang="placeholder_edit_address_ru" required>
+                <input type="text" id="edit-address-en" placeholder="Адрес (EN)" data-lang="placeholder_edit_address_en" required>
+                <input type="text" id="edit-working-hours" placeholder="Время работы (например, 10:00-22:00)" data-lang="placeholder_edit_working_hours" required>
+                <input type="text" id="edit-phone" placeholder="Телефон" data-lang="placeholder_edit_phone" required>
+                <input type="text" id="edit-type" placeholder="Тип (RU)" data-lang="placeholder_edit_type_ru" required>
+                <input type="text" id="edit-type-en" placeholder="Тип (EN)" data-lang="placeholder_edit_type_en" required>
+                <input type="text" id="edit-capacity" placeholder="Вместимость (через запятую, например, 35,100,150)" data-lang="placeholder_edit_capacity" required>
+                <input type="text" id="edit-services" placeholder="Услуги (RU, через запятую)" data-lang="placeholder_edit_services_ru" required>
+                <input type="text" id="edit-services-en" placeholder="Услуги (EN, через запятую)" data-lang="placeholder_edit_services_en" required>
+                <input type="text" id="edit-features" placeholder="Особенности (RU, через запятую)" data-lang="placeholder_edit_features_ru" required>
+                <input type="text" id="edit-features-en" placeholder="Особенности (EN, через запятую)" data-lang="placeholder_edit_features_en" required>                    <input type="number" id="edit-average-price" placeholder="Средний чек" data-lang="placeholder_edit_average_price" min="0" required>
+                <input type="number" id="edit-menu-price" placeholder="Цена меню" data-lang="placeholder_edit_menu_price" min="0" required>
+                <input type="number" id="edit-rent-price" placeholder="Цена аренды" data-lang="placeholder_edit_rent_price" min="0" required>
+                <input type="text" id="edit-images" placeholder="Изображения (через запятую)" data-lang="placeholder_edit_images" required>
+                <input type="number" id="edit-number-of-halls" placeholder="Количество залов" data-lang="placeholder_edit_number_of_halls" min="1" required>
+                <input type="text" id="edit-area" placeholder="Площадь (через запятую, например, 50,100,120)" data-lang="placeholder_edit_area" required>
+                <div class="flex align-center justify-center">
+                    <button id="edit-submit" data-lang="modal_save">Сохранить</button>
+                </div>
             </div>
 
             <!-- Модальное окно удаления -->
             <div class="modal admin-modal" id="delete-modal">
                 <span class="close-button">×</span>
-                <h3>Удалить ресторан</h3>
+                <h3 data-lang="modal_delete_venue">Удалить ресторан</h3>
                 <div class="group">
-                    <input type="number" id="delete-id" placeholder="ID товара" required>
+                    <input type="number" id="delete-id" placeholder="ID площадки" data-lang="placeholder_delete_id" required>
                 </div>
-                <button id="delete-submit">Удалить</button>
+                <button id="delete-submit" data-lang="modal_delete">Удалить</button>
             </div>
         </div>
     </section>
@@ -266,19 +355,18 @@
         </div>
         <div class="black_line"></div>
         <div class="footer_div flex align-center">
-            <div class>
+            <div class="footer_img">
                 <img src="./resources/header_icons/Logo.png" alt="LogoImage" id="footer_logo_image">
             </div>
             <div class="footer_info flex align-center flex-direction-column">
-                <p class="contact_label">Контакты:</p>
+                <p class="contact_label" data-lang="footer_contacts">Контакты:</p>
                 <p><span class="footer_bold_text">Email: </span>ilyasidarenko@gmail.com</p>
-                <p><span class="footer_bold_text">Телефон: </span>+375 (29) 123-45-67</p>
-                <p><span class="footer_bold_text">Сайт: </span>GitHub</p>
+                <p><span class="footer_bold_text" data-lang="footer_phone_label">Телефон: </span>+375 (29) 123-45-67</p>
+                <p><span class="footer_bold_text" data-lang="footer_website_label">Сайт: </span>GitHub</p>
             </div>
         </div>
         <div class="black_line second_black_line"></div>
-        <p class="coopyright">Авторское право © Guest Place | Разработано IlyaSid231</p>
-
+        <p class="coopyright" data-lang="footer_copyright">Авторское право © Guest Place | Разработано IlyaSid231</p>
     </footer>
 
     <script src="https://unpkg.com/imask"></script>
@@ -286,5 +374,7 @@
     <script src="./js/theme.js"></script>
     <script type="module" src="./js/roles.js"></script>
     <script type="module" src="./js/navigation.js"></script>
+    <script type="module" src="./js/app.js"></script>
+    <script type="module" src="./js/accessibility_mode.js"></script>
 </body>
 </html>
