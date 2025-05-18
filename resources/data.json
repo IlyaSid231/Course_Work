@@ -1,0 +1,1242 @@
+{
+  "restaurants": [
+    {
+      "id": 1,
+      "title": {
+        "ru": "Банкетный зал лофт Форест Холл",
+        "en": "Banquet Hall Loft Forest Hall"
+      },
+      "rating": 3.7,
+      "reviews": 23,
+      "metro": {
+        "ru": "Сокольники",
+        "en": "Sokolniki"
+      },
+      "capacity": [
+        35,
+        100,
+        150
+      ],
+      "services": [
+        {
+          "ru": "Wi-Fi",
+          "en": "Wi-Fi"
+        },
+        {
+          "ru": "Бизнес-ланч",
+          "en": "Business Lunch"
+        },
+        {
+          "ru": "Выездная регистрация",
+          "en": "Off-site Registration"
+        },
+        {
+          "ru": "Банкеты",
+          "en": "Banquets"
+        },
+        {
+          "ru": "Анимация",
+          "en": "Animation"
+        },
+        {
+          "ru": "Тимбилдинг",
+          "en": "Team Building"
+        },
+        {
+          "ru": "Конференции",
+          "en": "Conferences"
+        },
+        {
+          "ru": "Презентации",
+          "en": "Presentations"
+        }
+      ],
+      "features": [
+        {
+          "ru": "Летняя веранда",
+          "en": "Summer Veranda"
+        },
+        {
+          "ru": "Парковая зона",
+          "en": "Park Area"
+        },
+        {
+          "ru": "удобный подъезд",
+          "en": "Convenient Access"
+        }
+      ],
+      "average_price": 2500,
+      "menu_price": 4000,
+      "rent_price": 3000,
+      "images": [
+        "/hall1/image1.png",
+        "/hall1/image2.png",
+        "/hall1/image3.png",
+        "/hall1/image4.png"
+      ],
+      "type": {
+        "ru": "Банкетный зал",
+        "en": "Banquet Hall"
+      },
+      "address": {
+        "ru": "г. Москва, ул. Сокольническая, д. 10",
+        "en": "Moscow, Sokolnicheskaya St., 10"
+      },
+      "working_hours": "10:00 - 23:00",
+      "phone": "+375 (29) 123-45-67",
+      "number_of_halls": 3,
+      "area": [
+        50,
+        150,
+        200
+      ]
+    },
+    {
+      "id": 2,
+      "title": {
+        "ru": "Loft Party Hall",
+        "en": "Loft Party Hall"
+      },
+      "rating": 4.6,
+      "reviews": 23,
+      "metro": {
+        "ru": "Чистые пруды",
+        "en": "Chistye Prudy"
+      },
+      "capacity": [
+        20,
+        70,
+        120
+      ],
+      "services": [
+        {
+          "ru": "Wi-Fi",
+          "en": "Wi-Fi"
+        },
+        {
+          "ru": "DJ",
+          "en": "DJ"
+        },
+        {
+          "ru": "Кейтеринг",
+          "en": "Catering"
+        },
+        {
+          "ru": "Кальян",
+          "en": "Hookah"
+        },
+        {
+          "ru": "Презентации",
+          "en": "Presentations"
+        }
+      ],
+      "features": [
+        {
+          "ru": "Панорамные окна",
+          "en": "Panoramic Windows"
+        },
+        {
+          "ru": "Неоновый свет",
+          "en": "Neon Lighting"
+        },
+        {
+          "ru": "Терраса",
+          "en": "Terrace"
+        }
+      ],
+      "average_price": 2700,
+      "menu_price": 4200,
+      "rent_price": 3200,
+      "images": [
+        "/hall2/image1.jpg",
+        "/hall2/image2.jpg",
+        "/hall2/image3.jpg",
+        "/hall2/image4.jpg"
+      ],
+      "type": {
+        "ru": "Лофт",
+        "en": "Loft"
+      },
+      "address": {
+        "ru": "г. Москва, ул. Чистые пруды, д. 15",
+        "en": "Moscow, Chistye Prudy St., 15"
+      },
+      "working_hours": "12:00 - 02:00",
+      "phone": "+375 (29) 234-56-78",
+      "number_of_halls": 4,
+      "area": [
+        30,
+        100,
+        180
+      ]
+    },
+    {
+      "id": 3,
+      "title": {
+        "ru": "Зал Прованс",
+        "en": "Provence Hall"
+      },
+      "rating": 4.7,
+      "reviews": 41,
+      "metro": {
+        "ru": "Новокузнецкая",
+        "en": "Novokuznetskaya"
+      },
+      "capacity": [
+        40,
+        80,
+        130
+      ],
+      "services": [
+        {
+          "ru": "Wi-Fi",
+          "en": "Wi-Fi"
+        },
+        {
+          "ru": "Кондиционер",
+          "en": "Air Conditioning"
+        },
+        {
+          "ru": "Банкеты",
+          "en": "Banquets"
+        },
+        {
+          "ru": "Живая музыка",
+          "en": "Live Music"
+        },
+        {
+          "ru": "Презентации",
+          "en": "Presentations"
+        }
+      ],
+      "features": [
+        {
+          "ru": "Уютный интерьер",
+          "en": "Cozy Interior"
+        },
+        {
+          "ru": "Камин",
+          "en": "Fireplace"
+        },
+        {
+          "ru": "Зона для танцев",
+          "en": "Dance Area"
+        }
+      ],
+      "average_price": 2400,
+      "menu_price": 3900,
+      "rent_price": 2800,
+      "images": [
+        "/hall3/image1.jpg",
+        "/hall3/image2.jpg",
+        "/hall3/image3.jpg",
+        "/hall3/image4.jpg"
+      ],
+      "type": {
+        "ru": "Банкетный зал",
+        "en": "Banquet Hall"
+      },
+      "address": {
+        "ru": "Москва, ул. Новокузнецкая, д. 5",
+        "en": "Moscow, Novokuznetskaya St., 5"
+      },
+      "working_hours": "09:00 - 22:00",
+      "phone": "+375 (29) 345-67-89",
+      "number_of_halls": 3,
+      "area": [
+        60,
+        120,
+        200
+      ]
+    },
+    {
+      "id": 4,
+      "title": {
+        "ru": "Гранд Холл «Москва»",
+        "en": "Grand Hall Moscow"
+      },
+      "rating": 4.8,
+      "reviews": 57,
+      "metro": {
+        "ru": "Павелецкая",
+        "en": "Paveletskaya"
+      },
+      "capacity": [
+        120,
+        200,
+        300
+      ],
+      "services": [
+        {
+          "ru": "Wi-Fi",
+          "en": "Wi-Fi"
+        },
+        {
+          "ru": "Банкетное меню",
+          "en": "Banquet Menu"
+        },
+        {
+          "ru": "Кейтеринг",
+          "en": "Catering"
+        },
+        {
+          "ru": "Шоу-программа",
+          "en": "Show Program"
+        },
+        {
+          "ru": "Парковка",
+          "en": "Parking"
+        }
+      ],
+      "features": [
+        {
+          "ru": "Сцена",
+          "en": "Stage"
+        },
+        {
+          "ru": "Профессиональный звук",
+          "en": "Professional Sound"
+        },
+        {
+          "ru": "VIP-зоны",
+          "en": "VIP Areas"
+        }
+      ],
+      "average_price": 5000,
+      "menu_price": 6500,
+      "rent_price": 7000,
+      "images": [
+        "/hall4/image1.jpg",
+        "/hall4/image2.jpg",
+        "/hall4/image3.jpg",
+        "/hall4/image4.jpg"
+      ],
+      "type": {
+        "ru": "Конференц-зал",
+        "en": "Conference Hall"
+      },
+      "address": {
+        "ru": "г. Москва, ул. Павелецкая, д. 12",
+        "en": "Moscow, Paveletskaya St., 12"
+      },
+      "working_hours": "08:00 - 00:00",
+      "phone": "+375 (29) 456-78-90",
+      "number_of_halls": 3,
+      "area": [
+        150,
+        250,
+        400
+      ]
+    },
+    {
+      "id": 5,
+      "title": {
+        "ru": "SkyView Hall",
+        "en": "SkyView Hall"
+      },
+      "rating": 4.3,
+      "reviews": 33,
+      "metro": {
+        "ru": "Маяковская",
+        "en": "Mayakovskaya"
+      },
+      "capacity": [
+        30,
+        60,
+        110
+      ],
+      "services": [
+        {
+          "ru": "Wi-Fi",
+          "en": "Wi-Fi"
+        },
+        {
+          "ru": "Панорамный вид",
+          "en": "Panoramic View"
+        },
+        {
+          "ru": "Живая музыка",
+          "en": "Live Music"
+        },
+        {
+          "ru": "Диджей",
+          "en": "DJ"
+        },
+        {
+          "ru": "Проектор",
+          "en": "Projector"
+        }
+      ],
+      "features": [
+        {
+          "ru": "На крыше",
+          "en": "On the Roof"
+        },
+        {
+          "ru": "Шикарный вид",
+          "en": "Stunning View"
+        },
+        {
+          "ru": "Барная стойка",
+          "en": "Bar Counter"
+        }
+      ],
+      "average_price": 3200,
+      "menu_price": 4500,
+      "rent_price": 3800,
+      "images": [
+        "/hall5/image1.jpg",
+        "/hall5/image2.jpg",
+        "/hall5/image3.jpg",
+        "/hall5/image4.jpg"
+      ],
+      "type": {
+        "ru": "Площадка на крыше",
+        "en": "Rooftop Deck"
+      },
+      "address": {
+        "ru": "г. Москва, ул. Маяковская, д. 8",
+        "en": "Moscow, Mayakovskaya St., 8"
+      },
+      "working_hours": "11:00 - 01:00",
+      "phone": "+375 (29) 567-89-01",
+      "number_of_halls": 3,
+      "area": [
+        40,
+        80,
+        150
+      ]
+    },
+    {
+      "id": 6,
+      "title": {
+        "ru": "Loft на Бауманской",
+        "en": "Loft on Baumanskaya"
+      },
+      "rating": 5,
+      "reviews": 17,
+      "metro": {
+        "ru": "Бауманская",
+        "en": "Baumanskaya"
+      },
+      "capacity": [
+        25,
+        50,
+        90
+      ],
+      "services": [
+        {
+          "ru": "Wi-Fi",
+          "en": "Wi-Fi"
+        },
+        {
+          "ru": "Бар",
+          "en": "Bar"
+        },
+        {
+          "ru": "Диджей",
+          "en": "DJ"
+        },
+        {
+          "ru": "Фотозона",
+          "en": "Photo Zone"
+        },
+        {
+          "ru": "Игры",
+          "en": "Games"
+        }
+      ],
+      "features": [
+        {
+          "ru": "Индустриальный стиль",
+          "en": "Industrial Style"
+        },
+        {
+          "ru": "Световое оборудование",
+          "en": "Lighting Equipment"
+        }
+      ],
+      "average_price": 2300,
+      "menu_price": 3700,
+      "rent_price": 2500,
+      "images": [
+        "/hall6/image1.webp",
+        "/hall6/image2.webp",
+        "/hall6/image3.webp",
+        "/hall6/image4.jpg"
+      ],
+      "type": {
+        "ru": "Лофт",
+        "en": "Loft"
+      },
+      "address": {
+        "ru": "г. Москва, ул. Бауманская, д. 7",
+        "en": "Moscow, Baumanskaya St., 7"
+      },
+      "working_hours": "12:00 - 23:00",
+      "phone": "+375 (29) 678-90-12",
+      "number_of_halls": 3,
+      "area": [
+        30,
+        70,
+        130
+      ]
+    },
+    {
+      "id": 7,
+      "title": {
+        "ru": "Императорский зал",
+        "en": "Imperial Hall"
+      },
+      "rating": 4.9,
+      "reviews": 76,
+      "metro": {
+        "ru": "Кутузовская",
+        "en": "Kutuzovskaya"
+      },
+      "capacity": [
+        80,
+        150,
+        220
+      ],
+      "services": [
+        {
+          "ru": "Wi-Fi",
+          "en": "Wi-Fi"
+        },
+        {
+          "ru": "Официанты",
+          "en": "Waiters"
+        },
+        {
+          "ru": "Фуршет",
+          "en": "Buffet"
+        },
+        {
+          "ru": "Банкеты",
+          "en": "Banquets"
+        },
+        {
+          "ru": "Свадьбы",
+          "en": "Weddings"
+        }
+      ],
+      "features": [
+        {
+          "ru": "Зеркальные потолки",
+          "en": "Mirrored Ceilings"
+        },
+        {
+          "ru": "Хрустальные люстры",
+          "en": "Crystal Chandeliers"
+        }
+      ],
+      "average_price": 4700,
+      "menu_price": 7000,
+      "rent_price": 6000,
+      "images": [
+        "/hall7/image1.jpg",
+        "/hall7/image2.webp",
+        "/hall7/image3.jpg",
+        "/hall7/image4.webp"
+      ],
+      "type": {
+        "ru": "Банкетный зал",
+        "en": "Banquet Hall"
+      },
+      "address": {
+        "ru": "г. Москва, ул. Кутузовская, д. 14",
+        "en": "Moscow, Kutuzovskaya St., 14"
+      },
+      "working_hours": "09:00 - 01:00",
+      "phone": "+375 (29) 789-01-23",
+      "number_of_halls": 3,
+      "area": [
+        100,
+        200,
+        300
+      ]
+    },
+    {
+      "id": 8,
+      "title": {
+        "ru": "Площадка на крыше «Вершина»",
+        "en": "Rooftop Deck Vertex"
+      },
+      "rating": 4.6,
+      "reviews": 29,
+      "metro": {
+        "ru": "Краснопресненская",
+        "en": "Krasnopresnenskaya"
+      },
+      "capacity": [
+        40,
+        80,
+        140
+      ],
+      "services": [
+        {
+          "ru": "Wi-Fi",
+          "en": "Wi-Fi"
+        },
+        {
+          "ru": "Проектор",
+          "en": "Projector"
+        },
+        {
+          "ru": "DJ",
+          "en": "DJ"
+        },
+        {
+          "ru": "Летняя веранда",
+          "en": "Summer Veranda"
+        }
+      ],
+      "features": [
+        {
+          "ru": "Открытое небо",
+          "en": "Open Sky"
+        },
+        {
+          "ru": "Вид на центр Москвы",
+          "en": "View of Central Moscow"
+        }
+      ],
+      "average_price": 3500,
+      "menu_price": 4800,
+      "rent_price": 4000,
+      "images": [
+        "/hall8/image1.jpeg",
+        "/hall8/image2.jpg",
+        "/hall8/image3.webp",
+        "/hall8/image4.jpg"
+      ],
+      "type": {
+        "ru": "Площадка на крыше",
+        "en": "Rooftop Deck"
+      },
+      "address": {
+        "ru": "г. Москва, ул. Краснопресненская, д. 9",
+        "en": "Moscow, Krasnopresnenskaya St., 9"
+      },
+      "working_hours": "10:00 - 00:00",
+      "phone": "+375 (29) 890-12-34",
+      "number_of_halls": 3,
+      "area": [
+        50,
+        100,
+        180
+      ]
+    },
+    {
+      "id": 9,
+      "title": {
+        "ru": "Family Event Hall",
+        "en": "Family Event Hall"
+      },
+      "rating": 4,
+      "reviews": 12,
+      "metro": {
+        "ru": "Перово",
+        "en": "Perovo"
+      },
+      "capacity": [
+        20,
+        40,
+        70
+      ],
+      "services": [
+        {
+          "ru": "Wi-Fi",
+          "en": "Wi-Fi"
+        },
+        {
+          "ru": "Детские праздники",
+          "en": "Children's Parties"
+        },
+        {
+          "ru": "Анимация",
+          "en": "Animation"
+        },
+        {
+          "ru": "Кофе-брейки",
+          "en": "Coffee Breaks"
+        }
+      ],
+      "features": [
+        {
+          "ru": "Детская зона",
+          "en": "Children's Area"
+        },
+        {
+          "ru": "Игровая комната",
+          "en": "Playroom"
+        }
+      ],
+      "average_price": 1800,
+      "menu_price": 3000,
+      "rent_price": 2200,
+      "images": [
+        "/hall9/image1.webp",
+        "/hall9/image2.webp",
+        "/hall9/image3.jpg",
+        "/hall9/image4.jpg"
+      ],
+      "type": {
+        "ru": "Банкетный зал",
+        "en": "Banquet Hall"
+      },
+      "address": {
+        "ru": "г. Москва, ул. Перово, д. 3",
+        "en": "Moscow, Perovo St., 3"
+      },
+      "working_hours": "10:00 - 20:00",
+      "phone": "+375 (29) 901-23-45",
+      "number_of_halls": 3,
+      "area": [
+        30,
+        60,
+        100
+      ]
+    },
+    {
+      "id": 10,
+      "title": {
+        "ru": "Центральный клубный зал",
+        "en": "Central Club Hall"
+      },
+      "rating": 2.9,
+      "reviews": 21,
+      "metro": {
+        "ru": "Таганская",
+        "en": "Taganskaya"
+      },
+      "capacity": [
+        35,
+        90,
+        130
+      ],
+      "services": [
+        {
+          "ru": "Wi-Fi",
+          "en": "Wi-Fi"
+        },
+        {
+          "ru": "Светомузыка",
+          "en": "Light Music"
+        },
+        {
+          "ru": "Танцпол",
+          "en": "Dance Floor"
+        },
+        {
+          "ru": "Бар",
+          "en": "Bar"
+        },
+        {
+          "ru": "Презентации",
+          "en": "Presentations"
+        }
+      ],
+      "features": [
+        {
+          "ru": "Мини-сцена",
+          "en": "Mini Stage"
+        },
+        {
+          "ru": "Современный дизайн",
+          "en": "Modern Design"
+        }
+      ],
+      "average_price": 2600,
+      "menu_price": 4100,
+      "rent_price": 3100,
+      "images": [
+        "/hall10/image1.jpg",
+        "/hall10/image2.jpg",
+        "/hall10/image3.webp",
+        "/hall10/image4.jpg"
+      ],
+      "type": {
+        "ru": "Клубный зал",
+        "en": "Club Hall"
+      },
+      "address": {
+        "ru": "г. Москва, ул. Таганская, д. 11",
+        "en": "Moscow, Taganskaya St., 11"
+      },
+      "working_hours": "14:00 - 02:00",
+      "phone": "+375 (29) 012-34-56",
+      "number_of_halls": 3,
+      "area": [
+        50,
+        120,
+        180
+      ]
+    },
+    {
+      "id": 11,
+      "title": {
+        "ru": "VIP-зал «Элегант»",
+        "en": "VIP Hall Elegant"
+      },
+      "rating": 4.8,
+      "reviews": 38,
+      "metro": {
+        "ru": "Пушкинская",
+        "en": "Pushkinskaya"
+      },
+      "capacity": [
+        20,
+        40,
+        60
+      ],
+      "services": [
+        {
+          "ru": "Wi-Fi",
+          "en": "Wi-Fi"
+        },
+        {
+          "ru": "Персональное обслуживание",
+          "en": "Personal Service"
+        },
+        {
+          "ru": "Презентации",
+          "en": "Presentations"
+        },
+        {
+          "ru": "Банкеты",
+          "en": "Banquets"
+        }
+      ],
+      "features": [
+        {
+          "ru": "Закрытая территория",
+          "en": "Private Area"
+        },
+        {
+          "ru": "VIP-парковка",
+          "en": "VIP Parking"
+        }
+      ],
+      "average_price": 5500,
+      "menu_price": 7000,
+      "rent_price": 6500,
+      "images": [
+        "/hall11/image1.jpg",
+        "/hall11/image2.jpg",
+        "/hall11/image3.jpg",
+        "/hall11/image4.jpg"
+      ],
+      "type": {
+        "ru": "Банкетный зал",
+        "en": "Banquet Hall"
+      },
+      "address": {
+        "ru": "г. Москва, ул. Пушкинская, д. 6",
+        "en": "Moscow, Pushkinskaya St., 6"
+      },
+      "working_hours": "09:00 - 23:00",
+      "phone": "+375 (29) 123-45-78",
+      "number_of_halls": 3,
+      "area": [
+        30,
+        60,
+        90
+      ]
+    },
+    {
+      "id": 12,
+      "title": {
+        "ru": "Loft Modern",
+        "en": "Loft Modern"
+      },
+      "rating": 4.4,
+      "reviews": 27,
+      "metro": {
+        "ru": "Савёловская",
+        "en": "Savyolovskaya"
+      },
+      "capacity": [
+        30,
+        60,
+        90
+      ],
+      "services": [
+        {
+          "ru": "Wi-Fi",
+          "en": "Wi-Fi"
+        },
+        {
+          "ru": "DJ",
+          "en": "DJ"
+        },
+        {
+          "ru": "Проектор",
+          "en": "Projector"
+        },
+        {
+          "ru": "Кейтеринг",
+          "en": "Catering"
+        },
+        {
+          "ru": "Настольные игры",
+          "en": "Board Games"
+        }
+      ],
+      "features": [
+        {
+          "ru": "Бетонные стены",
+          "en": "Concrete Walls"
+        },
+        {
+          "ru": "Проекционный экран",
+          "en": "Projection Screen"
+        }
+      ],
+      "average_price": 2400,
+      "menu_price": 3900,
+      "rent_price": 2700,
+      "images": [
+        "/hall12/image1.webp",
+        "/hall12/image2.jpg",
+        "/hall12/image3.jpg",
+        "/hall12/image4.jpg"
+      ],
+      "type": {
+        "ru": "Лофт",
+        "en": "Loft"
+      },
+      "address": {
+        "ru": "г. Москва, ул. Савёловская, д. 13",
+        "en": "Moscow, Savyolovskaya St., 13"
+      },
+      "working_hours": "12:00 - 01:00",
+      "phone": "+375 (29) 234-56-89",
+      "number_of_halls": 3,
+      "area": [
+        40,
+        80,
+        130
+      ]
+    },
+    {
+      "id": 13,
+      "title": {
+        "ru": "Театральный зал «Сцена»",
+        "en": "Theater Hall"
+      },
+      "rating": 4.5,
+      "reviews": 34,
+      "metro": {
+        "ru": "Театральная",
+        "en": "Teatralnaya"
+      },
+      "capacity": [
+        50,
+        100,
+        180
+      ],
+      "services": [
+        {
+          "ru": "Wi-Fi",
+          "en": "Wi-Fi"
+        },
+        {
+          "ru": "Сцена",
+          "en": "Stage"
+        },
+        {
+          "ru": "Микрофоны",
+          "en": "Microphones"
+        },
+        {
+          "ru": "Освещение",
+          "en": "Lighting"
+        },
+        {
+          "ru": "Акустика",
+          "en": "Acoustics"
+        }
+      ],
+      "features": [
+        {
+          "ru": "Профессиональный звук",
+          "en": "Professional Sound"
+        },
+        {
+          "ru": "Красный бархат",
+          "en": "Red Velvet"
+        }
+      ],
+      "average_price": 4300,
+      "menu_price": 6200,
+      "rent_price": 5000,
+      "images": [
+        "/hall13/image1.jpg",
+        "/hall13/image2.jpg",
+        "/hall13/image3.webp",
+        "/hall13/image4.webp"
+      ],
+      "type": {
+        "ru": "Театральный зал",
+        "en": "Theater Hall"
+      },
+      "address": {
+        "ru": "г. Москва, ул. Театральная, д. 4",
+        "en": "Moscow, Teatralnaya St., 4"
+      },
+      "working_hours": "10:00 - 22:00",
+      "phone": "+375 (29) 345-67-90",
+      "number_of_halls": 3,
+      "area": [
+        70,
+        150,
+        250
+      ]
+    },
+    {
+      "id": 14,
+      "title": {
+        "ru": "Оранжерея Green Hall",
+        "en": "Greenhouse Hall"
+      },
+      "rating": 4.6,
+      "reviews": 44,
+      "metro": {
+        "ru": "ВДНХ",
+        "en": "VDNKh"
+      },
+      "capacity": [
+        25,
+        60,
+        100
+      ],
+      "services": [
+        {
+          "ru": "Wi-Fi",
+          "en": "Wi-Fi"
+        },
+        {
+          "ru": "Живые растения",
+          "en": "Live Plants"
+        },
+        {
+          "ru": "Фото-зона",
+          "en": "Photo Zone"
+        },
+        {
+          "ru": "Банкеты",
+          "en": "Banquets"
+        },
+        {
+          "ru": "Природная атмосфера",
+          "en": "Natural Atmosphere"
+        }
+      ],
+      "features": [
+        {
+          "ru": "Стеклянная крыша",
+          "en": "Glass Roof"
+        },
+        {
+          "ru": "Много света",
+          "en": "Plenty of Light"
+        },
+        {
+          "ru": "Живая природа",
+          "en": "Live Nature"
+        }
+      ],
+      "average_price": 2800,
+      "menu_price": 4200,
+      "rent_price": 3300,
+      "images": [
+        "/hall14/image1.jpg",
+        "/hall14/image2.jpg",
+        "/hall14/image3.jpg",
+        "/hall14/image4.jpg"
+      ],
+      "type": {
+        "ru": "Оранжерея",
+        "en": "Greenhouse"
+      },
+      "address": {
+        "ru": "г. Москва, ул. ВДНХ, д. 2",
+        "en": "Moscow, VDNKh St., 2"
+      },
+      "working_hours": "09:00 - 21:00",
+      "phone": "+375 (29) 456-78-01",
+      "number_of_halls": 3,
+      "area": [
+        40,
+        90,
+        150
+      ]
+    },
+    {
+      "id": 15,
+      "title": {
+        "ru": "Усадьба Event Hall",
+        "en": "Manor Event Hall"
+      },
+      "rating": 4.9,
+      "reviews": 52,
+      "metro": {
+        "ru": "Крылатское",
+        "en": "Krylatskoe"
+      },
+      "capacity": [
+        60,
+        120,
+        200
+      ],
+      "services": [
+        {
+          "ru": "Wi-Fi",
+          "en": "Wi-Fi"
+        },
+        {
+          "ru": "Шатры",
+          "en": "Marquees"
+        },
+        {
+          "ru": "Живая музыка",
+          "en": "Live Music"
+        },
+        {
+          "ru": "Природа",
+          "en": "Nature"
+        },
+        {
+          "ru": "Кейтеринг",
+          "en": "Catering"
+        }
+      ],
+      "features": [
+        {
+          "ru": "Загородный стиль",
+          "en": "Country Style"
+        },
+        {
+          "ru": "Зона барбекю",
+          "en": "BBQ Area"
+        },
+        {
+          "ru": "Парковка",
+          "en": "Parking"
+        }
+      ],
+      "average_price": 3700,
+      "menu_price": 5200,
+      "rent_price": 4500,
+      "images": [
+        "/hall15/image1.webp",
+        "/hall15/image2.jpg",
+        "/hall15/image3.jpg",
+        "/hall15/image4.jpg"
+      ],
+      "type": {
+        "ru": "Усадьба",
+        "en": "Manor"
+      },
+      "address": {
+        "ru": "г. Москва, ул. Крылатская, д. 18",
+        "en": "Moscow, Krylatskaya St., 18"
+      },
+      "working_hours": "10:00 - 00:00",
+      "phone": "+375 (29) 567-89-12",
+      "number_of_halls": 4,
+      "area": [
+        80,
+        160,
+        300
+      ]
+    }
+  ],
+  "favorites": [
+    {
+      "id": 3,
+      "username": "client_user",
+      "restaurantId": 5
+    },
+    {
+      "id": 6,
+      "username": "adminMe",
+      "restaurantId": 10
+    },
+    {
+      "id": 7,
+      "username": "adminMe",
+      "restaurantId": 4
+    },
+    {
+      "id": 8,
+      "username": "\"consuetudinary759\"",
+      "restaurantId": 1
+    },
+    {
+      "id": 9,
+      "username": "adminMe",
+      "restaurantId": 7
+    },
+    {
+      "id": 12,
+      "username": "adminMe",
+      "restaurantId": 5
+    }
+  ],
+  "requests": [
+    {
+      "id": 1,
+      "username": "adminMe",
+      "restaurantId": 3,
+      "date": "2023-11-15",
+      "contactPhone": "+375 (29) 270-93-92",
+      "contactName": "Aloe",
+      "question": "Admin Test"
+    },
+    {
+      "id": 2,
+      "username": "client_user",
+      "restaurantId": 5,
+      "date": "2024-11-15",
+      "contactPhone": "+375 (29) 270-93-66",
+      "contactName": "Alia",
+      "question": ""
+    },
+    {
+      "id": 3,
+      "username": "adminMe",
+      "restaurantId": 2,
+      "date": "2024-12-12",
+      "contactPhone": "+375 (29) 270-44-44",
+      "contactName": "Dori",
+      "question": "Yeap test"
+    }
+  ],
+  "users": [
+    {
+      "username": "adminMe",
+      "password": "1234567890",
+      "email": "admin@example.com",
+      "phone": "+375 (29) 270-44-44",
+      "birth_date": "2000/12/12",
+      "first_name": "Petya",
+      "last_name": "Petrov",
+      "middle_name": "Sanych",
+      "role": "admin"
+    },
+    {
+      "username": "client_user",
+      "password": "123456789",
+      "email": "client@example.com",
+      "phone": "+375339876543",
+      "birth_date": "2000/11/11",
+      "first_name": "Vasya",
+      "last_name": "Vasilev",
+      "middle_name": "Alexsanych",
+      "role": "client"
+    }
+  ]
+}
