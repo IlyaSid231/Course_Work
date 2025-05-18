@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detailed</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <title>Favorites Restaurants</title>
     <link rel="stylesheet" href="/css/fonts.css">
     <link rel="stylesheet" href="/css/base.css">
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="/css/cards.css">
     <link rel="stylesheet" href="/css/modal.css">
     <link rel="icon" href="/resources/favicon/favicon.svg" type="image/x-icon">
 </head>
@@ -15,7 +14,7 @@
      <div id="preloader">
         <img src="/resources/header_icons/Logo.png" alt="Loading..." class="preloader-logo">
     </div>
-     <header>
+    <header>
         <div class="first_block_header flex align-center">
             <div class="header_logo">
                <span class="image-placeholder" data-alt="LogoImage">
@@ -64,67 +63,26 @@
         </div>
     </header>
 
-     <div class="path_current_restaurant flex justify-center">
+     <div class="path_about_us flex justify-center">
         <p class="p_grey_text" data-lang="home_breadcrumb">Главная </p>
-        <p class="p-plaform" id="currentPlatformName"></p>
+        <p class="p-about-platform" data-lang="favorites_breadcrumb">/ Избранное</p>
+    </div>
+    <section class="label_section flex justify-center" data-lang="favorites_title">
+        <p>Избранные площадки</p>
+    </section>
+
+    <div id="catalog-container" class="catalog-grid flex ">
+        <!-- Карточки будут сгенерированы здесь -->
     </div>
 
-    <div class="title-container">
-            <h1 id="restaurant-title"></h1>
-            <h2 id="restaurant-title-english" class="title-english blue_text"></h2>
-        </div>
-
-    <div class="reviews_and_favorites_section flex justify-center align-center" id="reviews_and_favorites_section">
-
-        <button class="favorite_btn" id="favorite_btn" data-lang="add_favorite">В избранное</button>
+    <div class="pagination flex justify-center align-center">
+        <button id="firstPageBtn" title="В начало"><span>&lt;&lt;</span></button>
+        <button id="prevPageBtn" title="Назад"><span>&lt;</span></button>
+        <span id="currentPage">1</span>
+        <button id="nextPageBtn" title="Вперед"><span>&gt;</span></button>
+        <button id="lastPageBtn" title="В конец"><span>&gt;&gt;</span></button>
     </div>
 
-    <!-- Модальное окно для слайдера -->
-    <div class="images_modal" id="images_modal">
-        <span class="close-modal" id="close-modal">&times;</span>
-        <div class="swiper modal-swiper">
-            <div class="swiper-wrapper">
-                <!-- Слайды будут добавляться динамически через JS -->
-            </div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-        </div>
-    </div>
-
-    <div class="card_section flex">
-         <!-- Контейнер для слайдера -->
-        <div class="swiper main-swiper">
-            <div class="swiper-wrapper">
-                <!-- Слайды будут добавляться динамически через JS -->
-            </div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-        </div>
-
-
-        <div class="restaurant-details flex flex-direction-column">
-            <!-- Контейнер для информации о ресторане -->
-            <div class="restaurant-info flex">
-                <div class="first_inf_container flex flex-direction-column">
-                    <p class="infContainerLabel" data-lang="address_label">Адрес: <span id="restaurant-address" class="infContainerValue"></span></p>
-                    <p class="infContainerLabel" data-lang="metro_label">Метро: <span id="restaurant-metro" class="infContainerValue"></span></p>
-                    <p class="infContainerLabel" data-lang="hours_label">Рабочее время: <span id="restaurant-hours" class="infContainerValue"></span></p>
-                    <p class="infContainerLabel" data-lang="average_price_label">Средний чек: <span id="restaurant-average-price" class="infContainerValue"></span></p>
-                    <p class="infContainerLabel" data-lang="menu_price_label">Банкетное меню от: <span id="restaurant-menu-price" class="infContainerValue"></span></p>
-                    <p class="infContainerLabel" data-lang="phone_label">Телефон: </strong> <span id="restaurant-phone" class="infContainerValue"></span></p>
-                    <p class="infContainerLabel" data-lang="halls_label">Количество залов: </strong> <span id="restaurant-halls" class="infContainerValue"></span></p>
-                </div>
-                <div class="second_inf_container flex flex-direction-column">
-                    <p class="infContainerLabel" data-lang="capacity_label">Количество мест: </strong> <span id="restaurant-capacity" class="infContainerValue"></span></p>
-                    <p class="infContainerLabel" data-lang="area_label">Площадь кв.м.: </strong> <span id="restaurant-area" class="infContainerValue"></span></p>
-                    <p class="infContainerLabel" data-lang="rent_price_label">Аренда от: <span id="restaurant-rent-price" class="infContainerValue"></span></p>
-                </div>
-            </div>
-            <div class="button_section" id="button_section">
-
-            </div>
-        </div>
-    </div>
 
     <footer>
         <div class="flag1">
@@ -149,9 +107,7 @@
         <p class="coopyright" data-lang="footer_copyright">Авторское право © Guest Place | Разработано IlyaSid231</p>
     </footer>
 
-    <script type="module" src="./js/restaurant-details.js"></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script type="module" src="./js/slider.js"></script>
+    <script type="module" src="./js/favorites-restaurants.js"></script>
     <script src="/js/theme.js"></script>
     <script type="module" src="/js/navigation.js"></script>
     <script type="module" src="/js/translate.js"></script>

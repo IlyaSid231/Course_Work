@@ -1,8 +1,8 @@
 // render.js
-import { hostServer, currentPage, totalPages, setTotalPages } from '/js/config.js';
-import { setupFavoriteListener, setupRequestListener } from '/js/eventListeners.js';
+import { hostServer, currentPage, totalPages, setTotalPages, currentLanguage } from '/js/config.js';
+import { setupFavoriteListener, setupRequestListener,setupDetailedButtons } from '/js/eventListeners.js';
 import { fetchFavorites, fetchRequests, fetchRestaurantsIdFromRequests } from '/js/api.js';
-import { getCurrentUserName } from '/js/authentication.js';
+import {changeLang} from "/js/translate.js"
 
 // Функция для очистки контейнера
 export function clearCatalogContainer() {
@@ -13,6 +13,8 @@ export function clearCatalogContainer() {
 // Функция для отображения ресторанов
 export async function RenderRestaurants(restaurantsToRender) {
 
+  const language = currentLanguage;
+
   clearCatalogContainer();
 
   const container = document.getElementById('catalog-container');
@@ -20,7 +22,7 @@ export async function RenderRestaurants(restaurantsToRender) {
   if (restaurantsToRender.length === 0) {
     const notFind = document.createElement('div');
     notFind.className = 'not_find_restaurants';
-    notFind.innerHTML = '<p class="no-products">No products found.</p>';
+    notFind.innerHTML = '<p class="no-products" data-lang="no_products_found">No products found.</p>';
     container.appendChild(notFind);
 
     setTotalPages(1);
@@ -93,38 +95,38 @@ export async function RenderRestaurants(restaurantsToRender) {
     const informationContainer = document.createElement('div');
     informationContainer.className = "card_infContainer flex flex-direction-column";
     const capacityText = `${item.capacity.join('/')}`;
-    const servicesText = `${item.services.join(', ')}.`;
-    const featuresText = `${item.features.join(', ')}`;
+    const servicesText = item.services.map(service => service[language]).join(', ') + '.';
+    const featuresText = item.features.map(feature => feature[language]).join(', ');
 
     informationContainer.innerHTML = `
-      <h3>${item.title}</h3>
+      <h3>${item.title[language]}</h3>
       <div class="metro_station_block">
-          <span class="metro_station_label infContainerLabel">Станция метро:</span>
-          <span class="metro_station infContainerValue">${item.metro}</span>
+          <span class="metro_station_label infContainerLabel" data-lang="metro_station_label">Станция метро:</span>
+          <span class="metro_station infContainerValue">${item.metro[language]}</span>
       </div>
       <div class="capacity_block">
-          <span class="capacity_label infContainerLabel">Вместимость (чел):</span>
+          <span class="capacity_label infContainerLabel" data-lang="capacity_label">Вместимость (чел):</span>
           <span class="capacity infContainerValue">${capacityText}</span>
       </div>
       <div class="services_block">
-          <span class="services_label infContainerLabel">Услуги:</span>
+          <span class="services_label infContainerLabel" data-lang="services_label">Услуги:</span>
           <span class="services infContainerValue">${servicesText}</span>
       </div>
       <div class="features_block">
-          <span class="features_label infContainerLabel">Особенности:</span>
+          <span class="features_label infContainerLabel" data-lang="features_label">Особенности:</span>
           <span class="features infContainerValue">${featuresText}</span>
       </div>
       <div class="vertical_inf_block flex">
           <div class="average_price_block flex flex-direction-column">
-              <p class="average_price_label infContainerLabelBigger">Средний чек</p>
+              <p class="average_price_label infContainerLabelBigger" data-lang="average_price_label">Средний чек</p>
               <p class="average_price infContainerValueBigger">${item.average_price.toLocaleString('ru-RU')} р.</p>
           </div>
           <div class="menu_price_block flex flex-direction-column">
-              <p class="menu_price_label infContainerLabelBigger">Банкетное меню</p>
+              <p class="menu_price_label infContainerLabelBigger" data-lang="menu_price_label">Банкетное меню</p>
               <p class="menu_price infContainerValueBigger">от ${item.menu_price.toLocaleString('ru-RU')} р.</p>
           </div>
           <div class="rent_price_block flex flex-direction-column">
-              <p class="rent_price_label infContainerLabelBigger">Аренда/час</p>
+              <p class="rent_price_label infContainerLabelBigger" data-lang="rent_price_label">Аренда/час</p>
               <p class="rent_price infContainerValueBigger">от ${item.rent_price.toLocaleString('ru-RU')} р.</p>
           </div>
       </div>
@@ -143,20 +145,24 @@ export async function RenderRestaurants(restaurantsToRender) {
     leaveRequestButton.className = "leave_request_button button_in_card";
     leaveRequestButton.id = `requestBtn_${item.id}`;
     leaveRequestButton.textContent = 'Оставить заявку';
+    leaveRequestButton.removeAttribute('data-lang');
+    leaveRequestButton.setAttribute('data-lang', 'leave_request_button');
 
     if(isSent){
       leaveRequestButton.className = "leave_request_button_sent";
       leaveRequestButton.textContent = 'Отозвать заявку';
+      leaveRequestButton.removeAttribute('data-lang');
+      leaveRequestButton.setAttribute('data-lang', 'cancel_request_button');
     }
 
     const moreInfButton = document.createElement('button');
     moreInfButton.className = "more_inf_button button_in_card";
     moreInfButton.id = `detailedBtn_${item.id}`;
     moreInfButton.textContent = 'Подробнее';
+    moreInfButton.setAttribute('data-lang', 'more_info_button');
 
     buttonBlock.appendChild(leaveRequestButton);
     buttonBlock.appendChild(moreInfButton);
-    // <button class="online_view_button button_in_card">Онлайн-показ</button> ТРЕТЬЯ КНОПКА (УДАЛЕННАЯ)
 
     
     card.appendChild(imagesContainer);
@@ -166,7 +172,9 @@ export async function RenderRestaurants(restaurantsToRender) {
 
     setupFavoriteListener(`favoriteBtn_${item.id}`, item.id);
     setupRequestListener(`requestBtn_${item.id}`, item.id, item.title);
+    setupDetailedButtons(`detailedBtn_${item.id}`, item);
   });
+  changeLang();
 }
 
 // Функция для обновления пагинации

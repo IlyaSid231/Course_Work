@@ -7,7 +7,6 @@
     --text-color: #333;
     --text-color-in-user-agreement: #333;
     --text-error-color: #fc6262;
-    --text-red-color: #FF5634;
     --white-color: #FFF;
     --svg-logo-text-color: #121212;
 }
@@ -21,6 +20,7 @@
     --text-color: #f3efef;
     --white-color: #000218;
     --svg-logo-text-color: #FFF;
+    --text-color-in-user-agreement: #d7cbcb;
 }
 
 
@@ -137,7 +137,7 @@ svg path:nth-child(4) {
 
 #registration_form {
     margin: 0 auto;
-    background: var(--bg-color);
+    background: var(--bg-color-section-2);
     width: 700px;
     padding: 20px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);

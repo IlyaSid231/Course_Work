@@ -18,10 +18,8 @@ document.getElementById('registration_form').addEventListener('submit', function
         let first_field = document.querySelector(".input_log_in_data");
         let second_field = document.querySelector(".password");
         if (isUserInUsers(first_field.value, second_field.value)) {
-            // if (localStorage.getItem("users") == null) {
-            //     localStorage.setItem("users", JSON.stringify(users));
-            // }
-            localStorage.setItem("currentUser", JSON.stringify(currentUser));
+
+            localStorage.setItem("currentUserName", currentUser.username);
             const previousPageUrl = document.referrer;
             if(previousPageUrl.includes('catalog') && currentUser.role != "admin"){
                 switchPageOnCatalog(); //TODO

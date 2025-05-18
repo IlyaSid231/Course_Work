@@ -1,6 +1,3 @@
-body{
-    font-size: 14px;
-}
 
 .infContainerLabel{
     color: var(--text-light);
@@ -20,11 +17,14 @@ p.p_grey_text{
 
 .path_current_restaurant{
     margin-top: 50px;
+    font-size: 14px;
+    color: var(--text-dark);
 }
 
 .title-container{
     text-align: center;
     margin-top: 37px;
+    color: var(--text-dark);
 }
 
 .title-container h1, .title-container h2{
@@ -61,6 +61,7 @@ p.p_grey_text{
     font-style: normal;
     font-weight: 400;
     line-height: 130%; /* 20.8px */
+    color: var(--text-dark);
 }
 
 
@@ -74,7 +75,7 @@ p.p_grey_text{
     background-repeat: no-repeat;
     background-position: 0 0;
     border: none;
-    background-color: var(--bg-color);
+    background-color: transparent;
     padding-left: 30px;
     cursor: pointer;
     transition: 240ms ease-out;
@@ -156,6 +157,10 @@ p.p_grey_text{
     max-width: 1110px;
     margin: 0 auto;
     gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0 15px;
 }
 
 .first_inf_container, .second_inf_container{
@@ -168,6 +173,7 @@ p.p_grey_text{
 
 .restaurant-info{
     gap: 30px;
+    width: 540px;
 }
 
 .restaurant-details{
@@ -178,50 +184,39 @@ p.p_grey_text{
 
 
 
+.swiper {
+    margin: 0;
+}
 
+.main-swiper {
+    width: 540px;
+    height: 344px;
+    border-radius: 30px;
+}
 
-
-/* Slider section --------------------------------------- */
-.slider {
-    position: relative;
+.swiper-wrapper{
     display: flex;
+    flex-direction: row;
+}
+
+
+.main-swiper .swiper-slide {
+    display: flex;
+    justify-content: center;
     align-items: center;
     width: 540px;
     height: 344px;
 }
 
-.slider-images {
-    display: flex;
-    overflow: hidden;
+.main-swiper .swiper-slide-image {
     width: 100%;
-}
-
-.slider-images img {
-    width: 540px;
-    height: 344px;
+    height: 100%;
     object-fit: cover;
-    cursor: pointer;
     border-radius: 30px;
-}
-
-.slider-arrow {
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
     cursor: pointer;
-    position: absolute;
-    z-index: 1;
 }
 
-.left-arrow {
-    left: 0;
-}
-
-.right-arrow {
-    right: 0;
-}
-
+/* Модальное окно */
 .images_modal {
     display: none;
     position: fixed;
@@ -229,45 +224,213 @@ p.p_grey_text{
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
     justify-content: center;
     align-items: center;
 }
 
-.modal-slider {
-    position: relative;
+.swiper.modal-swiper {
+  width: 80%;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
 }
 
-#modal-image {
-    max-width: 80%;
-    max-height: 80%;
+.swiper.modal-swiper .swiper-wrapper {
+  align-items: center;
 }
+
+.swiper.modal-swiper .swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+
 
 .close-modal {
     position: absolute;
     top: 20px;
     right: 20px;
+    color: white;
     font-size: 30px;
-    color: white;
     cursor: pointer;
+    z-index: 1001;
 }
 
-.modal-arrow {
+/* Кнопки навигации */
+.swiper-button-next,
+.swiper-button-prev {
+    color: white;
     background: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-#modal-left-arrow {
-    left: 10px;
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    font-size: 20px;
 }
 
-#modal-right-arrow {
+
+
+
+@media (max-width: 1000px) {
+    .sort_with_button{
+        justify-content: space-around;
+    }
+    .card{
+        padding: 0 15px;
+    }
+    #restaurant-title, #restaurant-title-english{
+        padding: 0 15px;
+    }
+    .restaurant-info{
+        width: auto;
+        max-width: 540px;
+    }
+    .path_current_restaurant{
+        margin-top: 25px;
+    }
+}
+
+
+@media (max-width: 700px) {
+    #restaurant-title, #restaurant-title-english{
+        font-size: 35px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    #restaurant-title, #restaurant-title-english{
+        font-size: 32px;
+    }
+
+    .restaurant-info{
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .requestButtonLarge{
+        width: 290px;
+        height: 52px;
+    }
+    
+    .swiper.main-swiper {
+        width: 290px !important;
+        height: 184px !important;
+        aspect-ratio: unset; /* Отключаем aspect-ratio для точных размеров */
+    }
+  
+    .swiper.main-swiper .swiper-slide {
+        width: 290px !important;
+        height: 184px !important;
+    }
+
+    .swiper-button-prev, 
+    .swiper-button-next {
+        transform: scale(0.7); /* Уменьшаем размер кнопок */
+    }
+
+
+}
+
+@media (max-width: 400px){
+
+    #restaurant-title, #restaurant-title-english{
+        font-size: 26px;
+    }
+
+   .reviews_and_favorites_section{
+    flex-direction: column;
+    gap: 7px;
+   }
+
+   .title-container{
+    margin-top: 33px;
+   }
+   .reviews_and_favorites_section{
+        margin-top: 20px;
+        margin-bottom: 75px;
+   }
+}
+
+
+
+
+
+/* Main Swiper ADAPTIVE*/
+
+@media (min-width: 768px) and (max-width: 1439px) {
+  .swiper.modal-swiper .swiper-slide {
+    width: 700px !important;
+    height: 370px !important;
+  }
+
+  .swiper.modal-swiper .swiper-slide img{
+    width: 700px !important;
+    height: 370px !important;
+  }
+  
+  .swiper.modal-swiper {
+    width: 700px;
+    height: 370px;
+  }
+}
+
+@media (max-width: 767px) {
+  .swiper.modal-swiper .swiper-slide {
+    width: 290px !important;
+    height: 478px !important;
+  }
+
+  .swiper.modal-swiper .swiper-slide {
+    width: 290px !important;
+    height: 500px !important;
+  }
+  
+  .swiper.modal-swiper {
+    width: 290px;
+    height: 478px;
+  }
+  
+  /* Кнопки навигации */
+  .swiper-button-prev, 
+  .swiper-button-next {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .swiper-button-prev::after, 
+  .swiper-button-next::after {
+    font-size: 16px;
+  }
+}
+
+/* Кнопка закрытия */
+.close-modal {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+@media (max-width: 767px) {
+  .close-modal {
+    top: 10px;
     right: 10px;
+    font-size: 25px;
+  }
 }

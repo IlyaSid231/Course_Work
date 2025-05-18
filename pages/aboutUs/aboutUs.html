@@ -10,217 +10,237 @@
     <link rel="icon" href="../../resources/favicon/favicon.svg" type="image/x-icon">
 </head>
 <body>
-    <header>
-        <div class="first_block_header flex justify-content-space-between ">
-            <div class="location_in_header flex align-center ">
-                <img src="../../resources/header_icons/MapPin.svg" alt="MapPinImage">
-                <p>Москва</p>
+     <div id="preloader">
+        <img src="/resources/header_icons/Logo.png" alt="Loading..." class="preloader-logo">
+    </div>
+     <header>
+        <div class="first_block_header flex align-center">
+            <div class="header_logo">
+               <span class="image-placeholder" data-alt="LogoImage">
+                    <img src="/resources/header_icons/Logo.png" alt="LogoImage" id="header_logo_image" class="accessibility-image">
+                </span>
             </div>
-            <div class="icons_in_header flex">
-                <img src="../../resources/header_icons/Favorite.svg" alt="FavoriteIconImage">
-                <img src="../../resources/header_icons/ChatCircle.svg" alt="ChatCircleImage">
-                <img src="../../resources/header_icons/User.svg" alt="UserImage">
+            <nav class="body_menu flex">
+                <div class="menu_background_text flex align-center">
+                    <div class="info_text_in_first_block_header flex align-center">
+                        <p id="homeLink" data-lang="header_home-title">Домой</p>
+                        <p id="contactsLink" data-lang="header_contacts-title">Contacts</p>
+                        <p id="aboutLink" data-lang="header_about-title">About</p>
+                    </div>
+                </div>
+                <div class="all_buttons_in_header flex align-center justify-center">
+                    <img src="/resources/header_icons/open_eye.png" alt="blind_ver" class="blind_version_btn" id="blind_version_btn">
+                    <label class="switch">
+                        <span><img src="/resources/header_icons/light-mode.png" class="light_image" alt="light_icon"></span>
+                        <span><img src="/resources/header_icons/dark-mode.png" class="dark_image" alt="dark_icon"></span>
+                        <input type="checkbox">
+                        <span class="move"></span>
+                    </label>
+                    <button type="button" class="languages_btn" data-btn="ru" style="display: none;">Ru</button>
+                    <button type="button" class="languages_btn" data-btn="en" style="display: block;">En</button>
+                    <div class="icons_in_header flex">
+                        <span class="image-placeholder" data-alt="FavoriteImage">
+                            <img src="/resources/header_icons/Favorite.svg" alt="FavoriteIconImage" id="header_favorite_button" class="accessibility-image">
+                        </span>
+                        <span class="image-placeholder" data-alt="ChatCircleImage">
+                            <img src="/resources/header_icons/ChatCircle.svg" alt="ChatImage" id="header_request_button" class="accessibility-image">
+                        </span>
+                        <span class="image-placeholder" data-alt="UserImage">
+                            <img src="/resources/header_icons/User.svg" alt="UserImage" id="header_user_button" class="accessibility-image">
+                        </span>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="menu_overflow"></div>
+            <!-- Бургер меню -->
+            <div class="menu_icon">
+                    <span></span>
             </div>
-        </div>
-        <div class="black_line"></div>
-        <div class="second_block_header flex align-center">
-            <div class>
-                <img src="../../resources/header_icons/Logo.png" alt="LogoImage">
-            </div>
-            <div class="info_text_in_second_block_header flex">
-                <p class="blue-text-about-us">О платформе</p>
-                <p>Площадкам</p>
-                <p>Гостям</p>
-            </div>
-            <div class="add_text_in_second_block_header flex">
-                <p><a link="#">Разместить запрос</a></p>
-                <p><a link="#">Добавить место</a></p>
-            </div>
+
+
         </div>
     </header>
 
-    <main>
-        <section class="label_about_us">
-            <div class="path_about_us flex">
-                <p class="p_grey_text">Главная </p>
-                <p class="p-about-platform">/ О платформе</p>
-            </div>
-            <div class="label_main_text_about_us flex">
-                <p>О платформе </p>
-                <p class="blue_text">Guest & Place</p>
-            </div>
-            <div class="label_description_about_us">
-                <p>Платформа, позволяющая общаться напрямую!</p>
-                <p>Помогаем каждому Гостю найти “свое” место.</p>
-                <p">Мы за «прозрачные отношения»!</p>
-            </div>  
-        </section>
-        <section class="platform_abilities_about_us">
-            <div class="label_platform_abilities_about_us">
-                <p>Возможности</p>
-                <p class="blue_text">Gp</p>
-                <p class="blue_text">platform</p>
-            </div>
-            <div class="rectangles_section_about_us flex justify-content-center">
-                <div class="white_rectangle_about_us guest_rectangle_about_us">
-                    <div class="rectangle_label_about_us flex align-center justify-content-center">
-                        <img src="./resources/images/identification_badge.svg" alt="identification_badge">
-                        <h3 class="rectangle_label_guest">Guest</h3>
-                    </div>
-                    <ul class="styled_list_about_us">
-                        <li>Прямая связь с площадкой в режиме реального времени</li>
-                        <li>Актуальная информация, меню, цены, свободные даты</li>
-                        <li>Прямое онлайн бронирование и оплата</li>
-                        <li>Заказ столика, банкета, доставка еды, аренда помещения под мероприятия — все в одном месте</li>
-                        <li>Онлайн просмотр</li>
-                        <li>Общение в чатах, видео-встречи, консультации менеджеров площадок</li>
-                        <li>Личный кабинет и вся информация в одном месте</li>
-                    </ul>
-                    <div class="button_block_in_white_rectangle">
-                        <button class="button_in_white_rectangle">Зарегистрироваться</button>
-                    </div>
+   <main>
+    <section class="label_about_us">
+        <div class="path_about_us flex justify-content-center">
+            <p class="p_grey_text" data-lang="home_breadcrumb">Главная</p>
+            <p class="p-about-platform" data-lang="about_breadcrumb">/ О платформе</p>
+        </div>
+        <div class="label_main_text_about_us flex justify-center">
+            <p data-lang="about_platform_label">О платформе</p>
+            <p class="blue_text">Guest & Place</p>
+        </div>
+        <div class="label_description_about_us">
+            <p data-lang="platform_description_1">Платформа, позволяющая общаться напрямую!</p>
+            <p data-lang="platform_description_2">Помогаем каждому Гостю найти “свое” место.</p>
+            <p data-lang="platform_description_3">Мы за «прозрачные отношения»!</p>
+        </div>  
+    </section>
+    <section class="platform_abilities_about_us">
+        <div class="label_platform_abilities_about_us flex justify-center align-center">
+            <p data-lang="abilities_label">Возможности</p>
+            <p class="blue_text">Gp</p>
+            <p class="blue_text">platform</p>
+        </div>
+        <div class="rectangles_section_about_us flex justify-content-center">
+            <div class="white_rectangle_about_us guest_rectangle_about_us">
+                <div class="rectangle_label_about_us flex align-center justify-content-center">
+                    <img src="./resources/images/identification_badge.svg" alt="identification_badge">
+                    <h3 class="rectangle_label_guest" data-lang="guest_label">Guest</h3>
                 </div>
-                <div class="white_rectangle_about_us place_rectangle_about_us">
-                    <div class="rectangle_label_about_us flex align-center justify-content-center">
-                        <img src="./resources/images/hot_cup.svg" alt="hot_cup">
-                        <h3>Place</h3>
-                    </div>
-                    <ul class="styled_list_about_us">
-                        <li>Прямая связь с потенциальными Гостями</li>
-                        <li>Чаты, видео-встречи</li>
-                        <li>Онлайн-показ площадки</li>
-                        <li>Прямые трансляции, новости, лента событий</li>
-                        <li>Прямое онлайн-бронирование и оплата</li>
-                        <li>Календарь бронирования в режиме реального времени</li>
-                        <li>Простое приложение в системе Учета (все в одном месте)</li>
-                    </ul>
-                    <div class="button_block_in_white_rectangle">
-                        <button class="button_in_white_rectangle">Добавить место</button>
-                    </div>
+                <ul class="styled_list_about_us">
+                    <li data-lang="guest_ability_1">Прямая связь с площадкой в режиме реального времени</li>
+                    <li data-lang="guest_ability_2">Актуальная информация, меню, цены, свободные даты</li>
+                    <li data-lang="guest_ability_3">Прямое онлайн бронирование и оплата</li>
+                    <li data-lang="guest_ability_4">Заказ столика, банкета, доставка еды, аренда помещения под мероприятия — все в одном месте</li>
+                    <li data-lang="guest_ability_5">Онлайн просмотр</li>
+                    <li data-lang="guest_ability_6">Общение в чатах, видео-встречи, консультации менеджеров площадок</li>
+                    <li data-lang="guest_ability_7">Личный кабинет и вся информация в одном месте</li>
+                </ul>
+                <div class="button_block_in_white_rectangle">
+                    <button class="button_in_white_rectangle" data-lang="register_button" id="register_button">Зарегистрироваться</button>
                 </div>
             </div>
-        </section>
-        <section class="third_section_about_us">
-            <div class="third_section_label flex">
-                <img src="../../resources/header_icons/Logo.png" alt="LogoImage">
-                <p>- проект от души :)</p>
-            </div>
-            <div class="third_section_description">
-                <p>Лидерство на рынке обеспечивается нашей талантливой командой, экспертами своего дела</p>
-            </div>
-            <div class="third_section_future flex">
-                <div class="lamp_block flex">
-                    <img src="./resources/images/lamp.svg" alt="lamp">
-                    <p>постоянный поиск новых решений и внедрение новых технологий</p>
+            <div class="white_rectangle_about_us place_rectangle_about_us">
+                <div class="rectangle_label_about_us flex align-center justify-content-center">
+                    <img src="./resources/images/hot_cup.svg" alt="hot_cup">
+                    <h3 data-lang="place_label">Place</h3>
                 </div>
-                <div class="reward_block flex">
-                    <img src="./resources/images/reward.svg" alt="reward">
-                    <p>мы хотим превзойти ожидания пользователей и свои тоже :)</p>
-                </div>
-            </div>
-        </section>
-        <section class="same_section_about_us flex justify-content-center">
-            <div class="same_section_text_block">
-                <div class="label_same_section_text_block flex">
-                    <h3>Наша</h3>
-                    <h3 class="blue_text">Миссия</h3>
-                </div>
-                <div class="label_description_same_section_text_block">
-                    <p>Соединяем гостей (людей) и места, создавая простоту <br>
-                        и прозрачность в “отношениях”. Предоставляем самые <br>
-                        современные технологии и инструменты для простого и легкого общения.</p>
-                        <div class="same_section_line_with_blue_text flex">
-                            <p>Наши эксперты помогают Гостям найти</p>
-                            <p class="blue_text">«то самое»</p>
-                            <p>место.</p>
-                        </div>
+                <ul class="styled_list_about_us">
+                    <li data-lang="place_ability_1">Прямая связь с потенциальными Гостями</li>
+                    <li data-lang="place_ability_2">Чаты, видео-встречи</li>
+                    <li data-lang="place_ability_3">Онлайн-показ площадки</li>
+                    <li data-lang="place_ability_4">Прямые трансляции, новости, лента событий</li>
+                    <li data-lang="place_ability_5">Прямое онлайн-бронирование и оплата</li>
+                    <li data-lang="place_ability_6">Календарь бронирования в режиме реального времени</li>
+                    <li data-lang="place_ability_7">Простое приложение в системе Учета (все в одном месте)</li>
+                </ul>
+                <div class="button_block_in_white_rectangle">
+                    <button class="button_in_white_rectangle" data-lang="show_at_list_button" id="show_at_list_button">Показать списком</button>
                 </div>
             </div>
-            <img src="./resources/images/party.png" alt="party-images">
-        </section>
-        <section class="same_section_about_us same_section_margin flex justify-content-center">
-            <img src="./resources/images/baloons.png" alt="party-images">
-            <div class="same_section_text_block">
-                <div class="label_same_section_text_block flex">
-                    <h3>История</h3>
-                    <h3 class="blue_text">Создания</h3>
-                </div>
-                <div class="label_description_same_section_text_block">
-                    <p>Соединяем гостей (людей) и места, создавая простоту <br>
-                        и прозрачность в “отношениях”. Предоставляем самые <br>
-                        современные технологии и инструменты для простого и легкого общения.</p>
-                        <div class="same_section_line_with_blue_text flex">
-                            <p>Наши эксперты помогают Гостям найти</p>
-                            <p class="blue_text">«то самое»</p>
-                            <p>место.</p>
-                        </div>
+        </div>
+    </section>
+    <section class="third_section_about_us">
+        <div class="third_section_label flex justify-center">
+            <img src="../../resources/header_icons/Logo.png" alt="LogoImage">
+            <p data-lang="project_label">— проект от души :)</p>
+        </div>
+        <div class="third_section_description">
+            <p data-lang="team_description">Лидерство на рынке обеспечивается нашей талантливой командой, экспертами своего дела</p>
+        </div>
+        <div class="third_section_future flex">
+            <div class="lamp_block flex">
+                <img src="./resources/images/lamp.svg" alt="lamp">
+                <p data-lang="innovation_description">постоянный поиск новых решений и внедрение новых технологий</p>
+            </div>
+            <div class="reward_block flex">
+                <img src="./resources/images/reward.svg" alt="reward">
+                <p data-lang="exceed_expectations">мы хотим превзойти ожидания пользователей и свои тоже :)</p>
+            </div>
+        </div>
+    </section>
+    <section class="same_section_about_us first_same_section flex justify-content-center">
+        <div class="same_section_text_block">
+            <div class="label_same_section_text_block flex">
+                <h3 data-lang="mission_label">Наша</h3>
+                <h3 class="blue_text" data-lang="mission_label_blue">Миссия</h3>
+            </div>
+            <div class="label_description_same_section_text_block">
+                <p data-lang="mission_description">Соединяем гостей (людей) и места, создавая простоту и прозрачность в “отношениях”. Предоставляем самые современные технологии и инструменты для простого и легкого общения.</p>
+                <div class="same_section_line_with_blue_text flex">
+                    <p data-lang="mission_experts_1">Наши эксперты помогают Гостям найти
+                    <span class="blue_text" data-lang="mission_experts_blue">«то самое»</span>
+                    <span data-lang="mission_experts_2">место.</span>
+                    </p>
                 </div>
             </div>
-        </section>
-        <section class="our_news_about_us">
-            <div class="our_news_label flex justify-content-center">
-                <h3>Наши</h3>
-                <h3 class="blue_text">Новости</h3>
+        </div>
+        <img src="./resources/images/party.png" alt="party-images">
+    </section>
+    <section class="same_section_about_us second_same_section same_section_margin flex justify-content-center">
+        <img src="./resources/images/baloons.png" alt="party-images">
+        <div class="same_section_text_block">
+            <div class="label_same_section_text_block flex">
+                <h3 data-lang="history_label">История</h3>
+                <h3 class="blue_text" data-lang="history_label_blue">Создания</h3>
             </div>
-            <div class="rectangle_container flex justify-content-center">
-                <div class="card">
-                    <div class="white_rectangle">
-                        <p>Площадкам</p>
-                        <div class="round"></div>
-                    </div>
-                    <div class="platform_round same_round">
-                        <img src="./resources/images/people.svg" alt="people_icon">
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="white_rectangle">
-                        <p>Обновления</p>
-                        <div class="round"></div>
-                    </div>
-                    <div class="update_round same_round">
-                        <img src="./resources/images/rotate-right.svg" alt="people_icon">
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="white_rectangle">
-                        <p>Новые продукты GP</p>
-                        <div class="round"></div>
-                    </div>
-                    <div class="new_product_round same_round">
-                        <img src="./resources/images/magic-star.svg" alt="people_icon">
-                    </div>
+            <div class="label_description_same_section_text_block">
+                <p data-lang="history_description">Наша история началась с идеи упростить поиск идеального места для каждого гостя. Мы стремимся создать платформу, где общение между гостями и площадками будет максимально удобным и прозрачным.</p>
+                <div class="same_section_line_with_blue_text flex">
+                    <p data-lang="history_experts_1">Мы вдохновляемся стремлением сделать каждое событие <span class="blue_text" data-lang="history_experts_blue">особенным</span> 
+                        <span data-lang="history_experts_2">и незабываемым.</span></p>
                 </div>
             </div>
-        </section>
-
-
-    </main>
+        </div>
+    </section>
+    <section class="our_news_about_us">
+        <div class="our_news_label flex justify-content-center">
+            <h3 data-lang="news_label">Наши</h3>
+            <h3 class="blue_text" data-lang="news_label_blue">Новости</h3>
+        </div>
+        <div class="rectangle_container flex justify-content-center">
+            <div class="card">
+                <div class="white_rectangle">
+                    <p data-lang="news_venues">Площадкам</p>
+                    <div class="round"></div>
+                </div>
+                <div class="platform_round same_round">
+                    <img src="./resources/images/people.svg" alt="people_icon">
+                </div>
+            </div>
+            <div class="card">
+                <div class="white_rectangle">
+                    <p data-lang="news_updates">Обновления</p>
+                    <div class="round"></div>
+                </div>
+                <div class="update_round same_round">
+                    <img src="./resources/images/rotate-right.svg" alt="people_icon">
+                </div>
+            </div>
+            <div class="card">
+                <div class="white_rectangle">
+                    <p data-lang="news_products">Новые продукты GP</p>
+                    <div class="round"></div>
+                </div>
+                <div class="new_product_round same_round">
+                    <img src="./resources/images/magic-star.svg" alt="people_icon">
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
 
 
 
     <footer>
         <div class="flag1">
-            <img src="../../resources/footer/Flag1.svg">
+            <img src="/resources/footer/Flag1.svg">
         </div>
         <div class="flag2">
-            <img src="../../resources/footer/Flag2.svg">
+            <img src="/resources/footer/Flag2.svg">
         </div>
         <div class="black_line"></div>
-        <div class="footer_div flex align-center justify-content-space-between">
+        <div class="footer_div flex align-center">
             <div class>
-                <img src="../../resources/header_icons/Logo.png" alt="LogoImage">
+                <img src="/resources/header_icons/Logo.png" alt="LogoImage" id="footer_logo_image">
             </div>
-            <div class="footer_info flex align-center">
-                <p>О проекте</p>
-                <p>Площадкам</p>
-                <p>Гостям</p>
-                <p>Контакты</p>
-                <p>Помощь</p>
-                <p>Вакансии</p>
-                <p>Техподдержка</p>
+            <div class="footer_info flex align-center flex-direction-column">
+                <p class="contact_label" data-lang="footer_contacts">Контакты:</p>
+                <p><span class="footer_bold_text">Email: </span>ilyasidarenko@gmail.com</p>
+                <p><span class="footer_bold_text" data-lang="footer_phone_label">Телефон: </span>+375 (29) 123-45-67</p>
+                <p><span class="footer_bold_text" data-lang="footer_website_label">Сайт: </span>GitHub</p>
             </div>
         </div>
-
+        <div class="black_line second_black_line"></div>
+        <p class="coopyright" data-lang="footer_copyright">Авторское право © Guest Place | Разработано IlyaSid231</p>
     </footer>
+
+    <script type="module" src="./js/aboutUs.js"></script>
+    <script src="/js/theme.js"></script>
+    <script type="module" src="/js/navigation.js"></script>
+    <script type="module" src="/js/translate.js"></script>
 </body>
 </html>

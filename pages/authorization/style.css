@@ -71,7 +71,6 @@ input{
     padding: 9px 25px;
 
     border-radius: 50px;
-    background: var(--bg-color);
     box-shadow: 0px 4px 15px 0px rgba(105, 78, 75, 0.14);
     border: 1px solid transparent;
 
@@ -173,7 +172,7 @@ input:focus{
 /*--------Registration form--------*/
 
 #registration_form{
-    background: var(--bg-color);
+    background: var(--bg-color-section-2);
     max-width: 700px;
     padding: 20px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);

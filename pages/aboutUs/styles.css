@@ -8,7 +8,8 @@
     font-style: normal;
     font-weight: 400;
     line-height: 135%;
-    max-width: 158px;
+    /* max-width: 158px; */
+    width: auto;
     margin: 50px auto 0 auto;
 }
 
@@ -17,10 +18,13 @@ p.p_grey_text{
     white-space: pre;
 }
 
+.p-about-platform{
+    color: var(--text-dark);
+}
 
 .label_main_text_about_us{
-    max-width: 565px;
-    height: 63px;
+    width: auto;
+    height: auto;
     font-family: 'PoiretOne', sans-serif;
     font-size: 4.2rem;
     font-style: normal;
@@ -28,8 +32,11 @@ p.p_grey_text{
     line-height: 150%;
     text-transform: uppercase;
     white-space: pre;
+    padding: 0 15px;
 
-    margin: 36px auto 0 auto;
+    color: var(--text-dark);
+    margin-top: 36px;
+
 }
 
 .label_description_about_us{
@@ -38,6 +45,7 @@ p.p_grey_text{
     font-size: 1.6rem;
     font-weight: 400;
     line-height: 130%;
+    color: var(--text-dark);
 
     margin-top: 25px;
 }
@@ -45,7 +53,6 @@ p.p_grey_text{
 /* ---------- Abilities Gp platform IN About Us ----------- */
 
 .label_platform_abilities_about_us{
-    display: flex;
     gap: 10px;
     flex-wrap: wrap;
     max-width: 453px;
@@ -56,9 +63,10 @@ p.p_grey_text{
     font-weight: 400;
     line-height: 150%;
     text-transform: uppercase;
+    color: var(--text-dark);
 
+    margin: 0 auto;
     margin-top: 101px;
-    margin-left: 34.3056%;
     align-items: center
     
 }
@@ -67,20 +75,23 @@ p.p_grey_text{
     margin-top: 53px;
     gap: 30px;
     z-index: 1;
+    flex-wrap: wrap;
 }
 
 .white_rectangle_about_us{
     position: relative;
-    width: 37.5%;
+    width: 540px;
     min-height: 500px;
     border-radius: 40px;
     background-color: var(--bg-color);
+    border: 1px solid var(--white-color);
     box-shadow: 0px 4px 15px 0px rgba(105, 78, 75, 0.14);
 
 }
 
 .rectangle_label_guest{
     margin-left: -1px;
+    color: var(--text-dark);
 }
 
 .guest_rectangle_about_us::after{
@@ -110,6 +121,7 @@ p.p_grey_text{
 .rectangle_label_about_us{
     gap: 10px;
     margin-top: 40px;
+    color: var(--text-dark);
 }
 
 .rectangle_label_about_us h3{
@@ -124,7 +136,7 @@ p.p_grey_text{
     padding: 0;
     font-size: 14px;
     line-height: 135%;
-    color: var(--text-regular);
+    color: var(--text-gray-color);
 
     margin-top: 30px;
     margin-left: 45px;
@@ -159,8 +171,11 @@ p.p_grey_text{
 }
 
 .button_block_in_white_rectangle{
+    position: absolute;
+    bottom: 42px;
     width: 228px;
-    margin: 33px auto 0 auto;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .button_in_white_rectangle{
@@ -174,7 +189,7 @@ p.p_grey_text{
     cursor: pointer;
 
     text-align: center;
-    color: var(--white-color);
+    color: var(--bg-color);
     font-size: 1.6rem;
     font-weight: 700;
 }
@@ -186,7 +201,7 @@ p.p_grey_text{
 /* ------------------------- Advantages section (third-section)------------------------ */
 
 .third_section_about_us{
-    width: 77.0833%;
+    width: 1110px;
     min-height: 364px;
     border-radius: 40px;
     background-color: var(--ultra-light-blue);
@@ -196,7 +211,8 @@ p.p_grey_text{
 }
 
 .third_section_label{
-    max-width: 503px;
+    /* max-width: 503px; */
+    width: auto;
     min-height: 30px;
     margin: 72px auto 33px auto;
     gap: 5px;
@@ -212,7 +228,8 @@ p.p_grey_text{
 .third_section_label p{
     color: #333;
     text-align: center;
-    width: 231px;
+    width: auto;
+
 
     font-size: 2.6rem;
     height: 26px;
@@ -233,6 +250,11 @@ p.p_grey_text{
     gap: 30px;
 }
 
+.third_section_future img{
+    width: 44px;
+    height: 44px;
+}
+
 .third_section_future p{
     max-width: 386px;
     font-size: 16px;
@@ -249,10 +271,13 @@ p.p_grey_text{
 .same_section_about_us{
     gap: 95px;
     margin-top: 100px;
+    flex-wrap: wrap;
+    padding: 0 15px;
 }
 
 .label_same_section_text_block{
     gap: 10px;
+    color: var(--text-dark);
 }
 
 .label_same_section_text_block h3{
@@ -274,6 +299,7 @@ p.p_grey_text{
 
 .label_description_same_section_text_block{
     margin-top: 41px;
+    color: var(--text-dark);
 }
 
 .same_section_line_with_blue_text{
@@ -293,6 +319,7 @@ p.p_grey_text{
 .our_news_label{
     gap: 10px;
     padding-left: 2px;
+    color: var(--text-dark);
 }
 
 .our_news_label h3{
@@ -308,6 +335,8 @@ p.p_grey_text{
 .rectangle_container{
     margin-top: 75px;
     gap: 29px;
+    flex-wrap: wrap;
+
 }
 
 .card{
@@ -320,7 +349,7 @@ p.p_grey_text{
     margin-top: 44px;
     width: 350px;
     min-height: 225px;
-    background-color: #ffffff;
+    background-color: var(--bg-color-section-2);
     box-shadow: 0px 4px 15px rgba(105, 78, 75, 0.14);
     border-radius: 40px;
     overflow: clip;
@@ -334,6 +363,7 @@ p.p_grey_text{
     font-size: 1.8rem;
     font-weight: 500;
     line-height: 130%;
+    color: var(--text-dark);
 }
 
 .white_rectangle::before{
@@ -378,4 +408,273 @@ p.p_grey_text{
 
 .new_product_round{
     background-color: #EF8062;
+}
+
+
+
+@media (max-width: 1280px){
+    .rectangles_section_about_us{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .place_rectangle_about_us::after{
+        display: none;
+    }
+
+}
+
+@media (max-width: 1150px){
+    .same_section_about_us{
+        gap: 50px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .second_same_section img{
+        order: 2;
+    }
+
+    .label_same_section_text_block{
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .same_section_margin{
+        margin-top: 100px;
+    }
+
+    .label_description_same_section_text_block{
+        margin-top: 30px;
+    }
+
+    .third_section_about_us{
+        margin: 100px 15px 0;
+        width: auto;
+    }
+
+    .lamp_block{
+        padding-left: 15px;
+    }
+
+    .reward_block{
+        padding-right: 15px;
+    }
+
+    .third_section_description{
+        padding: 0 15px;
+    }
+
+}
+
+@media (max-width: 580px){
+    .guest_rectangle_about_us::after{
+        display: none;
+    }
+
+    .label_main_text_about_us{
+        white-space: unset;
+        flex-wrap: wrap;
+    }
+
+    .white_rectangle_about_us{
+        width: auto;
+        height: auto;
+        margin: 0 15px;
+    }
+
+    .styled_list_about_us{
+        padding-right: 15px;
+        padding-bottom: 20px;
+        margin-left: 15px;
+    }
+
+    .third_section_future{
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .reward_block, .lamp_block{
+        padding: 15px;
+    }
+
+    .reward_block img, .lamp_block img{
+        width: 44px;
+        height: 44px;
+    }
+
+    .reward_block, .lamp_block{
+        margin: 0 auto;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 250px;
+        gap: 10px;
+    }
+
+    .reward_block{
+        padding-bottom: 81px;
+    }
+
+    .same_section_about_us img{
+        width: 290px;
+        height: 173px;
+        border-radius: 40px;
+    }
+
+    .third_section_future{
+        margin-top: 25px;
+    }
+
+    .white_rectangle_about_us{
+        max-width: 290px;
+        height: 585px;
+    }
+
+    .button_block_in_white_rectangle{
+        width: auto;
+        bottom: 40px;
+    }
+
+    .button_in_white_rectangle{
+        width: 260px;
+        height: 52px;
+    }
+
+    .card .white_rectangle{
+        width: 290px;
+        min-height: auto;
+        height: 186px;
+    }
+
+    .white_rectangle::before{
+        width: 102px;
+        height: 114px;
+    }
+
+    .same_round{
+        width: 82px;
+        height: 82px;
+        top: 10px;
+    }
+
+    .rectangle_container{
+        margin-top: 11px;
+        gap: 2px;
+    }
+
+    .white_rectangle p{
+        margin-top: 93px;
+    }
+
+    .same_round img{
+        top: 22px;
+    }
+
+    .our_news_label h3, .label_main_text_about_us p{
+        font-size: 26px;
+    }
+
+    .our_news_about_us{
+        margin-top: 80px;
+    }
+
+    .label_main_text_about_us p{
+        line-height: 150%;
+    }
+
+    .label_main_text_about_us{
+        margin-top: 10px;
+    }
+
+    .path_about_us{
+        margin-top: 25px;
+    }
+
+    .label_description_about_us{
+        margin-top: 20px;
+        padding: 0 15px;
+    }
+
+    .label_platform_abilities_about_us p{
+        font-size: 22px;
+        line-height: 150%;
+    }
+
+    .label_platform_abilities_about_us{
+        padding: 0 15px;
+        gap: 0;
+        margin-top: 54px;
+    }
+
+    .rectangles_section_about_us{
+        margin-top: 26px;
+    }
+
+    .place_rectangle_about_us{
+        height: 528px;
+    }
+
+    .place_rectangle_about_us .styled_list_about_us li{
+        margin-bottom: 14px !important;
+    }
+
+    .rectangles_section_about_us{
+        gap: 49px;
+    }
+
+    .third_section_about_us{
+        margin-top: 79px;
+    }
+
+    .third_section_label img{
+        width: 251px;
+        height: 28px;
+    }
+
+    .third_section_label{
+        margin-top: 59px;
+        gap: 5px;
+        margin-bottom: 26px;
+    }
+
+    .third_section_label p{
+        font-size: 24px;
+    }
+
+    .third_section_future{
+        margin-top: 10px;
+    }
+
+    .label_same_section_text_block h3{
+        font-size: 26px;
+    }
+
+    .same_section_about_us{
+        margin-top: 52px;
+        gap: 30px;
+    }
+
+    .label_same_section_text_block{
+        gap: 5px;
+    }
+
+    .same_section_margin{
+        margin-top: 22px;
+    }
+
+    .same_section_line_with_blue_text{
+        padding-bottom: 24px;
+    }
+
+    .second_same_section .same_section_line_with_blue_text{
+        padding-bottom: 0;
+    }
+
+    footer{
+        margin-top: 55px;
+    }
 }

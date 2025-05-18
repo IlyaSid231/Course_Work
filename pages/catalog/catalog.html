@@ -4,122 +4,167 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catalog</title>
-    <!-- <base href="/"> -->
     <link rel="stylesheet" href="/css/fonts.css">
     <link rel="stylesheet" href="/css/base.css">
-    <link rel="stylesheet" href="/pages/catalog/styles.css">
+    <link rel="stylesheet" href="./styles.css">
     <link rel="icon" href="/resources/favicon/favicon.svg" type="image/x-icon">
     <link rel="stylesheet" href="/css/modal.css">
 </head>
 <body>
+     <div id="preloader">
+        <img src="/resources/header_icons/Logo.png" alt="Loading..." class="preloader-logo">
+    </div>
     <header>
-        <div class="first_block_header flex justify-content-space-between ">
-            <div class="location_in_header flex align-center ">
-                <img src="/resources/header_icons/MapPin.svg" alt="MapPinImage">
-                <p>Москва</p>
+        <div class="first_block_header flex align-center">
+            <div class="header_logo">
+               <span class="image-placeholder" data-alt="LogoImage">
+                    <img src="/resources/header_icons/Logo.png" alt="LogoImage" id="header_logo_image" class="accessibility-image">
+                </span>
             </div>
-            <div class="icons_in_header flex">
-                <img src="/resources/header_icons/Favorite.svg" alt="FavoriteIconImage">
-                <img src="/resources/header_icons/ChatCircle.svg" alt="ChatCircleImage">
-                <img src="/resources/header_icons/User.svg" alt="UserImage">
+            <nav class="body_menu flex">
+                <div class="menu_background_text flex align-center">
+                    <div class="info_text_in_first_block_header flex align-center">
+                        <p id="homeLink" data-lang="header_home-title">Домой</p>
+                        <p id="contactsLink" data-lang="header_contacts-title">Contacts</p>
+                        <p id="aboutLink" data-lang="header_about-title">About</p>
+                    </div>
+                </div>
+                <div class="all_buttons_in_header flex align-center justify-center">
+                    <img src="/resources/header_icons/open_eye.png" alt="blind_ver" class="blind_version_btn" id="blind_version_btn">
+                    <label class="switch">
+                        <span><img src="/resources/header_icons/light-mode.png" class="light_image" alt="light_icon"></span>
+                        <span><img src="/resources/header_icons/dark-mode.png" class="dark_image" alt="dark_icon"></span>
+                        <input type="checkbox">
+                        <span class="move"></span>
+                    </label>
+                    <button type="button" class="languages_btn" data-btn="ru" style="display: none;">Ru</button>
+                    <button type="button" class="languages_btn" data-btn="en" style="display: block;">En</button>
+                    <div class="icons_in_header flex">
+                        <span class="image-placeholder" data-alt="FavoriteImage">
+                            <img src="/resources/header_icons/Favorite.svg" alt="FavoriteIconImage" id="header_favorite_button" class="accessibility-image">
+                        </span>
+                        <span class="image-placeholder" data-alt="ChatCircleImage">
+                            <img src="/resources/header_icons/ChatCircle.svg" alt="ChatImage" id="header_request_button" class="accessibility-image">
+                        </span>
+                        <span class="image-placeholder" data-alt="UserImage">
+                            <img src="/resources/header_icons/User.svg" alt="UserImage" id="header_user_button" class="accessibility-image">
+                        </span>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="menu_overflow"></div>
+            <!-- Бургер меню -->
+            <div class="menu_icon">
+                    <span></span>
             </div>
-        </div>
-        <div class="black_line"></div>
-        <div class="second_block_header flex align-center">
-            <div class>
-                <img src="/resources/header_icons/Logo.png" alt="LogoImage">
-            </div>
-            <div class="info_text_in_second_block_header flex">
-                <p class="blue-text-about-us">О платформе</p>
-                <p>Площадкам</p>
-                <p>Гостям</p>
-            </div>
-            <div class="add_text_in_second_block_header flex">
-                <p><a link="#">Разместить запрос</a></p>
-                <p><a link="#">Добавить место</a></p>
-            </div>
+
+
         </div>
     </header>
 
-    <div class="path_about_us flex">
-        <p class="p_grey_text">Главная </p>
-        <p class="p-about-platform">/ Поиск (показать списком)</p>
+    <div class="path_about_us flex justify-center align-center">
+        <p class="p_grey_text" data-lang="breadcrumb_home">Главная </p>
+        <p class="p-about-platform" data-lang="breadcrumb_search_list">/ Поиск (показать списком)</p>
     </div>
     <section class="label_section flex justify-center">
-        <p>Найдено </p> <span id="total-count" class="blue_text"> </span> 
+        <p data-lang="search_found">Найдено </p> <span id="total-count" class="blue_text"> </span> 
         <p id="platform_form" class="blue_text"> </p>
     </section>
 
     <!-- Контейнер с фильтрами и поиском ------------------------------------------>
     <div class="search_and_filter_block flex ">
-        <div class="input_text">
-            <input type="text" class="search_input" placeholder="Введите название площадки">
-        </div>
-        <div class="filter_dropdown flex align-center justify-center">
-            <select class="select_style filter_platform_type" id="filter_platform_type">
-                <option value="">Тип площадки</option>
-                <option value="conference_hall">Конференц-зал</option>
-                <option value="loft">Лофт</option>
-                <option value="banquet_hall">Банкетный зал</option>
-                <option value="rooftop_deck">Площадка на крыше</option>
-                <option value="manor">Усадьба</option>
-                <option value="theater_hall">Театральный зал</option>
-                <option value="greenhouse">Оранжерея</option>
-                <option value="club_hall">Клубный зал</option>
-            </select>
-            <img src="/resources/images/arrow_down.png" alt="arrow_down">
-        </div>
-        <div class="filter_dropdown flex align-center justify-center">
-            <select class="select_style filter_features" id="filter_features">
-                <option value="">Особенности</option>
-                <option value="parking">Парковка</option>
-                <option value="vip">VIP</option>
-                <option value="fireplace">Камин</option>
-            </select>
-            <img src="/resources/images/arrow_down.png" alt="arrow_down">
-        </div>
-        <div class="filter_dropdown flex align-center justify-center">
-            <select class="select_style filter_capacity" id="filter_capacity">
-                <option value="">Вместимость</option>
-                <option value="less_30">До 30 чел</option>
-                <option value="30_100">30-100 чел</option>
-                <option value="more_100">Более 100 чел</option>
-            </select>
-            <img src="/resources/images/arrow_down.png" alt="arrow_down">
-        </div>
-        <div class="filter_dropdown flex align-center justify-center">
-            <select class="select_style filter_price" id="filter_price">
-                <option value="">Стоимость</option>
-                <option value="less_3000">До 3000</option>
-                <option value="3000_5000">3000 - 5000</option>
-                <option value="more_5000">Более 5000</option>
-            </select>
-            <img src="/resources/images/arrow_down.png" alt="arrow_down">
-        </div>
-        <div class="filter_dropdown flex align-center justify-center">
-            <select class="select_style filter_more" id="filter_more">
-                <option value="">Ещё фильтры</option>
-                <option value="sokolniki">Сокольники</option>
-                <option value="mayakovskaya">Маяковская</option>
-                <option value="cutuzovskaya">Кутузовская</option>
-            </select>
-            <img src="/resources/images/arrow_down.png" alt="arrow_down">
-        </div>
-    </div>
+                <div class="input_text">
+                    <input type="text" class="search_input" placeholder="Введите название площадки" data-lang="search_placeholder">
+                </div>
+                <div class="filter_overflow"></div>
+                <div class="filter_container" id="filter_container">
+                    <div class="filter_dropdown flex align-center justify-center">
+                        <select class="select_style filter_platform_type" id="filter_platform_type" >
+                            <option value="" data-lang="filter_platform_type">Тип площадки</option>
+                            <option value="conference_hall" data-lang="platform_conference_hall">Конференц-зал</option>
+                            <option value="loft" data-lang="platform_loft">Лофт</option>
+                            <option value="banquet_hall" data-lang="platform_banquet_hall">Банкетный зал</option>
+                            <option value="rooftop_deck" data-lang="platform_rooftop_deck">Площадка на крыше</option>
+                            <option value="manor" data-lang="platform_manor">Усадьба</option>
+                            <option value="theater_hall" data-lang="platform_theater_hall">Театральный зал</option>
+                            <option value="greenhouse" data-lang="platform_greenhouse">Оранжерея</option>
+                            <option value="club_hall" data-lang="platform_club_hall">Клубный зал</option>
+                        </select>
+                        <img src="/resources/images/arrow_down.png" alt="arrow_down">
+                    </div>
+                    <div class="filter_dropdown flex align-center justify-center">
+                        <select class="select_style filter_features" id="filter_features">
+                            <option value="" data-lang="header_features-title">Особенности</option>
+                            <option value="parking" data-lang="feature_parking">Парковка</option>
+                            <option value="vip">VIP</option>
+                            <option value="fireplace" data-lang="feature_fireplace">Камин</option>
+                        </select>
+                        <img src="/resources/images/arrow_down.png" alt="arrow_down">
+                    </div>
+                    <div class="filter_dropdown flex align-center justify-center">
+                        <select class="select_style filter_capacity" id="filter_capacity">
+                            <option value="" data-lang="filter_capacity">Вместимость</option>
+                            <option value="less_30" data-lang="capacity_less_30">До 30 чел</option>
+                            <option value="30_100" data-lang="capacity_30_100">30-100 чел</option>
+                            <option value="more_100" data-lang="capacity_more_100">Более 100 чел</option>
+                        </select>
+                        <img src="/resources/images/arrow_down.png" alt="arrow_down">
+                    </div>
+                    <div class="filter_dropdown flex align-center justify-center">
+                        <select class="select_style filter_price" id="filter_price">
+                            <option value="" data-lang="filter_price">Стоимость</option>
+                            <option value="less_3000" data-lang="price_less_3000">До 3000</option>
+                            <option value="3000_5000" data-lang="price_3000_5000">3000 - 5000</option>
+                            <option value="more_5000" data-lang="price_more_5000">Более 5000</option>
+                        </select>
+                        <img src="/resources/images/arrow_down.png" alt="arrow_down">
+                    </div>
+                    <div class="filter_dropdown flex align-center justify-center">
+                        <select class="select_style filter_more" id="filter_more">
+                            <option value="" data-lang="filter_more">Ещё фильтры</option>
+                            <option value="sokolniki" data-lang="location_sokolniki">Сокольники</option>
+                            <option value="mayakovskaya" data-lang="location_mayakovskaya">Маяковская</option>
+                            <option value="cutuzovskaya" data-lang="location_kutuzovskaya">Кутузовская</option>
+                        </select>
+                        <img src="/resources/images/arrow_down.png" alt="arrow_down">
+                    </div>
+                </div>
+                <button class="filter_trigger" aria-label="Open filters" aria-controls="filter_container" aria-expanded="false">
+                    <span class="image-placeholder" data-alt="Filter Icon">
+                        <img src="/resources/images/filter_icon.svg" alt="Filter Icon" class="accessibility-image">
+                    </span>
+                </button>
+            </div>
 <!-- -------------------------------------------------------------------------------->
 
     <div class="sort_with_button flex justify-content-space-between align-center">
         <div class="sort_container flex align-center">
-            <img id="sort-order-icon" src="/resources/images/arrowsDownUp.svg" class="sort-order-icon" alt="arrowsDownUp">
+            <div class="arrows_UpDown flex align-center justify-center" id="sort-order-icon" >
+                <span class="arrow" id="down-arrow-1">&#8595;</span>
+                <span class="arrow" id="down-arrow-2" style="display: none;">&#8595;</span>
+                <span class="arrow" id="up-arrow-1">&#8593;</span>
+                <span class="arrow" id="up-arrow-2" style="display: none;">&#8593;</span>
+            </div>
             <select class="select_style sort_parameters" id="sort_parameters">
-                <option value="">Выберите критерий сортировки</option>
-                <option value="price">По цене</option>
-                <option value="name">По названию</option>
-                <option value="rating">По рейтингу</option>
+                <option value="" data-lang="select_sort_criterion">Выберите критерий сортировки</option>
+                <option value="price" data-lang="sort_by_price">По цене</option>
+                <option value="name" data-lang="sort_by_name">По названию</option>
+                <option value="rating" data-lang="sort_by_rating">По рейтингу</option>
             </select>
             <img src="/resources/images/arrow_down.png" alt="arrow_down">
         </div>
-        <button class="show_in_map">Показать на карте</button>
+        <button class="yandex_map" id="yandex_map" data-lang="show_on_map">Показать на карте</button>
+
+        <!-- Modal window for Yandex map -->
+        <div class="modal-overlay-yandex" bis_skin_checked="1">
+            <div class="modal_yandex" bis_skin_checked="1">
+                <span class="close-button-map">x</span>
+                <div class="map_1" bis_skin_checked="1"><iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A484176a18dba7e80e1e3bbfc1573b82e56f6763f85422e83fd1da633272acfee&amp;source=constructor" width="800" height="600" frameborder="0" bis_size="{&quot;x&quot;:137,&quot;y&quot;:7550,&quot;w&quot;:800,&quot;h&quot;:600,&quot;abs_x&quot;:137,&quot;abs_y&quot;:7550}" bis_id="fr_uwy0spgll4ld2f9iua0bq6" bis_depth="0" bis_chainid="3"></iframe></div>
+                <div class="map_2" bis_skin_checked="1"></div>
+            </div>
+        </div>
+
     </div>
 
 
@@ -133,9 +178,9 @@
         <span id="currentPage">1</span>
         <button id="nextPageBtn" title="Вперед"><span>&gt;</span></button>
         <button id="lastPageBtn" title="В конец"><span>&gt;&gt;</span></button>
-      </div>
+    </div>
 
-      <footer>
+    <footer>
         <div class="flag1">
             <img src="/resources/footer/Flag1.svg">
         </div>
@@ -143,22 +188,25 @@
             <img src="/resources/footer/Flag2.svg">
         </div>
         <div class="black_line"></div>
-        <div class="footer_div flex align-center justify-content-space-between">
+        <div class="footer_div flex align-center">
             <div class>
-                <img src="/resources/header_icons/Logo.png" alt="LogoImage">
+                <img src="/resources/header_icons/Logo.png" alt="LogoImage" id="footer_logo_image">
             </div>
-            <div class="footer_info flex align-center">
-                <p>О проекте</p>
-                <p>Площадкам</p>
-                <p>Гостям</p>
-                <p>Контакты</p>
-                <p>Помощь</p>
-                <p>Вакансии</p>
-                <p>Техподдержка</p>
+            <div class="footer_info flex align-center flex-direction-column">
+                <p class="contact_label" data-lang="footer_contacts">Контакты:</p>
+                <p><span class="footer_bold_text">Email: </span>ilyasidarenko@gmail.com</p>
+                <p><span class="footer_bold_text" data-lang="footer_phone_label">Телефон: </span>+375 (29) 123-45-67</p>
+                <p><span class="footer_bold_text" data-lang="footer_website_label">Сайт: </span>GitHub</p>
             </div>
         </div>
+        <div class="black_line second_black_line"></div>
+        <p class="coopyright" data-lang="footer_copyright">Авторское право © Guest Place | Разработано IlyaSid231</p>
     </footer>
 
     <script type="module" src="./js/catalog.js"></script>
+    <script src="/js/theme.js"></script>
+    <script type="module" src="/js/navigation.js"></script>
+    <script type="module" src="/js/yandex_map.js"></script>
+    <script type="module" src="/js/translate.js"></script>
 </body>
 </html>

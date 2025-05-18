@@ -111,7 +111,7 @@ document.getElementById('registration_form').addEventListener('submit',async fun
                 role: currentRole
             };
             if (currentRole !== "admin") {
-                localStorage.setItem("currentUserName", JSON.stringify(user.username));
+                localStorage.setItem("currentUserName", user.username);
             }
             users.push(user);
             await updateUsers(users);
