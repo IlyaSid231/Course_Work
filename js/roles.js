@@ -28,6 +28,25 @@ function openModal(modalId) {
     modal.classList.add("admin-modal--visible");
     overlay.classList.add("modal-overlay--visible");
     document.body.classList.add("lock");
+    modal.querySelectorAll("input").forEach(input_element => {
+        if (input_element.id == "edit-phone" || input_element.id == "add-phone"){
+            input_element.nextElementSibling.remove();
+            input_element.classList.remove("field_error");
+            return;
+        }
+        if (input_element.nextElementSibling && input_element.nextElementSibling.classList.contains('error_message')) {
+            input_element.nextElementSibling.remove();
+            input_element.classList.remove("field_error");
+        }
+        if(input_element.id === "edit-id"){
+            const idSection = document.getElementById("id_section");
+            if(idSection.nextElementSibling && idSection.nextElementSibling.classList.contains('error_message')){
+                idSection.nextElementSibling.remove();
+                idSection.classList.remove("field_error");
+            }
+        }
+        input_element.value = '';
+    })
 }
 
 // Закрытие модального окна
@@ -134,6 +153,9 @@ document.getElementById('find_rest_inf').addEventListener('click', async () => {
   const idSection = document.getElementById('id_section');
 
   if (!restaurantId) {
+    if(idSection.nextElementSibling && idSection.nextElementSibling.classList.contains('error_message')){
+            idSection.nextElementSibling.remove();
+    }
     showError(idSection, errorMessages["input_restaurant"][currentLanguage]);
     return;
   }
@@ -256,6 +278,48 @@ async function deleteChoozenRestaurant(){
 }
 
 
+// REMOVE LOCAL STORAGE _______________________________________
+
+function removeLocalStorage(){
+    const currentUserName = localStorage.getItem('currentUserName');
+
+var checkBox_1 = document.querySelector(".switch");
+    const event = new Event('change');
+    checkBox_1.dispatchEvent(event);
+    document.documentElement.classList.remove('dark');
+    document.querySelector(".switch input").checked = false;
+    document.getElementById("header_favorite_button").style.filter = "brightness(1)";
+    document.getElementById("header_request_button").style.filter = "brightness(1)";
+    document.getElementById("header_user_button").style.filter = "brightness(1)";
+    document.getElementById("blind_version_btn").style.filter = "brightness(1)";
+    document.getElementById("header_logo_image").style.filter = "brightness(1)";
+    document.getElementById("footer_logo_image").style.filter = "brightness(1)";
+
+    // Очищаем localStorage
+    localStorage.clear();
+
+    // Восстанавливаем значение currentUserName
+    if (currentUserName) {
+        localStorage.setItem('currentUserName', currentUserName);
+    }
+
+    const currentLanguage = 'ru';
+    const langButtons = document.querySelectorAll("[data-btn]");
+
+    function setNeedBtn() {
+    langButtons.forEach(item => {
+            if (item.dataset.btn == currentLanguage) {
+                item.style.display = "none"
+            }
+            else {
+                item.style.display = "block"
+            }
+        })
+    }
+
+    setNeedBtn();
+
+}
 
 
 
@@ -268,7 +332,8 @@ async function deleteChoozenRestaurant(){
 
 ["add-submit", "edit-submit"].forEach((id) => {
     const button = document.getElementById(id);
-    const inputs = button.parentElement.querySelectorAll("input");
+    const buttonSection = button.parentNode;
+    const inputs = buttonSection.parentElement.querySelectorAll("input");
     button.addEventListener("click", async () => {
             if (checkValidation(inputs)) 
             {
@@ -283,7 +348,7 @@ async function deleteChoozenRestaurant(){
             } 
             else 
             {
-                alert('EXCEPTION');
+                alert('Recheck interanced value');
             }
         });
 });
@@ -293,6 +358,9 @@ document.getElementById('delete-submit').addEventListener('click', async () => {
     const restaurantId = deleteInput.value;
 
     if (!restaurantId) {
+        if (deleteInput.nextElementSibling && deleteInput.nextElementSibling.classList.contains('error_message')) {
+            deleteInput.nextElementSibling.remove();
+        }
         showError(deleteInput, errorMessages["input_restaurant"][currentLanguage]);
         return;
     }
@@ -353,5 +421,8 @@ document.getElementById("modal-overlay").addEventListener("click", (e) => {
 
     document.getElementById('addAdmin').addEventListener('click', () => {
         window.location.href = '/pages/registration/registration.html';
+    });
+    document.getElementById('clearLocalStorage').addEventListener('click', () => {
+        removeLocalStorage();
     });
 })();

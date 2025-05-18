@@ -35,7 +35,7 @@ export function checkValidation(inputs) {
 
     inputs.forEach(input_element => {
 
-        if (input_element.nextElementSibling && input_element.nextElementSibling.classList.contains('error-message')) {
+        if (input_element.nextElementSibling && input_element.nextElementSibling.classList.contains('error_message')) {
             input_element.nextElementSibling.remove();
         }
 
@@ -68,7 +68,10 @@ export function checkValidation(inputs) {
         if (input_element.value.length == 0 && input_element.id == "edit-id"){
             checkResult = false;
             const idSection = document.getElementById("id_section");
-            showError(idSection, errorMessages["required_field"][language])
+            if (!(idSection.nextElementSibling && idSection.nextElementSibling.textContent === errorMessages["required_field"][language])) {
+                showError(idSection, errorMessages["required_field"][language])
+                checkResult = false;
+            }
         }
         
         if (input_element.nextElementSibling && (input_element.nextElementSibling.tagName.toLowerCase() != 'button' && input_element.nextElementSibling.tagName.toLowerCase() != 'input')) {
@@ -83,6 +86,9 @@ export function checkValidation(inputs) {
 document.querySelectorAll('#modal-overlay input').forEach(el => {
     el.addEventListener('blur', () => {
         if (el.value.length === 0 && el.id != "edit-id") {
+            if (el.nextElementSibling && el.nextElementSibling.classList.contains('error_message')) {
+            el.nextElementSibling.remove();
+            }
             showError(el, errorMessages["required_field"][language])
         }
         else if (el.id == "add-phone") {
@@ -114,6 +120,9 @@ document.querySelectorAll('#modal-overlay input').forEach(el => {
         }
         else if (el.id == "edit-id" && el.value.length === 0){
             const idSection = document.getElementById("id_section");
+            if(idSection.nextElementSibling && idSection.nextElementSibling.classList.contains('error_message')){
+                idSection.nextElementSibling.remove();
+            }
             showError(idSection, errorMessages["required_field"][language])
         }
     })

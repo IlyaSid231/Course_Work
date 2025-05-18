@@ -184,5 +184,11 @@ export async function initializeNavigationButtonsFromHeader(){
       window.location.href = '/pages/aboutUs/aboutUs.html';
   });
 
+  document.getElementById("blind_version_btn").addEventListener('click', function(){
+    if (window.location.pathname === '/') {
+        return;
+    }
+    window.location.href = '/';
+  });
 
 }

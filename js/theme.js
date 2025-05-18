@@ -1,5 +1,4 @@
 var checkBox_1 = document.querySelector(".switch");
-// var checkBox_2 = document.querySelector(".switch_2");
 
 checkBox_1.addEventListener("change", function(){
     if (localStorage.getItem('theme') === 'dark') {
@@ -10,16 +9,6 @@ checkBox_1.addEventListener("change", function(){
     }
     addDarkClassToHTML();
 });
-
-// checkBox_2.addEventListener("change", function(){
-//     if (localStorage.getItem('theme') === 'dark') {
-//         localStorage.removeItem('theme');
-//     }
-//     else{
-//         localStorage.setItem('theme', 'dark');
-//     }
-//     addDarkClassToHTML();
-// });
 
 function addDarkClassToHTML(){
     try {
@@ -32,7 +21,12 @@ function addDarkClassToHTML(){
             document.getElementById("blind_version_btn").style.filter = "brightness(5)";
             document.getElementById("header_logo_image").style.filter = "brightness(4)";
             document.getElementById("footer_logo_image").style.filter = "brightness(4)";
-            // document.querySelector(".switch_2 input").checked = true;
+            const selectArrows = document.querySelectorAll(".filter_dropdown img");
+            if(selectArrows){
+                selectArrows.forEach(arrow => 
+                    arrow.style.filter = "brightness(4)"                    
+                )
+            }
             
         }
         else{
@@ -44,7 +38,12 @@ function addDarkClassToHTML(){
             document.getElementById("blind_version_btn").style.filter = "brightness(1)";
             document.getElementById("header_logo_image").style.filter = "brightness(1)";
             document.getElementById("footer_logo_image").style.filter = "brightness(1)";
-            // document.querySelector(".switch_2 input").checked = false;
+            const selectArrows = document.querySelectorAll(".filter_dropdown img");
+            if(selectArrows){
+                selectArrows.forEach(arrow => 
+                    arrow.style.filter = "brightness(1)"                    
+                )
+            }
         }
     } catch (err) { }
     

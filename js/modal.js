@@ -1,8 +1,8 @@
 import { fetchUser, updateRequests } from './api.js';
-import { errorMessages } from "/pages/registration/js/error_messages.js";
 import IMask from '/node_modules/imask/esm/index.js';
+import { modalText } from '/js/texts.js';
 
-const currentLanguage = localStorage.getItem('language') || "ru";
+let currentLanguage = localStorage.getItem('language') || "ru";
 
 async function getMessage(params){
   let message;
@@ -47,6 +47,7 @@ async function getMessage(params){
 }
 
 export async function authorizationModalWindow(params) {
+    currentLanguage = localStorage.getItem('language') || "ru";
     const overlay = document.createElement('div');
     overlay.className = 'modal-overlay';
 
@@ -56,12 +57,12 @@ export async function authorizationModalWindow(params) {
     modal.className = 'modal modal_auth_window';
     modal.innerHTML = `
       <div class="modal-content">
-        <h3>Требуется <span class="blue_text">авторизация</span></h3>
+        <h3>${modalText["required_text"][currentLanguage]}<span class="blue_text">${modalText["authorization_text"][currentLanguage]}</span></h3>
         <p>${message[currentLanguage]}</p>
         
         <div class="auth-buttons">
-          <button id="loginBtn" class="auth-button login">Войти</button>
-          <button id="registerBtn" class="auth-button register">Регистрация</button>
+          <button id="loginBtn" class="auth-button login">${modalText["authorization_button"][currentLanguage]}</button>
+          <button id="registerBtn" class="auth-button register">${modalText["registration_text"][currentLanguage]}</button>
         </div>
       </div>
     `;
@@ -93,7 +94,7 @@ export async function authorizationModalWindow(params) {
 
 
 export async function createRequestModal(elementId, restaurantId, restaurantName, requests) {
-  
+  currentLanguage = localStorage.getItem('language') || "ru";
   // Создание затемненного фона
   const overlay = document.createElement('div');
   overlay.className = 'modal-overlay';
@@ -102,24 +103,24 @@ export async function createRequestModal(elementId, restaurantId, restaurantName
   const modal = document.createElement('div');
   modal.className = 'modal modal_request_window';
   modal.innerHTML = `
-    <h3>ОСТАВИТЬ ЗАЯВКУ</h3>
-    <p>Представитель площадки <span class="blue_text">${restaurantName}</span> свяжется с вами и организует просмотр удобным способом.</p>
+    <h3>${modalText["leaveRequest_text"][currentLanguage]}</h3>
+    <p>${modalText["platform_representative"][currentLanguage]} <span class="blue_text">${restaurantName[currentLanguage]}&nbsp;</span> ${modalText["connect_text"][currentLanguage]}</p>
     
     <form id="requestForm">
     <div class="input-group flex flex-direction-column align-center justify-center">
         <div class="form-group">
-          <input type="text" id="modal_req_name_area" name="name" required placeholder="Ваше имя">
+          <input type="text" id="modal_req_name_area" name="name" required placeholder="${modalText["modal_req_name_placeholder"][currentLanguage]}">
         </div>
 
         <div class="form-group">
-          <input type="tel" id="phone" name="phone" required placeholder="Ваш номер телефона">
+          <input type="tel" id="phone" name="phone" required placeholder="${modalText["modal_req_phone_placeholder"][currentLanguage]}">
         </div>
 
         <div class="form-group">
-          <input type="text" id="modal_req_question_area" name="question" maxlength="100" placeholder="Ваш вопрос (макс. 100 символов)">
+          <input type="text" id="modal_req_question_area" name="question" maxlength="100" placeholder="${modalText["modal_req_question_placeholder"][currentLanguage]}">
         </div>
     </div>
-        <button type="submit" class="sybmit_button">Отправить</button>
+        <button type="submit" class="sybmit_button">${modalText["submit_button_text"][currentLanguage]}</button>
     </form>
     </form>
   `;
@@ -131,7 +132,6 @@ export async function createRequestModal(elementId, restaurantId, restaurantName
 
   
   const currentUser = await fetchUser();
-  console.log(currentUser);
   if (currentUser && currentUser != "unauthorized") {
     document.getElementById('modal_req_name_area').value = currentUser.username || '';
     document.getElementById('phone').value = currentUser.phone || '';
@@ -142,11 +142,26 @@ export async function createRequestModal(elementId, restaurantId, restaurantName
   // Обработчик отправки формы
   modal.querySelector('#requestForm').addEventListener('submit', async (e) => {
     e.preventDefault();
+
+    const messages = {
+      ru: {
+        incorrectNumber: 'Введенный номер некорректен! Попробуйте снова',
+        invalidData: 'Ошибка, введены некорректные данные! Попробуйте еще раз',
+        successfulSubmission: 'Заявка успешно оставлена!',
+      },
+      en: {
+          incorrectNumber: 'The entered number is incorrect! Please try again',
+          invalidData: 'Error, invalid data entered! Please try again',
+          successfulSubmission: 'Application successfully submitted!',
+      },
+    };
     
     if(!checkValidation(this)){
-      alert('Введенный номер некорректен! Попробуйте снова');
+
+      alert(messages[currentLanguage].incorrectNumber);
       overlay.remove();
       document.body.style.overflow = '';
+      return;
     }
     const newRequest = {
       id:  requests.length > 0 ? Math.max(...requests.map(fav => fav.id)) + 1 : 1,
@@ -160,7 +175,7 @@ export async function createRequestModal(elementId, restaurantId, restaurantName
 
     const updatedRequests = [...requests, newRequest];
     if(!(await updateRequests(updatedRequests))){
-      alert('Ошибка, введены некорректные данные попробуйте еще раз!');
+      alert(messages[currentLanguage].invalidData);
       overlay.remove();
       document.body.style.overflow = '';
       return;
@@ -174,7 +189,7 @@ export async function createRequestModal(elementId, restaurantId, restaurantName
     
     overlay.remove();
     document.body.style.overflow = '';
-    alert('Заявка успешно оставлена!');
+    alert(messages[currentLanguage].successfulSubmission);
   });
 
   // Закрытие по клику на оверлей
@@ -188,7 +203,6 @@ export async function createRequestModal(elementId, restaurantId, restaurantName
 
 
 let mask;
-const phoneInput = document.getElementById('phone');
 
 function initializeMask() {
   const phoneInput = document.getElementById('phone');
@@ -209,7 +223,6 @@ function checkValidation() {
 
   let checkResult = true;
 
-  // Проверяем, соответствует ли введенное значение маске
   if (!mask.masked.isComplete) {
     checkResult = false;
   }
