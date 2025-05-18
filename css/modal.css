@@ -25,7 +25,7 @@
 /* Стили окна оставления заявки ------------------------------------------- */
   .modal_auth_window{
     position: relative;
-    z-index: 1;
+    z-index: 10000;
   }
 
   .modal_auth_window::after{
@@ -61,7 +61,7 @@
 
 .modal-content p{
   margin: 57px auto;
-  color: var(--text-regular);
+  color: var(--text-gray-2);
   font-family: 'Raleway', sans-serif;
   font-size: 26px;
   font-style: normal;
@@ -122,7 +122,7 @@
   max-width: 445px;
   margin: 30px auto;
 
-  color: var(--text-regular);
+  color: var(--text-gray-color);
   font-family: 'Raleway', sans-serif;
   font-size: 16px;
   font-style: normal;
@@ -144,7 +144,8 @@
   border-radius: 50px;
   background: var(--bg-color);
   box-shadow: 0px 4px 15px 0px rgba(105, 78, 75, 0.14);
-  border: 1px solid transparent;
+  border: 1px solid var(--white-color);
+  color: var(--text-dark);
 
   font-family: 'Raleway', sans-serif;
   font-size: 14px;
@@ -154,3 +155,45 @@
   font-variant-numeric: lining-nums proportional-nums;
 }
 
+.modal_request_window input::placeholder{
+  color: var(--text-gray-2);
+}
+
+
+@media (max-width:750px){
+  .modal{
+    width: 300px !important;
+    height: 568px !important;
+  }
+  .modal_auth_window::after, .modal_request_window::after{
+    display: none;
+  }
+  .modal-content h3{
+    font-size: 30px;
+    padding-top: 50px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .modal-content p, .modal_request_window p{
+    font-size: 20px;
+    margin: 45px 0;
+    padding: 0 15px;
+  }
+  .modal-content .auth-buttons .auth-button, .sybmit_button{
+    width: 250px;
+  }
+
+  .modal_request_window h3{
+    font-size: 30px;
+    padding-top: 50px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .modal_request_window p{
+    margin: 25px;
+  }
+
+  .modal_request_window input{
+    width: 290px;
+  }
+}

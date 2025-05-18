@@ -1,6 +1,194 @@
 :root{
     --text-error-color: #fc6262;
+    /* Параметры шрифта по умолчанию (средний) */
+    --font-size: 10px;
+    --line-height: normal;
+    --letter-spacing: 0%; /* 0.12 × кегль */
+    --word-spacing: normal; /* 0.16 × кегль */
 }
+
+
+
+/* Цветовые схемы для слабовидящих */
+.black-white {
+    --bg-color: #000;
+    --text-color: #FFF;
+    --text-dark: #FFF;
+    --blue-color: #FFF;
+    --white-color: #000;
+    --horisontal-line: #FFF;
+}
+
+.black-green {
+    --bg-color: #000;
+    --text-color: #00FF00;
+    --text-dark: #00FF00;
+    --blue-color: #00FF00;
+    --white-color: #000;
+    --horisontal-line: #00FF00;
+}
+
+.white-black {
+    --bg-color: #FFF;
+    --text-color: #000;
+    --text-dark: #000;
+    --blue-color: #000;
+    --white-color: #FFF;
+    --horisontal-line: #000;
+}
+
+/* Размеры шрифта */
+.font-small {
+    --font-size: 16px;
+    --line-height: 24px; /* 1.5 × кегль */
+    --letter-spacing: 1.92px; /* 0.12 × кегль */
+    --word-spacing: 2.56px; /* 0.16 × кегль */
+}
+
+.font-medium {
+    --font-size: 20px;
+    --line-height: 30px;
+    --letter-spacing: 2.4px;
+    --word-spacing: 3.2px;
+}
+
+.font-large {
+    --font-size: 24px;
+    --line-height: 36px; /* 1.5 × кегль */
+    --letter-spacing: 2.88px; /* 0.12 × кегль */
+    --word-spacing: 3.84px; /* 0.16 × кегль */
+}
+
+/* Скрытие изображений и отображение текста alt в accessibility-mode */
+.accessibility-mode.images-off .accessibility-image, .accessibility-mode.images-off .icons_in_header, .accessibility-mode.images-off footer img {
+    display: none;
+}
+
+.accessibility-mode.images-off .img_in_main_info{
+    background-image: none;
+}
+
+.accessibility-mode.images-off .image-placeholder {
+    display: inline-block;
+}
+
+.accessibility-mode.images-off .image-placeholder::after {
+    content: attr(data-alt); /* Отображаем текст из data-alt */
+    display: block;
+    color: var(--text-color);
+    font-size: var(--font-size);
+    line-height: var(--line-height);
+    margin: 10px 0;
+}
+
+
+/* Общие стили */
+.accessibility-mode body {
+    margin: 0;
+    background-color: var(--bg-color);
+    font-family: "Raleway", sans-serif;
+    font-size: var(--font-size);
+    line-height: var(--line-height);
+    letter-spacing: var(--letter-spacing);
+    color: var(--text-color);
+    text-align: left; /* Без выравнивания по ширине */
+}
+
+.accessibility-mode p,
+.accessibility-mode h2,
+.accessibility-mode h3,
+.accessibility-mode input
+ {
+    font-size: var(--font-size) !important;
+    line-height: var(--line-height);
+    letter-spacing: var(--letter-spacing);
+    word-spacing: var(--word-spacing);
+    color: var(--text-color);
+}
+
+.accessibility-mode header,
+.accessibility-mode main,
+.accessibility-mode footer {
+    margin: auto;
+    padding: 20px 0;
+}
+
+
+
+
+
+
+/* Стили для панели настроек */
+.accessibility-panel {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-color);
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    font-size: 20px;
+    gap: 20px;
+    overflow: auto;
+}
+
+.accessibility-panel-options{
+    gap: 20px;
+}
+
+.accessibility-panel h3{
+    color: var(--text-dark);
+    font-family: "PoiretOne", sans-serif;
+    font-size: 40px !important;
+    margin-bottom: calc(var(--line-height) * 1.5);
+}
+
+.accessibility-panel.active {
+    display: block;
+}
+
+.accessibility-option {
+    margin-bottom: calc(var(--line-height) * 1.5);
+    color: var(--text-color);
+}
+
+.accessibility-btn {
+    padding: 10px 20px;
+    border: 1px solid var(--text-color);
+    background-color: var(--bg-color);
+    cursor: pointer;
+    margin-right: 10px;
+    border-radius: 5px;
+    width: 200px;
+    font-size: 17px;
+    color: var(--text-color);
+}
+
+.accessibility-btn.active {
+    background-color: var(--blue-color);
+    color: var(--white-color);
+}
+
+/* 
+.close-panel {
+    margin-top: calc(var(--line-height) * 1.5);
+} */
+/* ______________________________________________ */
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*---------------------Sections-----------------*/
@@ -67,6 +255,103 @@ div.img_in_main_info img {
     font-size: 24px;
 }
 
+@media (max-width: 565px){
+    .p1_in_text{
+        margin-top: 24px;
+    }
+    .big_text_in_text_main_info{
+        font-size: 60px;
+    }
+
+    .p4_in_text{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .search_and_filter_block{
+        padding: 10px 0 !important;
+    }
+
+    div.img_in_main_info img{
+       width: 420px; 
+    }
+}
+
+@media (max-width: 455px){
+    .big_text_in_text_main_info{
+        font-size: 36px;
+        line-height: 105%;
+    }
+
+    .medium_text_in_text_main_info{
+        font-size: 20px;
+    }
+
+    div.img_in_main_info img{
+        display: none;
+
+    }
+    .img_in_main_info{
+        width: 290px;
+        height: 165px;
+        background: url(/resources/first_section_images/People.svg);
+        background-size: 290px 238px;
+        background-repeat: no-repeat;
+        background-position: 1px -6px;
+    }
+
+    .search_and_filter_block{
+        margin-top: -10px !important;
+    }
+    
+    .main_info_on_section{
+        gap: 30px;
+    }
+
+    .image_div{
+        background-size: 540px 323px;
+        background-position: center 165px;
+    }
+
+    .search_and_filter_block{
+        width: 290px;
+        height: 45px !important;
+        padding: 0 !important;
+        margin: -16px auto 0 !important;
+    }
+
+    .filter_trigger{
+        padding-left: 0 !important;
+    }
+
+    .buttons_block_in_section_1{
+        flex-direction: column;
+        gap: 11px !important;
+        align-items: center;
+        justify-content: center;
+        padding: 0 !important;
+    }
+
+    .buttons_block_in_section_1 button{
+        width: 290px;
+        height: 52px;
+    }
+    .p1_in_text{
+        margin-top: 29px;
+    }
+
+    .blue_text_platform{
+        padding-top: 10px;
+    }
+
+    .p3_in_text{
+        margin-top: 14px;
+    }
+}
+
+
 
 
 
@@ -87,6 +372,7 @@ div.img_in_main_info img {
     height: 40px;
     gap: 5px;
     overflow: hidden;
+    position: relative;
 }
 
 .search_and_filter_block > :nth-child(3){
@@ -115,6 +401,10 @@ div.img_in_main_info img {
     line-height: 135%;
     background-color: var(--bg-color);
     color: var(--text-color);
+}
+
+.search_input::placeholder{
+    color: var(--text-gray-2);
 }
 
 .filter_dropdown_main_name {
@@ -154,7 +444,131 @@ div.img_in_main_info img {
     color: var(--text-dark);
 }
 
+/* Стили для триггера фильтров */
+.filter_trigger {
+    filter: brightness(0.5);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    display: none; /* По умолчанию скрыт на десктопе */
+}
 
+.filter_trigger .accessibility-image {
+    width: 20px;
+    height: 20px;
+}
+
+/* Стили для выпадающего контейнера фильтров */
+.filter_container {
+    display: flex;
+    gap: 26px;
+}
+
+.filter_container.active {
+    display: flex; /* Показывается при активации */
+    right: 50%;
+    transform: translateX(50%);
+    padding-left: 0;
+}
+
+.filter_overflow {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .7);
+    z-index: 5;
+    animation: ground .5s;
+}
+
+
+@media (max-width: 1150px){
+    .main_info_on_section{
+        justify-content: center;
+        text-align: center;
+    }
+    .image_div{
+        height: auto;
+    }
+} 
+
+@media (max-width: 1150px){
+    .cards_in_second_section{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .second_section{
+        text-align: center;
+    }
+    .main_info_on_section{
+        padding: 0 15px;
+    }
+    .buttons_block_in_section_1{
+        padding-right: 15px;
+    }
+} 
+   
+
+
+/* Адаптивные стили */
+@media (max-width: 1130px) {
+    .search_and_filter_block{
+        max-width: 700px;
+        justify-content: space-between;
+        /* margin: 15px; */
+    }
+
+    .filter_trigger{
+        padding: 0;
+        padding-right: 25px;
+    }
+
+    .search_and_filter_block .filter_dropdown {
+        display: flex;
+    }
+
+    .filter_trigger {
+        display: block; /* Показываем иконку воронки */
+    }
+
+    .filter_container {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 25vh;
+        right: -100%;
+        height: auto;
+        width: 50%;
+        z-index: 10;
+        justify-content: right;
+        transition: all .2s;
+        overflow: auto;
+        background-color: var(--bg-color);
+        box-shadow: 0 3px 12px rgba(18, 18, 18, .57);
+        border-radius: 30px;
+        padding: 15px 0;
+    }
+    .filter_overflow.show {
+        display: block;
+    }
+
+}
+
+@media (max-width: 730px) {
+    .search_and_filter_block{
+        margin: 15px;
+    }
+}
+
+@media (max-width: 565px){
+    .search_input{
+        padding-left: 10px;
+    }
+}
 
 
 
@@ -252,6 +666,21 @@ div.img_in_main_info img {
 }
 
 
+@media (max-width: 1130px) {
+    .buttons_block_in_section_1{
+        justify-content: center;
+    }
+}
+
+
+
+
+
+
+
+
+
+
 /*---Second section----*/
 
 .second_section {
@@ -280,6 +709,7 @@ div.img_in_main_info img {
     border-radius: 50px;
     position: relative; 
     overflow: hidden;
+    border: 1px solid var(--white-color);
     /* background-color: var(--bg-color-section-2); */
 }
 
@@ -327,10 +757,101 @@ div.img_in_main_info img {
 }
 
 
+@media (max-width: 565px) {
+    .main_text_in_second_section{
+        font-size: 37px;
+    }
+
+    .card{
+        width: 290px;
+        height: 132px;
+        border-radius: 60px;
+    }
+
+    .text_on_card{
+        font-size: 24px;
+        width: 140px;
+        text-align: left;
+    }
+
+    .circle{
+        width: 203px;
+        height: 203px;
+        left: 145px;
+    }
+
+    #image_in_card_1{
+        margin-left: -12px;
+        margin-top: 12px;
+    }
+
+    #image_in_card_2{
+        margin-left: 0px;
+        margin-top: 11px;
+    }
+
+    #image_in_card_3{
+        margin-left: -15px;
+        margin-top: -15px;
+    }
+
+     #image_in_card_4{
+        margin-left: 0px;
+    }
+
+    #image_in_card_1 img{
+        margin: 0%;
+        width: 115px;
+        height: 110px;
+    }
+
+    #image_in_card_2 img{
+        width: 85px;
+        height: 108px;
+    }
+
+    #image_in_card_3 img{
+        margin: 0;
+        width: 120px;
+        height: 115px;
+    }
+
+    .tape{
+        top: -14px;
+        right: -15px;
+    }
+
+    .tape img{
+        width: 118px;
+        height: 67px;
+    }
+
+     #image_in_card_4 img{
+        width: 95px;
+        height: 98px;
+    }
+}
+
+@media (max-width: 455px){
+    .main_text_in_second_section{
+        font-size: 26px;
+    }
+    .second_section{
+        margin-top: 95px;
+    }
+    .cards_in_second_section{
+        margin-top: 33px;
+        gap: 20px;
+    }
+}
+
+
+
 
 /* Админ-панель ----------------------------*/
 .admin-panel {
     background: var(--bg-color);
+    border: 1px solid var(--white-color);
     padding: 20px;
     margin: 20px auto;
     width: auto;
@@ -350,6 +871,7 @@ div.img_in_main_info img {
 
 .admin_buttons_section{
     gap: 20px;
+    flex-wrap: wrap;
 }
 
 .admin-action-btn {
@@ -388,7 +910,7 @@ div.img_in_main_info img {
 }
 
 /* Модальные окна */
-.modal-overlay {
+.modal-overlay-admin, .modal-overlay-yandex {
     position: fixed;
     left: 0;
     right: 0;
@@ -409,6 +931,7 @@ div.img_in_main_info img {
 .modal-overlay--visible {
     opacity: 1;
     visibility: visible;
+    transition: all 0.3s ease-in-out;
 }
 
 
@@ -457,9 +980,10 @@ div.img_in_main_info img {
 }
 
 .admin-modal button {
+    width: 130px;
     height: 55px;
     padding: 1em 2em;
-    margin: 1em 0;
+    margin: 2em 0 0 ;
     border: 1px solid #ededed;
     background: conic-gradient(from 180deg, #8E2DBC, #FFC5BD 110deg, #DB7AE3, #06C 300deg);
     background-size: 200% 300%;
@@ -496,7 +1020,64 @@ div.img_in_main_info img {
     }
 }
 
-.close-button {
+/* Admin panel adaptive */
+
+@media (max-width: 1180px){
+    .admin-panel{
+        margin: 20px;
+    }
+    .id_section{
+        width: auto !important;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 670px){
+    .modal input{
+        box-sizing: border-box;
+        width: 400px;
+        transform: none;
+        margin: 25px auto;
+    }
+}
+
+
+@media (max-width: 620px){
+    .modal{
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        margin: 0;
+    }
+
+    .modal input{
+        box-sizing: border-box;
+        width: 290px;
+        transform: none;
+        margin: 25px auto;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.close-button, .close-button-map {
     background: #606061;
     color: #FFFFFF;
     line-height: 25px;
@@ -511,7 +1092,7 @@ div.img_in_main_info img {
 }
 
 .close-button:hover,
-.close-button:focus {
+.close-button:focus, .close-button-map:hover, .close-button-map:focus {
     color: black;
     text-decoration: none;
 }
@@ -541,15 +1122,10 @@ body.lock {
     overflow-y: hidden;
 }
 
-#add-submit{
-    margin-top: 20px;
-    margin-left: 50%;
-    transform: translateX(-50%);
-}
-
 .id_section{
     width: 515px;
     margin: 0 auto;
+    justify-content: space-around;
 }
 
 #edit-id {
@@ -557,3 +1133,224 @@ body.lock {
     width: 50%;
     transform: none;
 }
+
+#delete-modal{
+    height: auto;
+}
+
+#delete-submit{
+    margin-top: 30px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+#find_rest_inf{
+    margin: 0;
+}
+
+
+
+
+/* Yandex styles */
+.modal_yandex{
+    background-color: var(--bg-color);
+    width: 800px;
+    height: 600px;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+    display: none;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
+    padding: 40px;
+    max-height: 80vh;
+    margin: 0 10px;
+}
+
+.modal_1--visible {
+    display: block;
+}
+
+@media (max-width: 900px) {
+    .modal_yandex {
+        width: 320px;
+        height: 400px;
+        padding: 30px 0;
+        margin: 0 15px;
+    }
+    .close-button-map{
+        right: 0;
+        top: 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Стили для accessibility-mode */
+.accessibility-mode .first_section,
+.accessibility-mode .second_section {
+    /* max-width: 80ch; */
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.accessibility-mode .image_div {
+    /* display: none;  */
+    background-image: none;
+
+}
+
+.accessibility-mode .text_in_main_info_on_section{
+    text-align: center;
+    order: 2;
+}
+
+.accessibility-mode .main_info_on_section {
+    flex-direction: column;
+    gap: 20px;
+}
+
+.accessibility-mode .big_text_in_text_main_info {
+    font-family: 'PoiretOne', sans-serif;
+    text-transform: uppercase;
+    font-size: calc(var(--font-size) * 1.5);
+    margin-bottom: calc(var(--line-height) * 1.5);
+    line-height: var(--line-height);
+    color: var(--text-dark);
+    margin: 0 auto;
+}
+
+.accessibility-mode .img_in_main_info{
+    order: 1;
+    text-align: center;
+}
+
+.accessibility-mode .blue_text_platform {
+    color: var(--blue-color);
+}
+
+.accessibility-mode .medium_text_in_text_main_info {
+    font-size: var(--font-size);
+    margin-bottom: calc(var(--line-height) * 1.5);
+    color: var(--text-dark);
+}
+
+.accessibility-mode .image_div{
+    height: auto;
+}
+
+
+.accessibility-mode .search_and_filter_block, .accessibility-mode .buttons_block_in_section_1, .accessibility-mode .switch, .accessibility-mode .tape {
+   display: none;
+}
+
+.accessibility-mode .second_section {
+    margin-top: calc(var(--font-size)*3);
+    text-align: center;
+}
+
+.accessibility-mode .main_text_in_second_section {
+    font-family: 'PoiretOne', sans-serif;
+    text-transform: uppercase;
+    font-size: calc(var(--font-size) * 1.2);
+    margin-bottom: calc(var(--line-height) * 1.5);
+    color: var(--text-dark);
+}
+
+.accessibility-mode .cards_in_second_section {
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.accessibility-mode .card {
+    max-width: 1110px;
+    height: auto;
+    box-shadow: none;
+    border: 1px solid var(--text-color);
+    border-radius: 10px;
+    padding: 15px;
+    position: relative;
+    justify-content: space-around;
+    margin: 0 15px;
+}
+
+.accessibility-mode .text_on_card {
+    font-size: var(--font-size);
+    margin: 0;
+    color: var(--text-dark);
+}
+
+.accessibility-mode .circle {
+    display: none; /* Убираем декоративный круг */
+}
+
+.accessibility-mode #image_in_card_1,
+.accessibility-mode #image_in_card_2,
+.accessibility-mode #image_in_card_3,
+.accessibility-mode #image_in_card_4,
+.accessibility-mode .tape {
+    margin: 10px 0;
+}
+
+.accessibility-mode.black-white header .accessibility-image,
+.accessibility-mode.black-white footer .footer_img,
+.accessibility-mode.black-white header .blind_version_btn,
+.accessibility-mode.black-green header .accessibility-image,
+.accessibility-mode.black-green footer .footer_img,
+.accessibility-mode.black-green header .blind_version_btn {
+    filter: brightness(4) !important; 
+}
+
+.accessibility-mode.black-green header .accessibility-image,
+.accessibility-mode.black-green footer .footer_img,
+.accessibility-mode.black-green header .blind_version_btn{
+    background-color: var(--text-color);
+    filter: brightness(1) !important;
+
+}
+
+
+
+
+/* ---------------ADAPTIVE */
+
+@media (max-width: 1150px){
+
+    .cards_in_second_section{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .accessibility-option{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        
+    }
+    .accessibility-panel{
+        text-align: center;
+        height: 100%;
+        overflow: auto;
+        padding-left: 0;
+        margin-bottom: 20px;
+    }
+    .accessibility-btn{
+        margin: 0;
+    }
+    .close-panel{
+        margin: 20px auto;
+    }
+} 
