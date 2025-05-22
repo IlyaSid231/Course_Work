@@ -568,6 +568,10 @@ div.img_in_main_info img {
     .search_input{
         padding-left: 10px;
     }
+    .error_message{
+        padding-left: 0px !important;
+        
+    }
 }
 
 
@@ -937,8 +941,8 @@ div.img_in_main_info img {
 
 .admin-modal {
     background-color: var(--bg-color);
-    width: 80%;
-    height: 90vh;
+    width: 80% !important;
+    height: 90vh !important;
     display: none;
     overflow-y: auto;
     overflow-x: hidden;
@@ -1039,20 +1043,24 @@ div.img_in_main_info img {
         transform: none;
         margin: 25px auto;
     }
+
+    .modal{
+        text-align: center;
+    }
 }
 
 
-@media (max-width: 620px){
+@media (max-width: 555px){
     .modal{
-        width: 100%;
-        height: 100%;
+        width: 100% !important;
+        height: 100% !important;
         text-align: center;
         margin: 0;
     }
 
     .modal input{
         box-sizing: border-box;
-        width: 290px;
+        width: 260px;
         transform: none;
         margin: 25px auto;
     }
@@ -1115,7 +1123,6 @@ div.img_in_main_info img {
     font-size: 13px;
     font-weight: 400;
     padding-left: 70px;
-    padding-right: 50%;
 }
 
 body.lock {
@@ -1135,13 +1142,13 @@ body.lock {
 }
 
 #delete-modal{
-    height: auto;
+    height: auto !important;
+    margin: 0 15px 0;
+    text-align: center;
 }
 
 #delete-submit{
     margin-top: 30px;
-    margin-left: 50%;
-    transform: translateX(-50%);
 }
 
 #find_rest_inf{
@@ -1269,6 +1276,8 @@ body.lock {
 
 .accessibility-mode .cards_in_second_section {
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 20px;
     margin-top: 20px;
 }
@@ -1283,6 +1292,39 @@ body.lock {
     position: relative;
     justify-content: space-around;
     margin: 0 15px;
+    margin: 0%;
+}
+
+@media (max-width:600px){
+    .accessibility-mode .card {
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    box-sizing: border-box;
+
+    }
+
+    .accessibility-mode.images-off .image-placeholder::after{
+        width: 150px;
+    }
+
+    .accessibility-mode .cards_in_second_section{
+        margin: 20px auto 0;
+        max-width: 300px;
+    }
+
+    .accessibility-mode .footer_info{
+        max-width: 320px;
+    }
+
+    .accessibility-mode .footer_info p{
+        max-width: 300px;
+    }
+
+    .accessibility-mode .footer_info > :nth-child(2){
+        font-size: 20px !important;
+    }
+
 }
 
 .accessibility-mode .text_on_card {
