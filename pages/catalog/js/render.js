@@ -119,15 +119,15 @@ export async function RenderRestaurants(restaurantsToRender) {
       <div class="vertical_inf_block flex">
           <div class="average_price_block flex flex-direction-column">
               <p class="average_price_label infContainerLabelBigger" data-lang="average_price_label">Средний чек</p>
-              <p class="average_price infContainerValueBigger">${item.average_price.toLocaleString('ru-RU')} р.</p>
+              <p class="average_price infContainerValueBigger">${item.average_price.toLocaleString('ru-RU')} ${currentLanguage === 'ru' ? 'р.' : 'r.'}</p>
           </div>
           <div class="menu_price_block flex flex-direction-column">
               <p class="menu_price_label infContainerLabelBigger" data-lang="menu_price_label">Банкетное меню</p>
-              <p class="menu_price infContainerValueBigger">от ${item.menu_price.toLocaleString('ru-RU')} р.</p>
+              <p class="menu_price infContainerValueBigger">${currentLanguage === 'ru' ? 'от.' : 'from.'} ${item.menu_price.toLocaleString('ru-RU')} ${currentLanguage === 'ru' ? 'р.' : 'r.'}</p>
           </div>
           <div class="rent_price_block flex flex-direction-column">
               <p class="rent_price_label infContainerLabelBigger" data-lang="rent_price_label">Аренда/час</p>
-              <p class="rent_price infContainerValueBigger">от ${item.rent_price.toLocaleString('ru-RU')} р.</p>
+              <p class="rent_price infContainerValueBigger">${currentLanguage === 'ru' ? 'от.' : 'from.'} ${item.rent_price.toLocaleString('ru-RU')} ${currentLanguage === 'ru' ? 'р.' : 'r.'}</p>
           </div>
       </div>
     `;
