@@ -27,7 +27,7 @@ export async function fetchRestaurants(page, searchQuery = '', sortField = '', s
 
     // Поиск
     if (searchQuery) {
-      url += `&q=${encodeURIComponent(searchQuery)}`;
+      url += `&title.${currentLanguage}_like=${encodeURIComponent(searchQuery)}`;
     }
 
     // Сортировка
